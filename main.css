@@ -48,17 +48,13 @@ img, svg, picture, video{
 
 :root{
     scroll-behavior: smooth !important;
-    --light-bg: #fff;
+    --light-bg: #DDD0C8;
     --dark-bg: #1f1f1f;
     --text-color: #555; 
     --text-pop-color: #444;
-    --accent-color: #9638d5;
+    --accent-color: #323232;
     --accent-color-dark: #7e3a9c;
     --accent-color-darker: #5d417c;
-    --primary-gradient: linear-gradient(135deg, #e462d8, #9638d5);
-    --secondary-gradient: linear-gradient(135deg, #5d417c 10%,#be5072);
-    --primary-btn-gradient: linear-gradient(45deg, #e462d8, #9638d5);
-    --secondary-btn-gradient: linear-gradient(135deg, #e6e6e6, #f5c8f0);
     --heading-color: #2f2f2f;
 }
 
@@ -99,7 +95,7 @@ header{
 
 header #header_name{
     font-family: "Montserrat";
-    color: var(--accent-color-dark);
+    color: var(--accent-color);
 }
 
 header a{
@@ -207,7 +203,7 @@ header ul{
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background: var(--primary-btn-gradient);
+    background: var(--accent-color);
     padding: 10px 20px;
     color: #fff;
     max-width: fit-content;
@@ -249,9 +245,7 @@ header ul{
 }
 
 .download_btn:hover{
-    /* border-color: var(--accent-color-dark); */
-    /* color: var(--accent-color-dark); */
-    background: var(--secondary-btn-gradient)
+    opacity: 0.8;
 }
 
 .contact_btn img{
@@ -296,19 +290,6 @@ header ul{
     border-radius: 50%;
 }
 
-.adorn:first-of-type{
-    top: -15%;
-    left: -20%;
-    z-index: -1;
-    background: var(--primary-gradient);
-}
-
-.adorn:last-of-type{
-    bottom: -20%;
-    right: -20%;
-    border-radius: 40px;
-    background: var(--secondary-gradient);
-}
 
 .scroll_down_section{
     display: flex;
@@ -379,7 +360,7 @@ header ul{
     .container{
         max-width: 90%;
     }
-    
+
     .intro_section .main{
         flex-direction: column;
     }
