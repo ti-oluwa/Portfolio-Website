@@ -58,6 +58,7 @@ img, svg, picture, video{
     --accent-color-dark: #7e3a9c;
     --accent-color-darker: #5d417c;
     --heading-color: #2f2f2f;
+    --shade: #b5b5b5;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -423,6 +424,10 @@ header ul{
     justify-content: center;
     align-items: center;
     gap: 10px;
+    background: var(--shade);
+    border-radius: 6px;
+    padding: 10px;
+    max-width: 200px;
 }
 
 .trophy h2{
