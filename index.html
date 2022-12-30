@@ -60,13 +60,13 @@
         </section>
 
         <!-- SCROLL DOWN MOUSE -->
-        <div class="scroll_down_section">
+        <div class="scroll_down_section" onclick="scrollDown();">
             <img src="./images/mouse.svg" alt=""  style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
             <p>Scroll down</p>
         </div>
 
         <!-- ABOUT SECTION -->
-        <section class="about_section">
+        <section class="about_section" id="about">
             <div class="section_head">
                 <h1>About Me</h1>
                 <p>Get to know me</p>
@@ -103,6 +103,252 @@
 
         </section>
 
+        <!-- SKILLS AND QUALIFICATIONS -->
+        <section class="sq_section">
+            <div class="section_head">
+                <h1>Skills</h1>
+                <p>My technical know how and educational background</p>
+            </div>
+
+            <div class="tab_switcher">
+                <div class="tab_indicator"></div>
+                <div class="tab_labels">
+                    <p class="label active_tab" id="skills">Skills</p>
+                    <p class="label" id="qualifications">Qualifications</p>
+                </div>
+            </div>
+
+            <!-- SKILLS SECTION -->
+            <div class="skills_section">
+                <div class="skill">
+                    <div class="skill_head">
+                        <img src="./images/connection-error.svg" alt="" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                        <div>
+                            <h3>Frontend development</h3>
+                            <p>More than 1 year</p>
+                        </div>
+                        <img class="drop_arrow" src="./images/dropdown.svg" alt="" alt="" style="width: clamp(20px, 4vw, 25px); height: clamp(20px, 4vw, 25px);">
+                    </div>
+
+                    <div class="skill_body">
+                            <div class="skill_item">
+                                <div class="item_head">
+                                    <h4>HTML5</h4>
+                                    <p>80%</p>
+                                </div>
+
+                                <div class="proficiency_indicator">
+                                    <!-- A PROFICIENCY SLIDER   -->
+                                    <div class="indicator"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill_item">
+                                <div class="item_head">
+                                    <h4>CSS3</h4>
+                                    <p>90%</p>
+                                </div>
+
+                                <div class="proficiency_indicator">
+                                    <!-- A PROFICIENCY SLIDER   -->
+                                    <div class="indicator"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill_item">
+                                <div class="item_head">
+                                    <h4>Javascript</h4>
+                                    <p>60%</p>
+                                </div>
+
+                                <div class="proficiency_indicator">
+                                    <!-- A PROFICIENCY SLIDER   -->
+                                    <div class="indicator"></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill_head">
+                        <img src="./images/connection-error.svg" alt="" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                        <div>
+                            <h3>Backend development</h3>
+                            <p>More than 2 year</p>
+                        </div>
+                        <img class="drop_arrow" src="./images/dropdown.svg" alt="" alt="" style="width: clamp(20px, 4vw, 25px); height: clamp(20px, 4vw, 25px);">
+                    </div>
+
+                    <div class="skill_body">
+                            <div class="skill_item">
+                                <div class="item_head">
+                                    <h4>Python</h4>
+                                    <p>80%</p>
+                                </div>
+
+                                <div class="proficiency_indicator">
+                                    <!-- A PROFICIENCY SLIDER   -->
+                                    <div class="indicator"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill_item">
+                                <div class="item_head">
+                                    <h4>SQL</h4>
+                                    <p>40%</p>
+                                </div>
+
+                                <div class="proficiency_indicator">
+                                    <!-- A PROFICIENCY SLIDER   -->
+                                    <div class="indicator"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill_item">
+                                <div class="item_head">
+                                    <h4>Django</h4>
+                                    <p>90%</p>
+                                </div>
+
+                                <div class="proficiency_indicator">
+                                    <!-- A PROFICIENCY SLIDER   -->
+                                    <div class="indicator"></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUALIFICATIONS SECTION -->
+            <div class="qualifications_section">
+                <div class="q_head">
+                    <p class="active_sub_tab" id="education_switch" onclick="showEducation();">
+                        <img src="./images/menu.svg" alt="" style="width: clamp(20px, 4vw, 25px); height: 100%;">
+                        Education
+                    </p>
+                    <p id="work_switch" onclick="showWork();">
+                        <img src="./images/tag.svg" alt="" style="width: clamp(20px, 4vw, 25px); height: 100%;">
+                        Work
+                    </p>
+                </div>
+
+                <div class="q_section" id="education">
+                    <div class="event">
+                        <h3>Petroleum Engineering, B.Eng</h3>
+                        <p>FUPRE - Delta, Nigeria.</p>
+                        <small>
+                            <img src="./images/menu.svg" alt="" style="width: clamp(14px, 4vw, 18px); height: 100%;">
+                            2019 - Till date
+                        </small>
+                    </div>
+
+                    <div class="event">
+                        <h3>Frontend development</h3>
+                        <p>FreeCodeCamp.Org</p>
+                        <small>
+                            <img src="./images/menu.svg" alt="" style="width: clamp(14px, 4vw, 18px); height: 100%;">
+                            2019 - Till date
+                        </small>
+                    </div>
+
+                    <div class="event">
+                        <h3>Backend development (Python)</h3>
+                        <p>I4G X ZURI Training - Nigeria</p>
+                        <small>
+                            <img src="./images/menu.svg" alt="" style="width: clamp(14px, 4vw, 18px); height: 100%;">
+                            July - Sept. 2019
+                        </small>
+                    </div>
+                </div>
+
+                <div class="q_section" id="work">
+                    <div class="event">
+                        <h3>Freelancing</h3>
+                        <p>Remote - Worldwide</p>
+                        <small>
+                            <img src="./images/menu.svg" alt="" style="width: clamp(14px, 4vw, 18px); height: 100%;">
+                            2019 - Till date
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
     </div>
 </body>
+<script type="text/javascript">
+    const tab_labels = document.querySelectorAll('.tab_labels .label');
+    const tab_indicator = document.querySelector('.tab_indicator');
+    const tab_switcher = document.querySelector('.tab_switcher');
+    let qualifications_section = document.querySelector('.qualifications_section');
+    let skills_section = document.querySelector('.skills_section');
+
+    tab_switcher.addEventListener('click', (e) => {
+        tab_labels.forEach((label, index) => {
+            if (label == e.target) {
+                label.classList.add('active_tab');
+                if(label.id == 'qualifications') {
+                    tab_indicator.classList.add('move_right');
+                    skills_section.style.display = 'none';
+                    qualifications_section.style.display = 'flex';
+                } else{
+                    tab_indicator.classList.remove('move_right');
+                    qualifications_section.style.display = 'none';
+                    skills_section.style.display = 'flex';
+                }
+            } else {
+                label.classList.remove('active_tab');
+            }
+        });
+    });
+
+    
+    let skills = document.querySelectorAll('.skill');
+    let skill_items = document.querySelectorAll('.skill_item');
+
+    skills.forEach((skill) => {
+        skill.querySelector('.skill_head').addEventListener('click', () => {
+            skill.querySelector('.drop_arrow').classList.toggle('flip');
+            skill.querySelector('.skill_body').classList.toggle('show_dropdown');
+        });
+    });
+
+    skill_items.forEach((item) => {
+        let proficiency = item.querySelector('.item_head p').innerHTML;
+        item.querySelector('.indicator').style.width = proficiency;
+    });
+
+    function showWork(){
+        let education_tab = document.querySelector('#education');
+        let work_tab = document.querySelector('#work');
+        let education_tab_switcher = document.querySelector('#education_switch');
+        let work_tab_switcher = document.querySelector('#work_switch');
+
+        education_tab.style.display = 'none';
+        education_tab_switcher.classList.remove('active_sub_tab');
+        work_tab_switcher.classList.add('active_sub_tab');
+        work_tab.style.display = 'flex';
+    };
+
+    function showEducation(){
+        let education_tab = document.querySelector('#education');
+        let work_tab = document.querySelector('#work');
+        let education_tab_switcher = document.querySelector('#education_switch');
+        let work_tab_switcher = document.querySelector('#work_switch');
+
+        work_tab.style.display = 'none';
+        work_tab_switcher.classList.remove('active_sub_tab');
+        education_tab_switcher.classList.add('active_sub_tab');
+        education_tab.style.display = 'flex';
+    };
+
+    function scrollDown(){
+        document.querySelector('#about').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        });
+    };
+
+</script>
 </html>
