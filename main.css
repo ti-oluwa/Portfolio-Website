@@ -376,6 +376,10 @@ header ul{
 }
 
 @media screen and (max-width: 580px){
+    .container{
+        max-width: 90%;
+    }
+    
     .intro_section .main{
         flex-direction: column;
     }
