@@ -256,6 +256,10 @@ header ul{
     }
 } */
 
+.contact_btn:active{
+    transform: scale(0.95);
+}
+
 .download_btn:hover{
     opacity: 0.8;
 }
