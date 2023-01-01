@@ -130,10 +130,14 @@ header ul{
     gap: 0 40px;
 }
 
+header ul li{
+    cursor: pointer;
+}
+
 #go_up{
     position: fixed;
     z-index: 100;
-    bottom: clamp(20px, 4vw, 30px);
+    bottom: clamp(80px, 4vw, 100px);
     right: clamp(20px, 4vw, 30px);
     width: 40px;
     height: 40px;
@@ -151,6 +155,132 @@ header ul{
     visibility: hidden;
 }
 
+.bottom_menu{
+    position: fixed;
+    bottom: 20px;
+    right: clamp(20px, 4vw, 30px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    gap: clamp(20px, 2vw, 30px);
+}
+
+.bottom_menu img{
+    filter: invert(0.2);
+}
+
+.menu_items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(10px, 4vw, 20px);
+}
+
+.menu_item{
+    visibility: hidden;
+    background-color: var(--shade);
+    padding: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: inset -2px -2px 4px var(--text-pop-color),
+                            inset 2px 2px 4px var(--light),
+                            2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.show_menu_item{
+    animation: show_menu_item 0.2s ease-out forwards;
+}
+
+@keyframes show_menu_item {
+    0% {
+        transform: translateX(10px) scale(0);
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.remove_menu_item{
+    animation: remove_menu_item 0.3s ease-out forwards !important;
+}
+
+@keyframes remove_menu_item {
+    0% {
+        transform: translateX(0px) scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        transform: translateX(20px) scale(0);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.menu_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    background-color: var(--shade-dark);
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: inset -2px -2px 4px var(--text-pop-color),
+                            inset 2px 2px 4px var(--light),
+                            2px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease;
+    animation: show_menu_btn 0.2s ease-out forwards;
+}
+
+@keyframes show_menu_btn {
+    0% {
+        transform: translateY(10px) scale(0);
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.hide_menu_btn{
+    animation: remove_menu_btn 0.3s ease-out forwards !important;
+}
+
+@keyframes remove_menu_btn {
+    0% {
+        transform: translateY(0px) scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        transform: translateY(10px) scale(0);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+    
+
+.menu_item img, .menu_btn img{
+    width: 30px;
+    height: 30px;
+}
+
+.open{
+    transform: rotate(90deg);
+}
+
+.menu_item:hover{
+    background-color: var(--shade-dark);
+    transform: scale(1.1);
+}
 /* INTRO SECTION */
 
 .intro_section{
@@ -173,16 +303,17 @@ header ul{
 .socials{
     display: flex;
     flex-direction: column;
-    gap: 40px 20px;
+    gap: 20px clamp(10px, 2vw, 20px);
     padding: 20px;
-    border-left: 2px solid var(--accent-color);
+    border-left: 2px solid var(--text-pop-color);
+    overflow-x: auto;
 }
 
 .socials img{
     width: 25px;
     height: 25px;
     filter: invert(0.5);
-    transition: 0.2s ease-in;
+    transition: 0.1s ease;
     cursor: pointer;
 }
 .socials img:hover{
@@ -1059,14 +1190,15 @@ header ul{
     .main .socials{
         flex-direction: row;
         border-left: none;
-        gap: 40px;
-        /* padding: 20px 40px; */
+        /* gap: 20px; */
+        padding: 14px 20px;
         align-self: flex-start;
-        border-left: 2px solid var(--accent-color);
-        border-right: 2px solid var(--accent-color);
-        justify-content: center;
+        border-left: 2px solid var(--text-color);
+        border-right: 2px solid var(--text-color);
+        justify-content: space-evenly;
         width: 100%;
     }
+
     .about_section .section_content{
         width: 90%;
     }
@@ -1081,6 +1213,10 @@ header ul{
 
     .trophy{
         max-width: 100px;
+    }
+
+    .services_section{
+        width: 100%;
     }
 }
 

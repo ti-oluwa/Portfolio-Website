@@ -11,12 +11,12 @@
     <header class="container">
         <a href="" id="header_name">Toluwalase</a>
         <ul>
-            <li><a href="" class="in_view">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Skills</a></li>
-            <li><a href="">Services</a></li>
-            <li><a href="">Portfolio</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a class="in_view">Home</a></li>
+            <li id="about_section"><a>About</a></li>
+            <li id="sq_section"><a>Skills</a></li>
+            <li id="services_section"><a>Services</a></li>
+            <li><a>Portfolio</a></li>
+            <li><a>Contact</a></li>
             <li></li>
         </ul>
     </header>
@@ -25,6 +25,22 @@
         <div id="go_up" class="hide">
             <img src="./images/up-arrow.svg" alt="">
         </div>
+
+        <!-- BOTTOM MENU -->
+        <div class="bottom_menu">
+            <div class="menu_items">
+                <div class="menu_item"><img src="./images/user.svg" alt=""></div>
+                <div class="menu_item"><img src="./images/skills.svg" alt=""></div>
+                <div class="menu_item"><img src="./images/services.svg" alt=""></div>
+                <div class="menu_item"><img src="./images/portfolio.svg" alt=""></div>
+                <div class="menu_item"><img src="./images/contact.svg" alt=""></div>
+            </div>
+            <div class="menu_btn">
+                <img src="./images/menu_dot.svg" alt="">
+            </div>
+        </div>
+
+
         <!-- INTRO SECTION -->
         <section class="intro_section" id="intro">
             <div class="main">
@@ -386,9 +402,27 @@
     let skills = document.querySelectorAll('.skill');
     let skill_items = document.querySelectorAll('.skill_item');
     let skills_section = document.querySelector('.skills_section');
+    let sq_section = document.querySelector('.sq_section');
+    let services_section = document.querySelectorAll('.services_section');
     let services = document.querySelectorAll('.service');
     let body = document.querySelector('body');
     let go_up_btn = document.querySelector('#go_up');
+    let menu_btn = document.querySelector('.menu_btn');
+    let menu_items = document.querySelectorAll('.menu_item');
+    let header = document.querySelector('header ul');
+    let header_links = document.querySelectorAll('header ul li');
+
+    // Menu button
+    const header_observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                menu_btn.classList.add('hide_menu_btn');
+            }else{
+                menu_btn.classList.remove('hide_menu_btn');
+            }
+        });
+    });
+    header_observer.observe(header);
 
     // Hides scroll up button when at the top of the page
     window.addEventListener('scroll', () => {
@@ -463,6 +497,17 @@
     
     window.addEventListener('click', (e) => {
 
+        //header
+
+        header_links.forEach((link) => {
+            if(link.contains(e.target) && link.id){
+                document.querySelector(`.${link.id}`).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            }
+        });
+
         // Skills section
         skills.forEach((skill) => {
             if(skill.querySelector('.skill_head').contains(e.target)){
@@ -493,6 +538,50 @@
                 block: 'start',
             });
         };
+
+        // Menu button
+        function openMenu(){
+            menu_btn.classList.add('open');
+            menu_btn.querySelector('img').src = './images/close.svg';
+            let delay = 0.08;
+            let index = menu_items.length  - 1;
+            for(let i = 0; i < menu_items.length; i++) {
+                menu_items[index].style.animationDelay = delay + 's';
+                menu_items[index].classList.toggle('show_menu_item');
+                delay += 0.08;
+                index -= 1;
+            };
+            setTimeout(() => {
+                menu_items.forEach((item) => {
+                    item.style.animationDelay = '0s';
+                });
+            }, 1000);
+        };
+
+        function closeMenu(){
+            menu_btn.classList.remove('open');
+            menu_btn.querySelector('img').src = './images/menu_dot.svg';
+            menu_items.forEach((item) => {
+                item.classList.add('remove_menu_item');
+                setTimeout(() => {
+                    item.classList.remove('show_menu_item');
+                    item.classList.remove('remove_menu_item');
+                }, 300);
+            });
+        };
+
+        if(menu_btn.contains(e.target)){
+            if (!menu_btn.classList.contains('open')) {
+                openMenu();
+                menu_btn.id = setTimeout(() => {
+                    closeMenu();
+                }, 10000);
+            } else{
+                closeMenu();
+                clearTimeout(menu_btn.id);
+            };
+        };
+
     });
 
     
