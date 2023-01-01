@@ -21,9 +21,12 @@
         </ul>
     </header>
     <div class="container">
-
+        <!-- GO UP ARROW -->
+        <div id="go_up" class="hide">
+            <img src="./images/up-arrow.svg" alt="">
+        </div>
         <!-- INTRO SECTION -->
-        <section class="intro_section">
+        <section class="intro_section" id="intro">
             <div class="main">
                 <div class="socials">
                     <img src="./images/linked-in.svg" alt="" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
@@ -88,11 +91,11 @@
     
                     <div class="trophies">
                         <div class="trophy">
-                            <h2>08+</h2>
+                            <h2>01+</h2>
                             <p>years experience</p>
                         </div>
                         <div class="trophy">
-                            <h2>10+</h2>
+                            <h2>3+</h2>
                             <p>Completed projects</p>
                         </div>
                         <div class="trophy">
@@ -385,6 +388,19 @@
     let skills_section = document.querySelector('.skills_section');
     let services = document.querySelectorAll('.service');
     let body = document.querySelector('body');
+    let go_up_btn = document.querySelector('#go_up');
+
+    // Hides scroll up button when at the top of the page
+    window.addEventListener('scroll', () => {
+        var scrollTop = document.documentElement.scrollTop;
+        // console.log(scrollTop)
+        if(scrollTop <= window.innerHeight){
+            go_up_btn.classList.add('hide');
+        }else{
+            go_up_btn.classList.remove('hide');
+        };
+    });
+
 
     // Tab switcher
     tab_switcher.addEventListener('click', (e) => {
@@ -469,6 +485,14 @@
                 }, 300);
             };
         });
+
+        // Scroll to top button
+        if(go_up_btn.contains(e.target)){
+            document.querySelector('header').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        };
     });
 
     

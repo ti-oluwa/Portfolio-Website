@@ -130,6 +130,27 @@ header ul{
     gap: 0 40px;
 }
 
+#go_up{
+    position: fixed;
+    z-index: 100;
+    bottom: clamp(20px, 4vw, 30px);
+    right: clamp(20px, 4vw, 30px);
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background: var(--accent-color);
+    padding: 5px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hide{
+    transform: translateY(100px);
+    opacity: 0;
+    visibility: hidden;
+}
+
 /* INTRO SECTION */
 
 .intro_section{
