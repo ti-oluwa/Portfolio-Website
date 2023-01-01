@@ -33,6 +33,7 @@ body{
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
     background: var(--light-bg);
+    position: relative;
 }
 
 img, svg, picture, video{
@@ -40,6 +41,10 @@ img, svg, picture, video{
     width: 100%;
     height: 100%;
     border-radius: inherit;
+}
+
+ul{
+    list-style-position: inside;
 }
 
 .container{
@@ -51,7 +56,7 @@ img, svg, picture, video{
     scroll-behavior: smooth !important;
     --light-bg: #DDD0C8;
     --dark-bg: #1f1f1f;
-    --light: #f5f5f5;
+    --light: #d0d0d0;
     --text-color: #555; 
     --text-pop-color: #444;
     --accent-color: #323232;
@@ -61,6 +66,8 @@ img, svg, picture, video{
     --shade: #b5b5b5;
     --shade-dark: #8f8f8f;
     --dark-gradient: linear-gradient(45deg, var(--shade-dark) 5%, var(--text-color) 40%, var(--accent-color));
+    --light-gradient: linear-gradient(45deg, var(--shade) 5%, var(--shade-dark) 40%);
+    --repeating-gradient: repeating-linear-gradient(-45deg,  var(--shade), var(--shade) 1px, var(--shade-dark) 1px, var(--shade-dark) 2px);
 }
 
 h1, h2, h3, h4, h5, h6, b{
@@ -69,7 +76,7 @@ h1, h2, h3, h4, h5, h6, b{
     font-weight: 600;
 }
 
-p, span, i, a, small{
+p, span, i, a, small, li{
     color: var(--text-color);
     font-family: 'Manrope';
     font-weight: 500;
@@ -402,7 +409,7 @@ header ul{
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background: var(--shade);
+    background: var(--repeating-gradient);
     border-radius: 6px;
     padding: 10px;
     max-width: 200px;
@@ -454,7 +461,8 @@ header ul{
     align-items: center;
     gap: 5px;
     border-radius: 6px;
-    box-shadow: inset -2px -2px 4px var(--text-pop-color);
+    box-shadow: inset -2px -2px 4px var(--text-pop-color),
+                            inset 2px 2px 4px var(--light);
 }
 
 .tab_indicator{
@@ -466,7 +474,10 @@ header ul{
     height: 86%;
     background: var(--accent-color);
     box-shadow: inset -2px -2px 4px var(--text-pop-color),
-                        inset 2px 2px 4px var(--heading-color);
+                        inset 2px 2px 4px var(--heading-color),
+                        2px 0px 4px var(--text-color),
+                        -2px 0px 4px var(--text-color);
+
     border-radius: 6px;
     transition: transform 0.3s ease-out;
 }
@@ -765,6 +776,165 @@ header ul{
     display: flex !important;
 }
 
+/* SERVICES SECTION */
+
+.services_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    gap: 60px;
+    margin-bottom: 60px;
+
+}
+
+.services{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    gap: 40px;
+    padding: 0 clamp(10px, 4vw, 20px);
+    width: 100%;
+}
+
+.service{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 260px;
+    width: 100%;
+    max-width: 300px;
+    background-color: var(--shade);
+    border-radius: 6px;
+    box-shadow: inset -2px -2px 4px var(--text-pop-color),
+                            inset 2px 2px 4px var(--light);                       
+    padding: 20px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.service::before{
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--shade-dark);
+    border-radius: 50px;
+    opacity: 0.2;
+    filter: blur(4px);
+    z-index: -1;
+    transform: translate3d(0, 55%, 20px) scaleY(0.07) rotate3d(1, 0, 0, 70deg) skew(-3deg);
+}
+
+.service img{
+    filter: invert(0.2);
+}
+
+.service .symbol{
+    margin-bottom: 40px;
+}
+
+.service h3{
+    font-size: clamp(18px, 4vw, 20px);
+    margin-bottom: 14px;
+}
+
+.service p{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    font-size: clamp(12px, 4vw, 14px);
+    cursor: pointer;
+}
+
+.more_info{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    height: minmax(300px, auto);
+    background: var(--light);
+    border-radius: 6px;
+    box-shadow: 0 0 0 100vmax rgba(31, 31, 31, 0.35),
+                        0 0 20px 10px rgba(31, 31, 31, 0.15);
+    padding: 40px clamp(24px, 4vw, 40px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    animation: show_more_info 0.3s ease-out forwards;
+}
+
+@keyframes show_more_info {
+    from{
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.remove_more_info{
+    animation: remove_more_info 0.3s ease-out forwards;
+}
+
+@keyframes remove_more_info {
+    from{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    to{
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+}
+
+.info_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.more_info ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.more_info ul li{
+    font-size: clamp(12px, 4vw, 18px);
+    /* border-left: 2px solid var(--accent-color); */
+    list-style-image: url(./images/check.svg);
+}
+
+
+
+.info_title img{
+    cursor: pointer;
+}
+
+.info_title img:hover{
+    transform: scale(1.1);
+}
+
+.stop_scroll{
+    overflow: hidden !important;
+    height: 100% !important;
+}
 
 /* MEDIA QUERIES */
 @media (hover:hover){
@@ -791,11 +961,14 @@ header ul{
         to{
             transform: translateY(-3px);
         }
+        
     }    
     
     .q_head p:hover{
         border-bottom: 2px solid var(--text-color);
     }
+
+    
 }
 
 @media screen and (max-width: 1280px) {
@@ -838,6 +1011,10 @@ header ul{
 @media screen and (max-width: 726px) {
     .sq_section{
         width:100%;
+    }
+
+    .services{
+        flex-direction: column;
     }
 }
 

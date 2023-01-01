@@ -26,9 +26,9 @@
         <section class="intro_section">
             <div class="main">
                 <div class="socials">
-                    <img src="./images/linked-in.svg" alt="" style="width: 25px; height: 25px;">
-                    <img src="./images/twitter.svg" alt="" style="width: 25px; height: 25px;">
-                    <img src="./images/github.svg" alt="" style="width: 25px; height: 25px;">
+                    <img src="./images/linked-in.svg" alt="" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                    <img src="./images/twitter.svg" alt="" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                    <img src="./images/github.svg" alt="" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
                 </div>
     
                 <div class="intro_content">
@@ -166,6 +166,18 @@
                                     <div class="indicator"></div>
                                 </div>
                             </div>
+
+                            <div class="skill_item">
+                                <div class="item_head">
+                                    <h4>Bootstrap</h4>
+                                    <p>45%</p>
+                                </div>
+
+                                <div class="proficiency_indicator">
+                                    <!-- A PROFICIENCY SLIDER   -->
+                                    <div class="indicator"></div>
+                                </div>
+                            </div>
                     </div>
                 </div>
 
@@ -174,7 +186,7 @@
                         <img src="./images/database.svg" alt="" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
                         <div>
                             <h3>Backend development</h3>
-                            <p>More than 2 year</p>
+                            <p>More than 2 years</p>
                         </div>
                         <img class="drop_arrow" src="./images/down.svg" alt="" alt="" style="width: clamp(20px, 4vw, 25px); height: clamp(20px, 4vw, 25px);">
                     </div>
@@ -194,7 +206,7 @@
 
                             <div class="skill_item">
                                 <div class="item_head">
-                                    <h4>SQL</h4>
+                                    <h4>MySQL</h4>
                                     <p>40%</p>
                                 </div>
 
@@ -217,7 +229,34 @@
                             </div>
                     </div>
                 </div>
+
+                <div class="skill">
+                    <div class="skill_head">
+                        <img src="./images/version_control.svg" alt="" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                        <div>
+                            <h3>Version control</h3>
+                            <!-- <p>More than 1 years</p> -->
+                        </div>
+                        <img class="drop_arrow" src="./images/down.svg" alt="" alt="" style="width: clamp(20px, 4vw, 25px); height: clamp(20px, 4vw, 25px);">
+                    </div>
+
+                    <div class="skill_body">
+                            <div class="skill_item">
+                                <div class="item_head">
+                                    <h4>Git</h4>
+                                    <p>75%</p>
+                                </div>
+
+                                <div class="proficiency_indicator">
+                                    <!-- A PROFICIENCY SLIDER   -->
+                                    <div class="indicator"></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
             </div>
+            
 
             <!-- QUALIFICATIONS SECTION -->
             <div class="qualifications_section">
@@ -275,6 +314,63 @@
 
         </section>
 
+        <!-- SERVICES SECTION -->
+        <section class="services_section">
+            <div class="section_head">
+                <h1>Services</h1>
+                <p>Services I render</p>
+            </div>
+
+            <div class="services">
+                <div class="service">
+                    <img src="./images/html_tag.svg" alt="" style="width: clamp(40px, 4vw, 60px); height: 100%;" class="symbol">
+                    <h3>Frontend Development</h3>
+                    <p class="info_btn">
+                        More info
+                        <img src="./images/info1.svg" alt="" style="width: clamp(14px, 4vw, 16px); height: 100%;">
+                    </p>
+
+                    <div class="more_info">
+                        <div class="info_title">
+                            <h3>Frontend Development</h3>
+                            <img src="./images/cancel.svg" alt="" style="width: clamp(25px, 4vw, 35px); height: 100%;"> 
+                        </div>
+
+                        <ul>
+                            <li>I develop the user interface.</li>
+                            <li>Web page development.</li>
+                            <li>I create ux element interactions.</li>
+                            <li>I position your company brand.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <img src="./images/server.svg" alt="" style="width: clamp(40px, 4vw, 60px); height: 100%;" class="symbol">
+                    <h3>Backend Development</h3>
+                    <p class="info_btn">
+                        More info
+                        <img src="./images/info1.svg" alt="" style="width: clamp(14px, 4vw, 16px); height: 100%;">
+                    </p>
+
+                    <div class="more_info">
+                        <div class="info_title">
+                            <h3>Backend Development</h3>
+                            <img src="./images/cancel.svg" alt="" style="width: clamp(25px, 4vw, 35px); height: 100%;">
+                        </div>
+
+                        <ul>
+                            <li>I develop the user interface.</li>
+                            <li>Web page development.</li>
+                            <li>I create ux element interactions.</li>
+                            <li>I position your company brand.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </div>
 </body>
 <script type="text/javascript">
@@ -282,8 +378,13 @@
     const tab_indicator = document.querySelector('.tab_indicator');
     const tab_switcher = document.querySelector('.tab_switcher');
     let qualifications_section = document.querySelector('.qualifications_section');
+    let skills = document.querySelectorAll('.skill');
+    let skill_items = document.querySelectorAll('.skill_item');
     let skills_section = document.querySelector('.skills_section');
+    let services = document.querySelectorAll('.service');
+    let body = document.querySelector('body');
 
+    // Tab switcher
     tab_switcher.addEventListener('click', (e) => {
         tab_labels.forEach((label, index) => {
             if (label == e.target) {
@@ -303,21 +404,13 @@
         });
     });
 
-    
-    let skills = document.querySelectorAll('.skill');
-    let skill_items = document.querySelectorAll('.skill_item');
 
-    skills.forEach((skill) => {
-        skill.querySelector('.skill_head').addEventListener('click', () => {
-            skill.querySelector('.drop_arrow').classList.toggle('flip');
-            skill.querySelector('.skill_body').classList.toggle('show_dropdown');
-        });
-    });
 
     skill_items.forEach((item) => {
         let proficiency = item.querySelector('.item_head p').innerHTML;
         item.querySelector('.indicator').style.width = proficiency;
     });
+
 
     function showWork(){
         let education_tab = document.querySelector('#education');
@@ -349,6 +442,34 @@
             block: 'start',
         });
     };
+    
+    window.addEventListener('click', (e) => {
 
+        // Skills section
+        skills.forEach((skill) => {
+            if(skill.querySelector('.skill_head').contains(e.target)){
+                skill.querySelector('.drop_arrow').classList.toggle('flip');
+                skill.querySelector('.skill_body').classList.toggle('show_dropdown');
+            };
+        });
+
+        // Services section
+        services.forEach((service) => {
+            if (service.querySelector('.info_btn').contains(e.target)) {
+                service.querySelector('.more_info').classList.add('show_flex');
+                body.classList.add('stop_scroll');
+            } else if(!service.querySelector('.more_info').contains(e.target) || service.querySelector('.info_title img').contains(e.target)) {
+                body.classList.remove('stop_scroll');
+                service.querySelector('.more_info').classList.add('remove_more_info');
+                setTimeout(() => {
+                    service.querySelector('.more_info').classList.remove('show_flex');
+                    service.querySelector('.more_info').classList.remove('remove_more_info');
+                }, 300);
+            };
+        });
+    });
+
+    
+    
 </script>
 </html>
