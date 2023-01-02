@@ -1136,6 +1136,7 @@ header ul li{
 }
 
 .carousel_nav img{
+    width: 100%;
     height: clamp(40px, 4vw, 60px) !important;
     cursor: pointer;
     filter: invert(0.2);  
