@@ -414,6 +414,7 @@
 
     // Menu button
     function openMenu(){
+        document.querySelector('.menu_items').classList.remove('hide_flex');
         menu_btn.classList.add('open');
         menu_btn.querySelector('img').src = './images/close.svg';
         let delay = 0.08;
@@ -439,6 +440,7 @@
             setTimeout(() => {
                 item.classList.remove('show_menu_item');
                 item.classList.remove('remove_menu_item');
+                document.querySelector('.menu_items').classList.add('hide_flex');
             }, 300);
         });
     };

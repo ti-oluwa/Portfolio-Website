@@ -155,6 +155,14 @@ header ul li{
     visibility: hidden;
 }
 
+#go_up:hover{
+    opacity: 0.9;
+}
+
+.hide_flex{
+    display: none !important;
+}
+
 .bottom_menu{
     position: fixed;
     bottom: 20px;
@@ -1217,6 +1225,28 @@ header ul li{
 
     .services_section{
         width: 100%;
+    }
+
+    .bottom_menu, .menu_items{
+        flex-direction: column;
+    }
+
+    #go_up{
+        bottom: 20px;
+        left: 20px;
+    }
+
+    @keyframes remove_menu_item {
+        0% {
+            transform: translateY(0px) scale(1);
+            opacity: 1;
+            visibility: visible;
+        }
+        100% {
+            transform: translateY(20px) scale(0);
+            opacity: 0;
+            visibility: hidden;
+        }
     }
 }
 
