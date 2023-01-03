@@ -762,6 +762,14 @@
             };
         });
 
+        carousel_dots.forEach((dot, index) => {
+            if(dot.contains(e.target)){
+                carousel_items[index].scrollIntoView({
+                    behavior: 'smooth',
+                });
+            }
+        })
+
     });
 
     
