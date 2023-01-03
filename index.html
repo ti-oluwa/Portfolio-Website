@@ -635,34 +635,10 @@
     // Carousel
     function slideCarousel(nav, carousel_item_width, carousel){
         if(nav.id == 'move_left'){
-            carousel_btns.forEach((btn) => {
-                if (btn.id == 'move_right'){
-                    btn.style.opacity = '1';
-                    btn.style.pointerEvents = 'auto';
-                };
-            });
-            carousel.scrollBy(-carousel_item_width, 0);
-            setTimeout(()=>{
-                if(carousel.scrollLeft == 0){
-                    nav.style.opacity = '0.5';
-                    nav.style.pointerEvents = 'none';
-                };
-            }, 500);
+            carousel.scrollBy(-carousel_item_width, 0);  
         }
         else if (nav.id == 'move_right'){
-            carousel_btns.forEach((btn) => {
-                if (btn.id == 'move_left'){
-                    btn.style.opacity = '1';
-                    btn.style.pointerEvents = 'auto';
-                };
-            });
-            carousel.scrollBy(carousel_item_width, 0);
-            setTimeout(() => {
-                if ( carousel.scrollLeft == carousel_item_width * (carousel_items.length - 1) ){
-                    nav.style.opacity = '0.5';
-                    nav.style.pointerEvents = 'none';
-                };
-            }, 500);
+            carousel.scrollBy(carousel_item_width, 0);    
         }
     };
 
@@ -693,7 +669,25 @@
 
     carousel.addEventListener('scroll', () => {
         highlightDot();
-    });
+
+        let left_nav = document.querySelector('#move_left');
+        let right_nav = document.querySelector('#move_right');
+
+        if ( carousel.scrollLeft == carousel_items[0].offsetWidth * (carousel_items.length - 1) ){
+            right_nav.style.opacity = '0.5';
+            right_nav.style.pointerEvents = 'none';
+        }else{
+            right_nav.style.opacity = '1';
+            right_nav.style.pointerEvents = 'auto';
+        };
+        if( carousel.scrollLeft == 0 ){
+            left_nav.style.opacity = '0.5';
+            left_nav.style.pointerEvents = 'none';
+        }else{
+            left_nav.style.opacity = '1';
+            left_nav.style.pointerEvents = 'auto';
+        };
+});
     
 
 

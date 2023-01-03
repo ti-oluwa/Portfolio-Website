@@ -65,6 +65,8 @@ ul{
     --heading-color: #2f2f2f;
     --shade: #b5b5b5;
     --shade-dark: #8f8f8f;
+    --shade-trans: hsl(0, 0%, 71%, 0.8);
+    --shade-dark-trans: hsl(0, 0%, 56%, 0.8);
     --dark-gradient: linear-gradient(45deg, var(--shade-dark) 5%, var(--text-color) 40%, var(--accent-color));
     --light-gradient: linear-gradient(45deg, var(--shade) 5%, var(--shade-dark) 40%);
     --repeating-gradient: repeating-linear-gradient(-45deg,  var(--shade), var(--shade) 1px, var(--shade-dark) 1px, var(--shade-dark) 2px);
@@ -186,14 +188,16 @@ header ul li{
 
 .menu_item{
     visibility: hidden;
-    background-color: var(--shade);
+    background: var(--shade-trans);
     padding: 6px;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: inset -1px -1px 4px var(--text-pop-color),
                             inset 2px 2px 4px var(--light),
                             2px 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
+
 
 .show_menu_item{
     animation: show_menu_item 0.2s ease-out forwards;
@@ -285,9 +289,12 @@ header ul li{
 }
 
 .menu_item:hover{
-    background-color: var(--shade-dark);
+    background: var(--shade-dark-trans);
     transform: scale(1.1);
 }
+
+
+
 /* INTRO SECTION */
 
 .intro_section{
