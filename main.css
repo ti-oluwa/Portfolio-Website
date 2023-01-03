@@ -281,7 +281,7 @@ header ul li{
 }
 
 .open{
-    transform: rotate(90deg);
+    transform: rotate(360deg);
 }
 
 .menu_item:hover{
@@ -379,6 +379,7 @@ header ul li{
     max-width: fit-content;
     border-radius: 6px;
     font-weight: 600;
+    font-size: clamp(14px, 2vw, 16px);
     box-shadow: 2px 2px 4px 2px rgba(31, 31, 31, 0.15),
                         -2px -2px 5px 2px rgba(236, 236, 236, 0.2),
                         inset 2px 2px 5px var(--shade-dark);
@@ -391,7 +392,8 @@ header ul li{
     gap: 10px;
     border: 2px solid var(--accent-color);
     background: transparent;
-    padding: 10px 20px;
+    padding: clamp(8px, 2vw, 10px) clamp(15px, 2vw, 20px);
+    font-size: clamp(14px, 2vw, 16px);
     color: var(--accent-color);
     background: transparent;
     max-width: fit-content;
@@ -575,7 +577,9 @@ header ul li{
     background: var(--repeating-gradient);
     border-radius: 6px;
     padding: 10px;
+    flex: 1;
     max-width: 200px;
+
 }
 
 .trophy h2{
@@ -1075,12 +1079,14 @@ header ul li{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    list-style: none;
 }
 
 .more_info ul li{
     font-size: clamp(12px, 4vw, 18px);
     /* border-left: 2px solid var(--accent-color); */
-    list-style-image: url(./images/check.svg);
+    background: url(./images/check.svg) no-repeat;
+    padding-left: 30px;
 }
 
 
@@ -1143,10 +1149,6 @@ header ul li{
     transition: all 0.2s ease-in-out;
 }
 
-.carousel_nav img:hover{
-    transform: scale(1.1);
-    filter:  invert(0.1);
-}
 
 .carousel{
     flex: 1;
@@ -1158,10 +1160,12 @@ header ul li{
     height: 100%;
     border: var(--text-pop-color) 1.5px solid;
     border-radius: 10px;
+    scroll-behavior: smooth !important;
+    scroll-snap-type: x mandatory !important;
 }
 
 .carousel::-webkit-scrollbar{
-    display: none;
+    display: none !important;
 }
 
 .carousel_item{
@@ -1172,11 +1176,10 @@ header ul li{
     min-width: 100%;
     max-width: 100%;
     gap: clamp(10px, 4vw, 40px);
-    padding: 20px;
-    scroll-behavior: smooth;
-    scroll-snap-align: start;
-    scroll-snap-type: x inline mandatory;
+    padding: clamp(16px, 2vw, 20px);
     border-radius: 10px;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
 }
 
 .carousel_item_img{
@@ -1211,12 +1214,12 @@ header ul li{
 }
 
 .img_overlay h3{
-    font-size: clamp(14px, 2vw, 20px);
+    font-size: clamp(14px, 4vw, 20px);
     color: var(--light);
 }
 
 .img_overlay p{
-    font-size: clamp(10px, 2vw, 14px);
+    font-size: clamp(10px, 4vw, 14px);
     color: var(--light);
 }
 
@@ -1251,12 +1254,12 @@ header ul li{
 }
 
 .carousel_item_body p{
-    font-size: clamp(10px, 2vw, 16px);
+    font-size: clamp(11px, 2vw, 16px);
     line-height: 1.5;
 }
 
 .carousel_item_body a{
-    font-size: clamp(10px, 2vw, 16px);
+    font-size: clamp(11px, 2vw, 16px);
     padding: 10px;
     background-color: var(--accent-color);
     color: var(--light);
@@ -1269,6 +1272,11 @@ header ul li{
     opacity: 0.9;
 }
 
+.carousel_item_body a:active{
+    transform: scale(0.97);
+}
+
+
 
 .carousel_indicator{
     width: 100%;
@@ -1280,8 +1288,8 @@ header ul li{
 }
 
 .carousel_dot{
-    width: clamp(10px, 4vw, 15px);
-    height: clamp(10px, 4vw, 15px);
+    width: clamp(10px, 2vw, 15px);
+    height: clamp(10px, 2vw, 15px);
     border-radius: 50%;
     background-color: var(--shade);
     cursor: pointer;
@@ -1294,6 +1302,7 @@ header ul li{
 
 .active_dot{
     background: var(--text-pop-color) !important;
+    transform: scale(1.1);
 }
 
 
@@ -1329,6 +1338,11 @@ header ul li{
         border-bottom: 2px solid var(--text-color);
     }
 
+    .carousel_nav img:hover{
+        transform: scale(1.1);
+        filter:  invert(0.1);
+    }
+    
     
 }
 

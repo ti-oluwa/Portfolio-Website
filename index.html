@@ -108,7 +108,7 @@
                     <div class="trophies">
                         <div class="trophy">
                             <h2>01+</h2>
-                            <p>years experience</p>
+                            <p>Years of experience</p>
                         </div>
                         <div class="trophy">
                             <h2>3+</h2>
@@ -307,7 +307,7 @@
                         <p>FreeCodeCamp.Org</p>
                         <small>
                             <img src="./images/calendar.svg" alt="" style="width: clamp(14px, 4vw, 18px); height: 100%;">
-                            2019 - Till date
+                            2021 - Till date
                         </small>
                     </div>
 
@@ -316,7 +316,7 @@
                         <p>I4G X ZURI Training - Nigeria</p>
                         <small>
                             <img src="./images/calendar.svg" alt="" style="width: clamp(14px, 4vw, 18px); height: 100%;">
-                            July - Sept. 2019
+                            June - Sept. 2022
                         </small>
                     </div>
                 </div>
@@ -327,7 +327,7 @@
                         <p>Remote - Worldwide</p>
                         <small>
                             <img src="./images/calendar.svg" alt="" style="width: clamp(14px, 4vw, 18px); height: 100%;">
-                            2019 - Till date
+                            2022 - Till date
                         </small>
                     </div>
                 </div>
@@ -402,10 +402,31 @@
             <div class="carousel_container">
                 <div class="carousel_body">
                     <div class="carousel_nav">
-                        <img src="./images/left_arrow.svg" alt="">
+                        <img src="./images/left_arrow.svg" alt="" id="move_left">
                     </div>
                     
                     <div class="carousel">
+                        <div class="carousel_item">
+                            <div class="carousel_item_img">
+                                <img src="./images/never_stop_learning.jpg" alt="">
+
+                                <div class="img_overlay">
+                                    <h3>Eden Place</h3>
+                                    <p>A school website</p>
+                                    <a href=""><img src="./images/link.svg" alt=""></a>
+                                </div>
+                            </div>
+
+                            <div class="carousel_item_body">
+                                <h3>Eden Place School</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore deleniti in modi odio asperiores sint? 
+                                    Nisi pariatur doloribus asperiores enim quisquam eligendi odio commodi esse
+                                </p>
+                                <a href="">View site</a>
+                            </div>
+                        </div>
+
                         <div class="carousel_item">
                             <div class="carousel_item_img">
                                 <img src="./images/never_stop_learning.jpg" alt="">
@@ -432,14 +453,14 @@
                                 <img src="./images/never_stop_learning.jpg" alt="">
 
                                 <div class="img_overlay">
-                                    <h3>Postman</h3>
-                                    <p>Messaging made easy</p>
+                                    <h3>Authwiki</h3>
+                                    <p>A library of auth codes</p>
                                     <a href=""><img src="./images/link.svg" alt=""></a>
                                 </div>
                             </div>
 
                             <div class="carousel_item_body">
-                                <h3>Postman Email/SMS Sender</h3>
+                                <h3>Authwiki - authentication code library</h3>
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore deleniti in modi odio asperiores sint? 
                                     Nisi pariatur doloribus asperiores enim quisquam eligendi odio commodi esse
@@ -450,12 +471,13 @@
                     </div>
     
                     <div class="carousel_nav">
-                        <img src="./images/right_arrow.svg" alt="">
+                        <img src="./images/right_arrow.svg" alt="" id="move_right">
                     </div>
                 </div>
                 
                 <div class="carousel_indicator">
                     <div class="carousel_dot active_dot"></div>
+                    <div class="carousel_dot"></div>
                     <div class="carousel_dot"></div>
                 </div>
             </div>
@@ -481,6 +503,11 @@
     let menu_items = document.querySelectorAll('.menu_item');
     let header = document.querySelector('header ul');
     let header_links = document.querySelectorAll('header ul li');
+    let carousel = document.querySelector('.carousel');
+    let carousel_btns = document.querySelectorAll('.carousel_nav img');
+    let carousel_items = document.querySelectorAll('.carousel_item');
+    let carousel_item_width = carousel_items[0].offsetWidth;
+    let carousel_dots = document.querySelectorAll('.carousel_dot');
 
     // Menu button
     function openMenu(){
@@ -604,6 +631,72 @@
         });
     };
     
+
+    // Carousel
+    function slideCarousel(nav, carousel_item_width, carousel){
+        if(nav.id == 'move_left'){
+            carousel_btns.forEach((btn) => {
+                if (btn.id == 'move_right'){
+                    btn.style.opacity = '1';
+                    btn.style.pointerEvents = 'auto';
+                };
+            });
+            carousel.scrollBy(-carousel_item_width, 0);
+            setTimeout(()=>{
+                if(carousel.scrollLeft == 0){
+                    nav.style.opacity = '0.5';
+                    nav.style.pointerEvents = 'none';
+                };
+            }, 500);
+        }
+        else if (nav.id == 'move_right'){
+            carousel_btns.forEach((btn) => {
+                if (btn.id == 'move_left'){
+                    btn.style.opacity = '1';
+                    btn.style.pointerEvents = 'auto';
+                };
+            });
+            carousel.scrollBy(carousel_item_width, 0);
+            setTimeout(() => {
+                if ( carousel.scrollLeft == carousel_item_width * (carousel_items.length - 1) ){
+                    nav.style.opacity = '0.5';
+                    nav.style.pointerEvents = 'none';
+                };
+            }, 500);
+        }
+    };
+
+    const carousel_item_observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+               
+            }
+            else{
+                
+            }
+        });
+    });
+    carousel_items.forEach((item) => {
+        carousel_item_observer.observe(item);
+    });
+
+    function highlightDot(){
+        let active_index = Math.abs( Math.round( carousel.scrollLeft / carousel_items[0].offsetWidth ) );
+        carousel_dots.forEach((item, index) => {
+            if(index != active_index){
+                item.classList.remove('active_dot');
+            }else{
+                item.classList.add('active_dot');
+            }
+        })
+    }
+
+    carousel.addEventListener('scroll', () => {
+        highlightDot();
+    });
+    
+
+
     window.addEventListener('click', (e) => {
 
         //header
@@ -660,6 +753,14 @@
                 clearTimeout(menu_btn.id);
             };
         };
+
+        // Carousel
+
+        carousel_btns.forEach((btn) => {
+            if(btn.contains(e.target)){
+                slideCarousel(btn, carousel_item_width, carousel);
+            };
+        });
 
     });
 
