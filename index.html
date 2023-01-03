@@ -758,7 +758,7 @@
 
         carousel_btns.forEach((btn) => {
             if(btn.contains(e.target)){
-                slideCarousel(btn, carousel_item_width, carousel);
+                slideCarousel(btn, carousel_items[0].offsetWidth, carousel);
             };
         });
 
