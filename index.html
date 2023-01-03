@@ -484,6 +484,22 @@
 
         </section>
 
+        <!-- CALL TO ACTION -->
+        <section class="call_to_action">
+            <div class="call_to_action_body">
+                <h3>Do you have a project?</h3>
+                <p>Contact me today and get 20% off your new project.</p>
+                <a href="">
+                    Contact me
+                    <img src="./images/right_arrow.svg" alt="" style="width: clamp(20px, 4vw, 25px); height: 100%; filter: invert(0.8);">
+                </a>
+            </div>
+
+            <div class="call_to_action_img">
+                <img src="./images/bust-removebg.png" alt="">
+            </div>
+        </section>
+
     </div>
 </body>
 <script type="text/javascript">
@@ -673,7 +689,7 @@
         let left_nav = document.querySelector('#move_left');
         let right_nav = document.querySelector('#move_right');
 
-        if ( carousel.scrollLeft == carousel_items[0].offsetWidth * (carousel_items.length - 1) ){
+        if ( carousel.scrollLeft == (carousel_items[0].offsetWidth * (carousel_items.length - 1)) || carousel.scrollLeft >= (carousel_items[0].offsetWidth * (carousel_items.length - 1) - 20) ){
             right_nav.style.opacity = '0.5';
             right_nav.style.pointerEvents = 'none';
         }else{
@@ -760,6 +776,7 @@
             if(dot.contains(e.target)){
                 carousel_items[index].scrollIntoView({
                     behavior: 'smooth',
+                    block: 'center',
                 });
             }
         })

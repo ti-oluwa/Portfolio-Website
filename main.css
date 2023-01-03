@@ -60,8 +60,8 @@ ul{
     --text-color: #555; 
     --text-pop-color: #444;
     --accent-color: #323232;
-    --accent-color-dark: #7e3a9c;
-    --accent-color-darker: #5d417c;
+    --accent-color-lighter: #6a6a6a;
+    --accent-color-darker: #282828;
     --heading-color: #2f2f2f;
     --shade: #b5b5b5;
     --shade-dark: #8f8f8f;
@@ -1117,6 +1117,7 @@ header ul li{
     flex-direction: column;
     align-items: center;
     width: minmax(700px, 80%);
+    max-width: 1000px;
     margin: 0 auto;
     gap: 60px;
     margin-bottom: 60px;
@@ -1272,7 +1273,7 @@ header ul li{
     color: var(--light);
     border-radius: 6px;
     box-shadow: inset 2px 2px 4px var(--text-color),
-                        inset -2px -2px 4px var(--text-color);
+                        inset -2px -2px 4px var(--dark-bg);
 }
 
 .carousel_item_body a:hover{
@@ -1311,6 +1312,73 @@ header ul li{
     background: var(--text-pop-color) !important;
     transform: scale(1.1);
 }
+
+/* CALL TO ACTION SECTION */
+
+.call_to_action{
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    background: var(--light-gradient);
+    border-radius: clamp(6px, 2vw, 20px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 clamp(20px, 4vw, 40px);
+}
+
+.call_to_action_body{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: clamp(20px, 4vw, 24px);
+}
+
+.call_to_action_body h3{
+    font-size: clamp(18px, 4vw, 26px);
+    font-weight: 600;
+}
+
+.call_to_action_body p{
+    color: var(--heading-color);
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 600;
+}
+
+.call_to_action_body a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px clamp(10px, 2vw, 20px);
+    gap: 5px;
+    color: var(--light);
+    background: var(--accent-color);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: clamp(14px, 4vw, 18px);
+    box-shadow: inset -2px -2px 4px var(--dark-bg),
+                            inset 2px 2px 4px var(--text-color);           
+}
+
+.call_to_action_body a:hover img{
+    animation: point ease 0.3s alternate-reverse 3;
+    animation-delay: 0.2s;
+}
+
+.call_to_action_img{
+    flex-basis: 50%;
+    height: 300px;
+}
+
+.call_to_action_img img{
+    object-fit: contain;
+    object-position: bottom;
+}
+
+
 
 
 /* MEDIA QUERIES */
@@ -1401,6 +1469,19 @@ header ul li{
 
     .carousel_item_img, .carousel_item_body{
         width: 100%;
+    }
+
+    .call_to_action{
+        width: 90%;
+        padding-block: 40px;
+    }
+
+    .call_to_action_img{
+        display: none;
+    }
+
+    .call_to_action_body{
+        flex-basis: 100%;
     }
 }
 
