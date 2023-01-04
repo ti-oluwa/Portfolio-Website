@@ -15,8 +15,8 @@
             <li id="about_section"><a>About</a></li>
             <li id="sq_section"><a>Skills</a></li>
             <li id="services_section"><a>Services</a></li>
-            <li><a>Portfolio</a></li>
-            <li><a>Contact</a></li>
+            <li id="portfolio_section"><a>Portfolio</a></li>
+            <li id="contacts_section"><a>Contact</a></li>
             <li></li>
         </ul>
     </header>
@@ -358,10 +358,10 @@
                         </div>
 
                         <ul>
-                            <li>I develop the user interface.</li>
-                            <li>Web page development.</li>
-                            <li>I create ux element interactions.</li>
-                            <li>I position your company brand.</li>
+                            <li style="background: url(./images/check.svg) no-repeat;">I develop the user interface.</li>
+                            <li style="background: url(./images/check.svg) no-repeat;">Web page development.</li>
+                            <li style="background: url(./images/check.svg) no-repeat;">I create ux element interactions.</li>
+                            <li style="background: url(./images/check.svg) no-repeat;">I position your company brand.</li>
                         </ul>
                     </div>
                 </div>
@@ -381,10 +381,10 @@
                         </div>
 
                         <ul>
-                            <li>I develop the user interface.</li>
-                            <li>Web page development.</li>
-                            <li>I create ux element interactions.</li>
-                            <li>I position your company brand.</li>
+                            <li style="background: url(./images/check.svg) no-repeat;">I develop the user interface.</li>
+                            <li style="background: url(./images/check.svg) no-repeat;">Web page development.</li>
+                            <li style="background: url(./images/check.svg) no-repeat;">I create ux element interactions.</li>
+                            <li style="background: url(./images/check.svg) no-repeat;">I position your company brand.</li>
                         </ul>
                     </div>
                 </div>
@@ -497,6 +497,121 @@
 
             <div class="call_to_action_img">
                 <img src="./images/bust-removebg.png" alt="">
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials_section">
+            <div class="section_head">
+                <h1>Testimonials</h1>
+                <p>Reviews from clients</p>
+            </div>
+
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testifier_details">
+                        <img src="./images/user.svg" alt="">
+    
+                        <div>
+                            <h3>Afolayan Comfort</h3>
+                            <p>Client</p>
+                        </div>
+                    </div>
+    
+                    <div class="testimony">
+                        <small>Rating: 4.3</small>
+                        <p>
+                            This is a very satisfying first impression. You carried out the project with the highest possible quality.
+                            and even provide 24/7 support.
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="testimonial">
+                    <div class="testifier_details">
+                        <img src="./images/user.svg" alt="">
+    
+                        <div>
+                            <h3>Terso Elama</h3>
+                            <p>Client</p>
+                        </div>
+                    </div>
+    
+                    <div class="testimony">
+                        <small>Rating: 4.3</small>
+                        <p>
+                            This is a very satisfying first impression. You carried out the project with the highest possible quality.
+                            and even provide 24/7 support.
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="testimonial">
+                    <div class="testifier_details">
+                        <img src="./images/user.svg" alt="">
+    
+                        <div>
+                            <h3>Joseph McLaghin</h3>
+                            <p>Client</p>
+                        </div>
+                    </div>
+    
+                    <div class="testimony">
+                        <small>Rating: 4.3</small>
+                        <p>
+                            This is a very satisfying first impression. You carried out the project with the highest possible quality.
+                            and even provide 24/7 support.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTS SECTION -->
+        <section class="contacts_section">
+            <div class="section_head">
+                <h1>Contact Me</h1>
+                <p>Get in touch or get a quote</p>
+            </div>
+
+            <div class="contacts_container">
+                <div class="contacts">
+                    <div class="contact">
+                        <img src="./images/phone.svg" alt="">
+                        <div>
+                            <h3>Call me on</h3>
+                            <a href="tel:+2349013329333">+234-9013329333</a>
+                        </div>
+                    </div>
+
+                    <div class="contact">
+                        <img src="./images/mail.svg" alt="">
+                        <div>
+                            <h3>My mailbox</h3>
+                            <a href="mailto:tholuwa23@gmail.com">tholuwa23@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact">
+                        <img src="./images/dm.svg" alt="">
+                        <div>
+                            <h3>Send a DM</h3>
+                            <a href="https://wa.me/+23409013329333">09013329333</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact_form">
+                    <div class="form_group">
+                        <input type="text" id="name" placeholder="Name" aria-required required>
+                        <input type="text" id="email" placeholder="Email address" aria-required required>
+                    </div>
+                    <textarea name="" id="message" placeholder="Message or Project description"></textarea>
+                    <button id="submit">
+                        Send message
+                        <img src="./images/send.svg" alt="" style="width: clamp(15px, 4vw, 25px); height: 100%;">
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -776,7 +891,8 @@
             if(dot.contains(e.target)){
                 carousel_items[index].scrollIntoView({
                     behavior: 'smooth',
-                    block: 'center',
+                    inline:"nearest",
+                    block:"nearest",
                 });
             }
         })
