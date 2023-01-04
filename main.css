@@ -213,8 +213,13 @@ header ul li{
                             inset 2px 2px 4px var(--light),
                             2px 4px 6px rgba(0, 0, 0, 0.2);
     position: relative;
+    transition: all 0.2s ease;
 }
 
+.active_menu_item{
+    background: var(--shade-dark-trans);
+    transform: scale(1.1);
+}
 
 .show_menu_item{
     animation: show_menu_item 0.2s ease-out forwards;
@@ -305,10 +310,6 @@ header ul li{
     transform: rotate(360deg);
 }
 
-.menu_item:hover{
-    background: var(--shade-dark-trans);
-    transform: scale(1.1);
-}
 
 
 
@@ -1633,6 +1634,11 @@ header ul li{
 
 /* MEDIA QUERIES */
 @media (hover:hover){
+    .menu_item:hover{
+        background: var(--shade-dark-trans);
+        transform: scale(1.1);
+    }
+    
     .contact_btn:hover img{
         animation: point ease 0.3s alternate-reverse 3;
         animation-delay: 0.2s;

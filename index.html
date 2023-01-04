@@ -29,11 +29,11 @@
         <!-- BOTTOM MENU -->
         <div class="bottom_menu">
             <div class="menu_items">
-                <div class="menu_item"><img src="./images/user.svg" alt=""></div>
-                <div class="menu_item"><img src="./images/skills.svg" alt=""></div>
-                <div class="menu_item"><img src="./images/services.svg" alt=""></div>
-                <div class="menu_item"><img src="./images/portfolio.svg" alt=""></div>
-                <div class="menu_item"><img src="./images/contact.svg" alt=""></div>
+                <div class="menu_item" id="about"><img src="./images/user.svg" alt=""></div>
+                <div class="menu_item" id="skills"><img src="./images/skills.svg" alt=""></div>
+                <div class="menu_item" id="services"><img src="./images/services.svg" alt=""></div>
+                <div class="menu_item" id="portfolio"><img src="./images/portfolio.svg" alt=""></div>
+                <div class="menu_item" id="contacts"><img src="./images/contact.svg" alt=""></div>
             </div>
             <div class="menu_btn">
                 <img src="./images/menu_dot.svg" alt="">
@@ -621,12 +621,15 @@
     const tab_labels = document.querySelectorAll('.tab_labels .label');
     const tab_indicator = document.querySelector('.tab_indicator');
     const tab_switcher = document.querySelector('.tab_switcher');
+    let about_section = document.querySelector('.about_section');
+    let portfolio_section = document.querySelector('.portfolio_section');
+    let contacts_section = document.querySelector('.contacts_section');
     let qualifications_section = document.querySelector('.qualifications_section');
     let skills = document.querySelectorAll('.skill');
     let skill_items = document.querySelectorAll('.skill_item');
     let skills_section = document.querySelector('.skills_section');
     let sq_section = document.querySelector('.sq_section');
-    let services_section = document.querySelectorAll('.services_section');
+    let services_section = document.querySelector('.services_section');
     let services = document.querySelectorAll('.service');
     let body = document.querySelector('body');
     let go_up_btn = document.querySelector('#go_up');
@@ -639,6 +642,28 @@
     let carousel_items = document.querySelectorAll('.carousel_item');
     let carousel_item_width = carousel_items[0].offsetWidth;
     let carousel_dots = document.querySelectorAll('.carousel_dot');
+    let menu_btns = document.querySelectorAll('.menu_item');
+
+    // section observer
+
+    const section_observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting){
+                let btn = document.querySelector(`#${entry.target.className.replace('_section', '')}`);
+                btn.classList.add('active_menu_item');
+            }else{
+                let btn = document.querySelector(`#${entry.target.className.replace('_section', '')}`);
+                btn.classList.remove('active_menu_item');
+            }
+        })
+    });
+
+    section_observer.observe(about_section);
+    section_observer.observe(skills_section);
+    section_observer.observe(services_section);
+    section_observer.observe(portfolio_section);
+    section_observer.observe(contacts_section);
+
 
     // Menu button
     function openMenu(){
@@ -896,6 +921,17 @@
                 });
             }
         })
+
+        // Bottom menu
+
+        menu_btns.forEach((btn) => {
+            if(btn.contains(e.target)){
+                document.querySelector(`.${btn.id}_section`).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                });
+            };
+        });
 
     });
 
