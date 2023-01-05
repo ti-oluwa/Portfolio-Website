@@ -213,12 +213,12 @@ header ul li{
                             inset 2px 2px 4px var(--light),
                             2px 4px 6px rgba(0, 0, 0, 0.2);
     position: relative;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease-out;
 }
 
 .active_menu_item{
-    background: var(--shade-dark-trans);
-    transform: scale(1.1);
+    background: var(--shade-dark);
+    transform: scale(1.2) !important;
 }
 
 .show_menu_item{
@@ -604,7 +604,7 @@ header ul li{
     border-radius: 6px;
     padding: 10px;
     flex: 1;
-    max-width: 200px;
+    max-width: 150px;
 
 }
 
@@ -1623,10 +1623,17 @@ header ul li{
     font-family: 'DM Sans';
     background: var(--accent-color);
     color: var(--light);
+    box-shadow: inset -2px -2px 4px var(--dark-bg),
+                            inset 2px 2px 4px var(--text-color);
+    cursor: pointer;           
 }
 
 .contact_form button img{
     filter: invert(0.8);
+}
+
+.contact_form button:active{
+    transform: scale(0.95);
 }
 
 
