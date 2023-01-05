@@ -107,6 +107,31 @@ input, textarea{
     background: none;
 }
 
+button:disabled{
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+input:invalid{
+    border-color: var(--accent-color);
+}
+
+*::-webkit-scrollbar{
+    width: clamp(6px, 2vw, 8px);
+    background: var(--shade-dark);
+    border-radius: 4px;
+}
+
+*::-webkit-scrollbar-track{
+    background: var(--shade-dark);
+    border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb{
+    background: var(--text-color);
+    border-radius: 4px;
+}
+
 .in_view{
     color: var(--accent-color);
 }
@@ -118,6 +143,7 @@ header{
     height: 80px;
     /* font-family: 'Montserrat'; */
     gap: 40px;
+    margin-bottom: clamp(20px, 2vw, 60px) !important;
 }
 
 header #header_name{
@@ -389,7 +415,7 @@ header ul li{
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    gap: 14px;
+    gap: 14px clamp(8px, 2vw, 14px);
     padding: 10px 0;
 }
 
@@ -398,6 +424,7 @@ header ul li{
     justify-content: center;
     align-items: center;
     gap: 10px;
+    cursor:  pointer;
     background: var(--accent-color);
     padding: 10px 20px;
     color: #fff;
@@ -460,7 +487,7 @@ header ul li{
     max-height: 320px;
     min-width: 150px;
     min-height: 150px;
-    border-radius: 10% 30% 10% 30%;
+    border-radius: 5%;
     position: relative;
     background: transparent;
 }
@@ -472,6 +499,7 @@ header ul li{
     object-fit: cover;
     object-position: center;
     border-radius: inherit;
+    filter: grayscale(0.8);
 }
 
 .intro_img .adorn{
@@ -1054,7 +1082,8 @@ header ul li{
     transform: translate(-50%, -50%);
     width: 80%;
     max-width: 600px;
-    height: minmax(300px, auto);
+    height: minmax(300px, 80vh);
+    max-height: 80vh;
     background: var(--light);
     border-radius: 6px;
     box-shadow: 0 0 0 100vmax rgba(31, 31, 31, 0.35),
@@ -1064,7 +1093,7 @@ header ul li{
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 20px;
+    gap: clamp(14px,2vw, 20px);
     animation: show_more_info 0.3s ease-out forwards;
 }
 
@@ -1104,8 +1133,11 @@ header ul li{
 .more_info ul{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: clamp(10px, 2vw, 20px);
     list-style: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: inherit;
 }
 
 .more_info ul li{
@@ -1155,7 +1187,7 @@ header ul li{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 350px;
+    min-height: 350px;
     width: 100%;
 }
 
@@ -1199,7 +1231,7 @@ header ul li{
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
-    height: 100%;
+    min-height: 100%;
     min-width: 100%;
     max-width: 100%;
     gap: clamp(10px, 4vw, 40px);
@@ -1431,7 +1463,7 @@ header ul li{
 .testimonial{
     scroll-snap-align: center;
     scroll-snap-stop: always;
-    min-width: 350px;
+    min-width: 380px;
     height: 200px;
     display: flex;
     flex-direction: column;
@@ -1637,8 +1669,71 @@ header ul li{
 }
 
 
+/* FOOTER */
+footer{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px clamp(0px, 2vw, 20px);
+}
 
+footer .copy{
+    font-size: clamp(14px, 2vw, 16px);
+    opacity: 0.8;
+    font-weight: 600;
+}
 
+.footer_main{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 40px;
+}
+
+.footer_main .descr{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.descr h3{
+    font-size: clamp(16px, 2vw, 20px);
+}
+
+.descr p{
+    font-size: clamp(14px, 4vw, 16px);
+}
+
+.footer_main .social_share{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.social_share p{
+    font-size: clamp(14px, 4vw, 18px);
+    font-weight: 600;
+}
+
+.social_share .share{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.share a img{
+    filter: invert(0.3);
+}
 
 /* MEDIA QUERIES */
 @media (hover:hover){
@@ -1776,6 +1871,10 @@ header ul li{
         flex-direction: column;
     }
 
+    .intro_img{
+        max-width: 250px;
+        max-height: 250px;
+    }
     .main{
         gap: 20px !important;
     }
