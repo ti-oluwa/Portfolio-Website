@@ -462,6 +462,7 @@ header ul li{
     min-height: 150px;
     border-radius: 10% 30% 10% 30%;
     position: relative;
+    background: transparent;
 }
 
 
@@ -1431,7 +1432,7 @@ header ul li{
     scroll-snap-align: center;
     scroll-snap-stop: always;
     min-width: 350px;
-    max-height: clamp(300px, 4vw, 400px);
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1486,14 +1487,14 @@ header ul li{
 }
 
 .testimony small{
-    font-size: clamp(12px, 4vw, 14px);
+    font-size: clamp(12px, 2vw, 14px);
     font-weight: 600;
     font-family: 'DM Sans';
 }
 
 .testimony p{
     line-height: 1.4;
-    font-size: clamp(14px, 4vw, 16px);
+    font-size: clamp(12px, 2vw, 16px);
 }
 
 /* CONTACT SECTION */
@@ -1526,7 +1527,7 @@ header ul li{
     align-items: center;
     flex-basis: minmax(25%, 500px);
     min-width: max-content;
-    gap: clamp(20px, 4vw, 40px);
+    gap: 40px;
 }
 
 .contact{
@@ -1638,7 +1639,7 @@ header ul li{
         background: var(--shade-dark-trans);
         transform: scale(1.1);
     }
-    
+
     .contact_btn:hover img{
         animation: point ease 0.3s alternate-reverse 3;
         animation-delay: 0.2s;

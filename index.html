@@ -95,7 +95,7 @@
 
             <div class="section_content">
                 <div class="about_img">
-                    <img src="./images/bust.jpg" alt="">
+                    <img src="./images/2.png" alt="">
                     <div class="frame"></div>
                 </div>
     
@@ -645,7 +645,6 @@
     let menu_btns = document.querySelectorAll('.menu_item');
 
     // section observer
-
     const section_observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting){
@@ -850,7 +849,6 @@
     window.addEventListener('click', (e) => {
 
         //header
-
         header_links.forEach((link) => {
             if(link.contains(e.target) && link.id){
                 document.querySelector(`.${link.id}`).scrollIntoView({
@@ -903,6 +901,8 @@
                 clearTimeout(menu_btn.id);
             };
         };
+
+        if()
 
         // Carousel
 
