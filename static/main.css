@@ -1876,7 +1876,7 @@ footer .copy{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 100%;
+    width: 90%;
     gap: 40px;
 }
 
@@ -2139,6 +2139,14 @@ footer .copy{
     }
 
     .contacts{
+        width: 100%;
+    }
+
+    footer{
+        gap: 40px;
+    }
+
+    .footer_main{
         width: 100%;
     }
 }
