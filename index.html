@@ -721,6 +721,23 @@
         t_delay += 0.2;
     })
 
+    // skill observer
+    const skill_observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('slide_up');
+            }
+        });
+    });
+
+    let sk_delay = 0.1
+
+    skills.forEach((skill) => {
+        skill.style.animationDelay = `${sk_delay}s`
+        skill_observer.observe(skill);
+        sk_delay += 0.2;
+    })
+
     // section observer
     const section_observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
