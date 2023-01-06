@@ -695,8 +695,6 @@
         entries.forEach((entry) => {
             if(entry.isIntersecting){
                 entry.target.classList.add('show_intro');
-            }else{
-                entry.target.classList.remove('show_intro');
             }
         });
     },);
@@ -720,6 +718,7 @@
         trophy_observer.observe(trophy);
         t_delay += 0.2;
     })
+    trophy_observer.observe(document.querySelector('.about_img'));
 
     // skill observer
     const skill_observer = new IntersectionObserver((entries) => {
@@ -737,6 +736,23 @@
         skill_observer.observe(skill);
         sk_delay += 0.2;
     })
+
+    skill_observer.observe(document.querySelector('.about_content p:first-of-type'));
+
+
+    // service observer
+    const service_observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('opacify');
+            }
+        });
+    },);
+    
+    services.forEach((service) => {
+        service_observer.observe(service);
+    })
+
 
     // section observer
     const section_observer = new IntersectionObserver((entries) => {

@@ -1092,11 +1092,18 @@ header ul li{
     max-width: 300px;
     background-color: var(--shade);
     border-radius: 6px;
-    box-shadow: inset -2px -2px 4px var(--text-pop-color),
-                            inset 2px 2px 4px var(--light);                       
+    opacity: 0;
+    box-shadow: none;           
     padding: 20px;
     position: relative;
-    transition: all 0.2s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.opacify{
+    opacity: 1 !important;
+    box-shadow: inset -2px -2px 4px var(--text-pop-color),
+                        inset 2px 2px 4px var(--light) !important;
+
 }
 
 .service::before{
@@ -1143,7 +1150,7 @@ header ul li{
     left: 50%;
     z-index: 100;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 88%;
     max-width: 600px;
     height: minmax(300px, 80vh);
     max-height: 80vh;
@@ -1201,6 +1208,7 @@ header ul li{
     overflow-y: auto;
     overflow-x: hidden;
     border-radius: inherit;
+    padding-right: 20px;
 }
 
 .more_info ul li{
