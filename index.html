@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tolu Afolayan</title>
-    <link rel="stylesheet" href="./main.css">
+    <title>Tioluwa's Portfolio</title>
+    <link rel="stylesheet" href="./static/main.css">
+    <link rel="icon" type="image/x-icon" href="./images/hive.svg">
 </head>
 <body>
     <header class="container">
-        <a href="" id="header_name">Toluwalase</a>
+        <a href="#" id="header_name">Toluwalase</a>
         <ul>
             <li><a class="in_view">Home</a></li>
             <li id="about_section"><a>About</a></li>
@@ -68,7 +69,7 @@
                         </p>
                     </p>
                     <div class="btns">
-                        <a href="" class="download_btn" onclick="downloadCV('./images/2.png', 'Tolu_Afolayan_CV.zip', event.target)">
+                        <a class="download_btn" onclick="downloadFile('./images/2.png', 'Tolu_Afolayan_CV.png', event.target)">
                             Download CV
                             <img src="./images/download.svg" style="width: 25px; height: 100%; filter: invert(0.2);">
                         </a>
@@ -81,7 +82,7 @@
             </div>
 
             <div class="intro_img">
-                <img src="./images/image3.jpeg">
+                <img src="./images/bust_canva.png">
             </div>
 
         </section>
@@ -248,7 +249,7 @@
                             <div class="skill_item">
                                 <div class="item_head">
                                     <h4>Django</h4>
-                                    <p>90%</p>
+                                    <p>70%</p>
                                 </div>
 
                                 <div class="proficiency_indicator">
@@ -629,7 +630,7 @@
                         <input type="email" id="email" placeholder="Email address" aria-required required title="Enter an email address i can contact you with">
                     </div>
                     <textarea name="" id="message" placeholder="Message or Project description" spellcheck="true" title="Type a message. Give a concise description of the project you have in mind."></textarea>
-                    <button id="submit" disabled aria-disabled="true" aria-details="Send a message to me">
+                    <button id="submit" disabled aria-disabled aria-details="Send a message to me">
                         Send message
                         <img src="./images/send.svg" style="width: clamp(15px, 4vw, 25px); height: 100%;">
                     </button>
@@ -658,6 +659,7 @@
         <p class="copy">ti_oluwa &copy;2023</p>
     </footer>
 </body>
+<script src="./static/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
     const tab_labels = document.querySelectorAll('.tab_labels .label');
     const tab_indicator = document.querySelector('.tab_indicator');
@@ -688,6 +690,8 @@
     let menu_btns = document.querySelectorAll('.menu_item');
     let testimonials = document.querySelectorAll('.testimonial');
     let testimonials_section = document.querySelector('.testimonials');
+    let send_btn = document.querySelector('#submit');
+    let message_form = document.querySelector('.contact_form');
 
 
     // intro observer
@@ -945,20 +949,7 @@
         }
     };
 
-    const carousel_item_observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if(entry.isIntersecting){
-               
-            }
-            else{
-                
-            }
-        });
-    });
-    carousel_items.forEach((item) => {
-        carousel_item_observer.observe(item);
-    });
-
+    
     function highlightDot(){
         let active_index = Math.abs( Math.round( carousel.scrollLeft / carousel_items[0].offsetWidth ) );
         carousel_dots.forEach((item, index) => {
@@ -992,7 +983,25 @@
         };
     });
     
+    // Contact form
+    message_form.addEventListener('input', ()=>{
+        let validity = [];
+        message_form.querySelectorAll('input, textarea').forEach((field) => {
+            if(field.value != ''){
+                validity.push(true);
+            }else{
+                validity.push(false);
+            }
+        });
 
+        if(!validity.every((e) =>{return e == true}) ){
+            send_btn.disabled = true;
+            send_btn.ariaDisabled = true;
+        }else{
+            send_btn.disabled = false;
+            send_btn.ariaDisabled = false;
+        };
+    });
 
     window.addEventListener('click', (e) => {
 
@@ -1087,6 +1096,68 @@
                 });
             };
         });
+
+        // Send message
+        if (send_btn.contains(e.target)){
+            e.stopImmediatePropagation();
+            let client_name = document.querySelector('#name').value;
+            let email_address = document.querySelector('#email').value;
+            let message = document.querySelector('#message').value;
+
+            let data = {
+                'message': message,
+                'sent_by': client_name,
+                'sent_by_email': email_address,
+            };
+
+            // const post = {
+            //     method: 'POST',
+            //     body: JSON.stringify(data),
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //     },
+            // };
+
+            // fetch('http://127.0.0.1:8000/api/send/', post)
+            // .then((response) => {
+            //     if(!response.ok){
+            //         console.log(response.body)
+            //         throw Error(response.status)
+            //     }return response.json();
+            // }).then((data) => {
+            //     console.log(data);
+            // }).catch(e => {
+            //     console.log(e);
+            // })
+
+            $.ajax({
+                url: 'http://127.0.0.1:8000/api/send/',
+                method: "POST",
+                contentType: 'application/json',
+                dataType: 'json',
+                data: JSON.stringify(data),
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest",
+                    "auth_token": "648gi34hotthcu3iognhufifj"
+                },
+                success: (response)=>{
+                    // console.log(response);
+                    if(response.status == "success"){
+                        alert("Thanks for contacting me! I'll get back to you shortly")
+                        document.querySelector('#name').value = null;
+                        document.querySelector('#email').value = null;
+                        document.querySelector('#message').value = null;
+                    }else{
+                        alert("Message failed to send. Please try again.")
+                    }
+                },
+                error: (e) => {
+                    console.log(e)
+                    throw Error(e.status)
+                }
+            });
+
+        };
 
     });
 
