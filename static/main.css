@@ -336,7 +336,89 @@ header ul li{
     transform: rotate(360deg);
 }
 
+/* NOTIFICATION */
 
+.notification_card{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -400px);
+    z-index: 100;
+    width: 80%;
+    max-width: 400px;
+    max-height: 150px;
+    background: var(--light);
+    border-inline: var(--text-pop-color);
+    border-radius: 6px;
+    padding: 30px 20px;
+    box-shadow: inset -2px -2px 4px var(--shade-dark),
+                        inset 2px 2px 4px var(--shade),
+                        2px 8px 6px rgba(31, 31, 31, 0.1),
+                        -2px 8px 6px rgba(31, 31, 31, 0.1);
+    gap: 16px;
+    opacity: 0;
+}
+
+.show_notification_card{
+    display: flex !important;
+    animation: show_notification_card 1s ease-in-out forwards;
+}
+
+@keyframes show_notification_card {
+    0%{
+        opacity: 0;
+        transform: translate(-50%, -400px);
+    }
+    75%{
+        transform: translate(-50%, 20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.hide_notification_card{
+    animation: hide_notification_card 1s ease-in-out forwards !important;
+}
+
+@keyframes hide_notification_card {
+    0%{
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    25%{
+        transform: translate(-50%, 20px);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(-50%, -400px);
+    }
+}
+
+.notification_card p{
+    width: 100%;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+    font-size: clamp(14px, 2vw, 16px);
+    font-family: "Manrope";
+}
+
+.notification_card button{
+    outline: none;
+    border: none;
+    width: 90%;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-family: "DM Sans";
+    font-size: clamp(14px, 2vw, 16px);
+    background: var(--accent-color-lighter);
+}
 
 
 /* INTRO SECTION */

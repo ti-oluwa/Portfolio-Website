@@ -41,6 +41,12 @@
             </div>
         </div>
 
+        <!-- NOTIFICATIONS -->
+        <div class="notification_card">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, fuga?</p>
+            <button>Okay</button>
+        </div>
+
 
         <!-- INTRO SECTION -->
         <section class="intro_section" id="intro">
@@ -692,6 +698,7 @@
     let testimonials_section = document.querySelector('.testimonials');
     let send_btn = document.querySelector('#submit');
     let message_form = document.querySelector('.contact_form');
+    let notification_card = document.querySelector('.notification_card');
 
 
     // intro observer
@@ -830,6 +837,15 @@
         element.href = url;
         element.setAttribute('download', filename);
         element.setAttribute('target', '_blank');
+        notification_card.querySelector('p').innerText = `Download of ${filename} has started.`;
+        notification_card.classList.add('show_notification_card');
+        setTimeout(()=>{
+            notification_card.classList.add('hide_notification_card');
+            setTimeout(() => {
+                notification_card.classList.remove('hide_notification_card');
+                notification_card.classList.remove('show_notification_card');
+            }, 3000);
+        }, 5000);
     };
 
     const header_observer = new IntersectionObserver((entries) => {
@@ -1146,13 +1162,29 @@
                     send_btn.classList.remove('sending');
                     send_btn.disabled = true;
                     if(response.status == "success"){
-                        alert("Thanks for contacting me! I'll get back to you shortly")
+                        notification_card.querySelector('p').innerText = "Thanks for contacting me! I'll get back to you shortly."
+                        notification_card.classList.add('show_notification_card');
+                        setTimeout(()=>{
+                            notification_card.classList.add('hide_notification_card');
+                            setTimeout(() => {
+                                notification_card.classList.remove('hide_notification_card');
+                                notification_card.classList.remove('show_notification_card');
+                            }, 3000);
+                        }, 5000);
                         document.querySelector('#name').value = null;
                         document.querySelector('#email').value = null;
                         document.querySelector('#message').value = null;
                     }else{
-                        alert("Message failed to send. Please try again.")
-                    }
+                        notification_card.querySelector('p').innerText = "Message failed to send. Please try again."
+                        notification_card.classList.add('show_notification_card');
+                        setTimeout(()=>{
+                            notification_card.classList.add('hide_notification_card');
+                            setTimeout(() => {
+                                notification_card.classList.remove('hide_notification_card');
+                                notification_card.classList.remove('show_notification_card');
+                            }, 3000);
+                        }, 5000);
+                    };
                 },
                 error: (e) => {
                     console.log(e)
