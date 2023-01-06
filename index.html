@@ -1099,6 +1099,7 @@
 
         // Send message
         if (send_btn.contains(e.target)){
+            send_btn.classList.add('sending');
             e.stopImmediatePropagation();
             let client_name = document.querySelector('#name').value;
             let email_address = document.querySelector('#email').value;
@@ -1138,10 +1139,12 @@
                 data: JSON.stringify(data),
                 headers: {
                     "X-Requested-With": "XMLHttpRequest",
-                    "auth_token": "648gi34hotthcu3iognhufifj"
+                    "auth_token": "648gi34hotthcu3iognhufifj",
                 },
                 success: (response)=>{
                     // console.log(response);
+                    send_btn.classList.remove('sending');
+                    send_btn.disabled = true;
                     if(response.status == "success"){
                         alert("Thanks for contacting me! I'll get back to you shortly")
                         document.querySelector('#name').value = null;
@@ -1153,6 +1156,7 @@
                 },
                 error: (e) => {
                     console.log(e)
+                    send_btn.classList.remove('sending');
                     throw Error(e.status)
                 }
             });
