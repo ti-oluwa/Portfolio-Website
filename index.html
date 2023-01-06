@@ -662,12 +662,14 @@
     const tab_labels = document.querySelectorAll('.tab_labels .label');
     const tab_indicator = document.querySelector('.tab_indicator');
     const tab_switcher = document.querySelector('.tab_switcher');
+    let intro_section = document.querySelector('.intro_section')
     let about_section = document.querySelector('.about_section');
     let portfolio_section = document.querySelector('.portfolio_section');
     let contacts_section = document.querySelector('.contacts_section');
     let qualifications_section = document.querySelector('.qualifications_section');
     let skills = document.querySelectorAll('.skill');
     let skill_items = document.querySelectorAll('.skill_item');
+    let trophies = document.querySelectorAll('.trophy');
     let skills_section = document.querySelector('.skills_section');
     let sq_section = document.querySelector('.sq_section');
     let services_section = document.querySelector('.services_section');
@@ -684,6 +686,40 @@
     let carousel_item_width = carousel_items[0].offsetWidth;
     let carousel_dots = document.querySelectorAll('.carousel_dot');
     let menu_btns = document.querySelectorAll('.menu_item');
+    let testimonials = document.querySelectorAll('.testimonial');
+    let testimonials_section = document.querySelector('.testimonials');
+
+
+    // intro observer
+    const intro_observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('show_intro');
+            }else{
+                entry.target.classList.remove('show_intro');
+            }
+        });
+    },);
+
+    intro_observer.observe(intro_section);
+
+
+    // trophy observer
+    const trophy_observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('show_trophy');
+            }
+        });
+    });
+
+    let t_delay = 0.1
+
+    trophies.forEach((trophy) => {
+        trophy.style.animationDelay = `${t_delay}s`
+        trophy_observer.observe(trophy);
+        t_delay += 0.2;
+    })
 
     // section observer
     const section_observer = new IntersectionObserver((entries) => {
@@ -704,6 +740,21 @@
     section_observer.observe(portfolio_section);
     section_observer.observe(contacts_section);
 
+    //testimonial observer
+
+    const testimonial_observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('enlarge');
+            }else {
+                entry.target.classList.remove('enlarge');
+            }
+        });
+    }, {threshold: 0.85,});
+
+    // testimonials.forEach((testimonial) =>{
+    //     testimonial_observer.observe(testimonial);
+    // })
 
     // Menu button
     function openMenu(){

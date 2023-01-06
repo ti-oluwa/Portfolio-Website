@@ -349,6 +349,22 @@ header ul li{
     min-height: 70vh;
     gap: clamp(32px, 6vw, 76px);
     margin-block: 20px;
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.show_intro{
+    animation: drop_down 1s ease-out forwards;
+}
+
+@keyframes drop_down {
+    from{
+        opacity: 0;
+        transform: translateY(-50px);
+    }to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .intro_section .main{
@@ -365,6 +381,22 @@ header ul li{
     padding: 20px;
     border-left: 2px solid var(--text-pop-color);
     overflow-x: auto;
+    opacity: 0;
+    transform: rotateY(-45deg) skewY(10deg) translateX(-100%);
+}
+
+.show_intro .socials{
+    animation: show_socials 1s ease forwards 0.5s;
+}
+
+@keyframes show_socials {
+    from{
+        opacity: 0;
+        transform: rotateY(-45deg) skewY(20deg) translateX(-100%);
+    }to{
+        opacity: 1;
+        transform: rotateY(-0deg) skewY(0deg) translateX(0%);
+    }
 }
 
 .socials img{
@@ -633,7 +665,23 @@ header ul li{
     padding: 10px;
     flex: 1;
     max-width: 150px;
+    opacity: 0;
+    filter: blur(4px);
+}
 
+.show_trophy{
+    animation: show_trophy 0.5s ease-out forwards;
+}
+@keyframes show_trophy {
+    from{
+        transform: translateX(-100px);
+        opacity: 0;
+        filter: blur(4px);
+    }to{
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
 }
 
 .trophy h2{
@@ -1444,6 +1492,7 @@ header ul li{
 
 .testimonials{
     width: 100%;
+    /* height: 250px; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -1475,6 +1524,10 @@ header ul li{
     border-radius: 6px;
     padding: 20px;
     box-shadow: 2px 8px 6px rgba(31, 31, 31, 0.15);
+}
+
+.enlarge{
+    transform: scale(1.05);
 }
 
 .testifier_details{
