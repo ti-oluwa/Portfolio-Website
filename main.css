@@ -531,7 +531,7 @@ header ul li{
     object-fit: cover;
     object-position: center;
     border-radius: inherit;
-    filter: grayscale(0.8);
+    filter: grayscale(1);
 }
 
 .intro_img .adorn{
