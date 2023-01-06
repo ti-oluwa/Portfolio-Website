@@ -8,7 +8,7 @@
     <meta property='og:image' content='./images/bust.jpg'/>
     <meta property='og:description' content='Check out my most recent works and resume.'/>
     <meta property='og:url' content='https://ti-oluwa.github.io/Portfolio-Website/index.html'/>
-    
+
     <title>Tioluwa's Portfolio</title>
     <link rel="stylesheet" href="./static/main.css">
     <link rel="icon" type="image/x-icon" href="./images/hive.svg">
@@ -49,7 +49,7 @@
         <!-- NOTIFICATIONS -->
         <div class="notification_card">
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, fuga?</p>
-            <button>Okay</button>
+            <button onclick="hideNotification()">Okay</button>
         </div>
 
 
@@ -660,15 +660,15 @@
                 <p>Share on</p>
                 <div class="share">
                     <a href="https://ctt.ac/aY525" target="_blank">
-                        <img src="./images/twitter.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                        <img src="./images/twitter.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on twitter">
                     </a>
 
                     <a href="">
-                        <img src="./images/whatsapp.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                        <img src="./images/whatsapp.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on whatsapp">
                     </a>
 
                     <a href="https://www.linkedin.com/shareArticle?url=https://ti-oluwa.github.io/Portfolio-Website/index.html&title=Tioluwa's Portfolio&summary=Check out my recent work and resume" target="_blank">
-                        <img src="./images/linked-in.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                        <img src="./images/linked-in.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on linkedin">
                     </a>
                 </div>
             </div>
@@ -811,6 +811,14 @@
     //     testimonial_observer.observe(testimonial);
     // })
 
+    //notification
+
+    function hideNotification(){
+        if (notification_card.classList.contains('show_notification_card')){
+            notification_card.classList.add('hide_notification_card');
+        };
+    };
+
     // Menu button
     function openMenu(){
         document.querySelector('.menu_items').classList.remove('hide_flex');
@@ -886,6 +894,9 @@
         }else{
             go_up_btn.classList.remove('hide');
         };
+
+        
+        hideNotification();
     });
 
 
@@ -1041,6 +1052,11 @@
                 });
             }
         });
+
+        //notification
+        if(!notification_card.contains(e.target)){
+            hideNotification();
+        }
 
         // Skills section
         skills.forEach((skill) => {
