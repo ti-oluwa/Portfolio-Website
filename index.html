@@ -826,7 +826,7 @@
         });
     };
 
-    function downloadFIle(url, filename, element){
+    function downloadFile(url, filename, element){
         element.href = url;
         element.setAttribute('download', filename);
         element.setAttribute('target', '_blank');
@@ -1131,7 +1131,7 @@
             // })
 
             $.ajax({
-                url: 'http://127.0.0.1:8000/api/send/',
+                url: 'https://messagemeapi.pythonanywhere.com/api/send/',
                 method: "POST",
                 contentType: 'application/json',
                 dataType: 'json',
