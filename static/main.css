@@ -54,7 +54,8 @@ ul{
 
 :root{
     scroll-behavior: smooth !important;
-    --light-bg: #DDD0C8;
+    /* --light-bg: #DDD0C8; */
+    --light-bg: #f5f5f5;
     --dark-bg: #1f1f1f;
     --light: #d0d0d0;
     --text-color: #555; 
