@@ -233,6 +233,7 @@ header ul li{
     gap: clamp(10px, 4vw, 20px);
 }
 
+
 .menu_item{
     visibility: hidden;
     background: var(--shade-trans);
