@@ -1902,7 +1902,7 @@ footer .copy{
     font-size: clamp(14px, 2vw, 16px);
 }
 
-.footer_main .social_share{
+.footer_main .social_share_tab{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1910,12 +1910,12 @@ footer .copy{
     gap: 6px;
 }
 
-.social_share p{
+.social_share_tab p{
     font-size: clamp(14px, 2vw, 18px);
     font-weight: 600;
 }
 
-.social_share .share{
+.social_share_tab .share{
     display: flex;
     justify-content: flex-end;
     align-items: center;
