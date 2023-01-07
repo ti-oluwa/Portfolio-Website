@@ -1624,7 +1624,7 @@ header ul li{
     scroll-snap-align: center;
     scroll-snap-stop: always;
     min-width: 380px;
-    height: 200px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -2142,6 +2142,8 @@ footer .copy{
 
     .testimonial{
         min-width: 280px;
+        height: 200px;
+
     }
 
     .contacts{
