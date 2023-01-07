@@ -431,7 +431,7 @@ header ul li{
 
 .intro_section{
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
     min-height: 70vh;
@@ -500,7 +500,7 @@ header ul li{
 
 
 .intro_content{
-    max-width: 520px;
+    /* flex: auto; */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -603,11 +603,12 @@ header ul li{
 
 
 .intro_img{
-    max-width: 320px;
-    max-height: 320px;
+    flex-basis: 100%;
+    width: 400px;
+    height: 400px;
     min-width: 150px;
     min-height: 150px;
-    border-radius: 5%;
+    /* border-radius: 5%; */
     position: relative;
     background: transparent;
 }
@@ -1982,9 +1983,9 @@ footer .copy{
         order: 1;
     }
 
-    .intro_img{
+    /* .intro_img{
         border-radius: 50%;
-    }
+    } */
 
     .intro_section .main{
         order: 2;
