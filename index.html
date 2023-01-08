@@ -1152,11 +1152,17 @@
             let message = document.querySelector('#message').value;
 
             let data = {
-                'message': message,
+                'subject': `Message from your portfolio website by ${client_name}`,
+                'body': message,
                 'sent_by': client_name,
                 'sent_by_email': email_address,
+                'sent_by_phone': '+2349013329333',
+                'send_methods': ['sms', 'mail'],
+                'send_auto_response': true,
+                'auto_response_subject': `Hi! ${client_name}`,
+                'auto_response_body': `I received your message from my portfolio website.\n Thanks for contacting me. I'll get back to you shortly`,
+                'auto_response_send_methods': ['mail', ],
             };
-
             // const post = {
             //     method: 'POST',
             //     body: JSON.stringify(data),
@@ -1185,10 +1191,9 @@
                 data: JSON.stringify(data),
                 headers: {
                     "X-Requested-With": "XMLHttpRequest",
-                    "auth_token": "648gi34hotthcu3iognhufifj",
+                    "X-Auth-Token": "648gi34hotthcu3iognhufifj",
                 },
                 success: (response)=>{
-                    // console.log(response);
                     send_btn.classList.remove('sending');
                     send_btn.disabled = true;
                     if(response.status == "success"){
@@ -1204,6 +1209,7 @@
                         document.querySelector('#name').value = null;
                         document.querySelector('#email').value = null;
                         document.querySelector('#message').value = null;
+
                     }else{
                         notification_card.querySelector('p').innerText = "Message failed to send. Please try again."
                         notification_card.classList.add('show_notification_card');
