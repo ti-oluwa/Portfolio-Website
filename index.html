@@ -85,7 +85,7 @@
                         </p>
                     </p>
                     <div class="btns">
-                        <a class="download_btn" onclick="downloadFile('./images/2.png', 'Tolu_Afolayan_CV.png', event.target)">
+                        <a class="download_btn" onclick="downloadFile(`./files/Tolu's Resume.pdf`, `Tolu's Resume.pdf`, event.target)">
                             Download CV
                             <img src="./images/download.svg" style="width: 25px; height: 100%; filter: invert(0.2);">
                         </a>
@@ -822,7 +822,33 @@
     function hideNotification(){
         if (notification_card.classList.contains('show_notification_card')){
             notification_card.classList.add('hide_notification_card');
+            notification_card.classList.remove('show_notification_card');
         };
+    };
+
+    function showNotification(duration, notification){
+        if(!duration || duration == 0){
+            duration= 7000;
+        };
+
+        if(!notification_card.classList.contains('show_notification_card')){
+            notification_card.querySelector('p').innerText = notification;
+            notification_card.classList.add('show_notification_card');
+            notification_card.classList.remove('hide_notification_card');
+            notification_card.id = setTimeout(()=>{
+                hideNotification();
+            }, duration);
+
+        }else{
+            if(notification_card.id){
+                let timeout_id = parseInt(notification_card.id);
+                clearTimeout(timeout_id);
+            };
+            hideNotification();
+            setTimeout(() => {
+                showNotification(0, notification);
+            }, 400);   
+        }   
     };
 
     // Menu button
@@ -863,16 +889,11 @@
         element.href = url;
         element.setAttribute('download', filename);
         element.setAttribute('target', '_blank');
-        notification_card.querySelector('p').innerText = `Download of ${filename} has started.`;
-        notification_card.classList.add('show_notification_card');
-        setTimeout(()=>{
-            notification_card.classList.add('hide_notification_card');
-            setTimeout(() => {
-                notification_card.classList.remove('hide_notification_card');
-                notification_card.classList.remove('show_notification_card');
-            }, 3000);
-        }, 5000);
+        let notify_text = `Download of ${filename} has started.`;
+        showNotification(0, notify_text);
+        
     };
+
 
     const header_observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -901,7 +922,6 @@
         }else{
             go_up_btn.classList.remove('hide');
         };
-
         
         hideNotification();
     });
@@ -1069,13 +1089,14 @@
                 skill.querySelector('.skill_body').classList.toggle('show_dropdown');
             };
         });
+        
 
         // Services section
         services.forEach((service) => {
             if (service.querySelector('.info_btn').contains(e.target)) {
                 body.classList.add('stop_scroll');
                 service.querySelector('.more_info').classList.add('show_flex');
-            } else if(!service.querySelector('.more_info').contains(e.target) || service.querySelector('.info_title img').contains(e.target)) {
+            } else if( (service.querySelector('.more_info').classList.contains('show_flex') && !service.querySelector('.more_info').contains(e.target))  || service.querySelector('.info_title img').contains(e.target)) {
                 body.classList.remove('stop_scroll');
                 service.querySelector('.more_info').classList.add('remove_more_info');
                 setTimeout(() => {
@@ -1160,8 +1181,8 @@
                 'sent_by_phone': '+2349013329333',
                 'send_methods': ['sms', 'mail'],
                 'send_auto_response': true,
-                'auto_response_subject': `Hi! ${client_name}`,
-                'auto_response_body': `I received your message from my portfolio website.\n Thanks for contacting me. I'll get back to you shortly`,
+                'auto_response_subject': `Acknowledgement of the receipt of your message on Tolu's Portfolio`,
+                'auto_response_body': `Hi ${client_name},\n\n Thanks for contacting me. This mail is to acknowledge the message you sent to me through my portfolio website. Please be patient pending my proper response to your message through the mail box you provided(${email_address}). I'll get back to you soonest.\n\nThank for your patience,\nAfolayan Toluwalase`,
                 'auto_response_send_methods': ['mail', ],
             };
             // const post = {
@@ -1198,29 +1219,15 @@
                     send_btn.classList.remove('sending');
                     send_btn.disabled = true;
                     if(response.status == "success"){
-                        notification_card.querySelector('p').innerText = "Thanks for contacting me! I'll get back to you shortly."
-                        notification_card.classList.add('show_notification_card');
-                        setTimeout(()=>{
-                            notification_card.classList.add('hide_notification_card');
-                            setTimeout(() => {
-                                notification_card.classList.remove('hide_notification_card');
-                                notification_card.classList.remove('show_notification_card');
-                            }, 3000);
-                        }, 5000);
+                        let notify_text = "Thanks for contacting me! Your message was delivered. Please check your mailbox as I will be responding there."
+                        showNotification(0, notify_text);
                         document.querySelector('#name').value = null;
                         document.querySelector('#email').value = null;
                         document.querySelector('#message').value = null;
 
                     }else{
-                        notification_card.querySelector('p').innerText = "Message failed to send. Please try again."
-                        notification_card.classList.add('show_notification_card');
-                        setTimeout(()=>{
-                            notification_card.classList.add('hide_notification_card');
-                            setTimeout(() => {
-                                notification_card.classList.remove('hide_notification_card');
-                                notification_card.classList.remove('show_notification_card');
-                            }, 3000);
-                        }, 5000);
+                        let notify_text = "Message failed to send. Please try again."
+                        showNotification(0, notify_text);
                     };
                 },
                 error: (e) => {
