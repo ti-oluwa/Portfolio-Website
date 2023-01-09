@@ -786,9 +786,11 @@
             if (entry.isIntersecting && menu_btn.classList.contains('open')){
                 let btn = document.querySelector(`#${entry.target.className.replace('_section', '')}`);
                 btn.classList.add('active_menu_item');
+                btn.style.pointerEvents = 'none';
             }else{
                 let btn = document.querySelector(`#${entry.target.className.replace('_section', '')}`);
                 btn.classList.remove('active_menu_item');
+                btn.style.pointerEvents = 'auto';
             }
         })
     },{threshold: 0.75,});
