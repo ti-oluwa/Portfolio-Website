@@ -624,7 +624,7 @@
                         <img src="./images/mail.svg">
                         <div>
                             <h3>My mailbox</h3>
-                            <a href="mailto:tholuwa23@gmail.com">tholuwa23@gmail.com</a>
+                            <a href="mailto:tioluwa.dev@gmail.com">tioluwa.dev@gmail.com</a>
                         </div>
                     </div>
 
@@ -1149,10 +1149,10 @@
             let client_name = document.querySelector('#name').value;
             let email_address = document.querySelector('#email').value;
             let message = document.querySelector('#message').value;
-
+            let user_detail = `\nContact email address: ${email_address}`
             let data = {
                 'subject': `Message from your portfolio website by ${client_name}`,
-                'body': message,
+                'body': message + user_detail,
                 'sent_by': client_name,
                 'sent_by_email': email_address,
                 'sent_by_phone': '+2349013329333',
