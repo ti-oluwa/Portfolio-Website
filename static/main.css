@@ -355,7 +355,7 @@ header ul li{
     transform: translate(-50%, -400px);
     z-index: 100;
     width: 80%;
-    max-width: 400px;
+    max-width: 500px;
     max-height: 150px;
     background: var(--light);
     border-inline: var(--text-pop-color);
