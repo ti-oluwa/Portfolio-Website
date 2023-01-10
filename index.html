@@ -13,12 +13,15 @@
 
     <title>Tolu's Portfolio</title>
     <link rel="stylesheet" href="./static/main.css">
-    <link rel="icon" type="image/x-icon" href="./images/hive.svg">
+    <link rel="icon" type="image/x-icon" href="./images/hive2.svg#hive">
 </head>
+
 <body>
     <header class="container">
         <a href="#" id="header_name">
-            <img src="./images/hive.svg" alt="">
+            <svg class="dark_light" style="width: clamp(20px, 2vw, 25px); height: clamp(20px, 2vw, 25px);">
+                <use xlink:href="./images/hive.svg#hive" href="./images/hive.svg#hive"></use>
+            </svg>
             ti_oluwa
         </a>
         <ul>
@@ -28,26 +31,57 @@
             <li id="services_section"><a>Services</a></li>
             <li id="portfolio_section"><a>Portfolio</a></li>
             <li id="contacts_section"><a>Contact</a></li>
-            <li></li>
         </ul>
+        <svg class="dark_dim theme_toggle" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on twitter">
+            <use xlink:href="./images/light-mode.svg#light-mode" href="./images/light-mode.svg#light-mode"></use>
+        </svg>
     </header>
     <div class="container">
         <!-- GO UP ARROW -->
         <div id="go_up" class="hide">
-            <img src="./images/up-arrow.svg">
+            <svg class="just_light">
+                <use xlink:href="./images/up-arrow.svg" href="./images/up-arrow.svg#up-arrow"></use>
+            </svg>
         </div>
 
         <!-- BOTTOM MENU -->
         <div class="bottom_menu">
             <div class="menu_items">
-                <div class="menu_item" id="about"><img src="./images/user.svg"></div>
-                <div class="menu_item" id="skills"><img src="./images/skills.svg"></div>
-                <div class="menu_item" id="services"><img src="./images/services.svg"></div>
-                <div class="menu_item" id="portfolio"><img src="./images/portfolio.svg"></div>
-                <div class="menu_item" id="contacts"><img src="./images/contact.svg"></div>
+                <div class="menu_item" id="about">
+                    <svg class="dark_dim">
+                        <use xlink:href="./images/user.svg#user" href="./images/user.svg#user"></use>
+                    </svg>
+                </div>
+
+                <div class="menu_item" id="skills">
+                    <svg class="dark_dim">
+                        <use xlink:href="./images/skills.svg#skills" href="./images/skills.svg#skills"></use>
+                    </svg>
+                </div>
+
+                <div class="menu_item" id="services">
+                    <svg class="dark_dim">
+                        <use xlink:href="./images/services.svg#services" href="./images/services.svg#services"></use>
+                    </svg>
+                </div>
+
+                <div class="menu_item" id="portfolio">
+                    <svg class="dark_dim">
+                        <use xlink:href="./images/portfolio.svg#portfolio" href="./images/portfolio.svg#portfolio"></use>
+                    </svg>
+                </div>
+
+                <div class="menu_item" id="contacts">
+                    <svg class="dark_dim">
+                        <use xlink:href="./images/contact.svg#contact" href="./images/contact.svg#contact"></use>
+                    </svg>
+                </div>
             </div>
+
             <div class="menu_btn">
-                <img src="./images/menu_dot.svg">
+                <svg class="dark_dim">
+                    <use href="./images/menu_dot.svg#menu_dot"></use>
+                </svg>
             </div>
         </div>
 
@@ -62,11 +96,35 @@
         <section class="intro_section" id="intro">
             <div class="main">
                 <div class="socials">
-                    <a href="https://linkedin.com/in/daniel-afolayan-00828823a" target="_blank" title="My LinkedIn profile"><img src="./images/linked-in.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);"></a>
-                    <a href="https://twitter.com/ti_oluwa_" target="_blank" title="My twitter profile"><img src="./images/twitter.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);"></a>
-                    <a href="https://github.com/ti-oluwa" target="_blank" title="My github profile"><img src="./images/github.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);"></a>
-                    <a href="https://wa.me/+23409013329333" target="_blank" title="Talk to me on Whatsapp"><img src="./images/whatsapp.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);"></a>
-                    <a href="https://instagram.com/ti_oluwa" target="_blank" title="Check out my instagram"><img src="./images/instagram.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);"></a>
+                    <a href="https://linkedin.com/in/daniel-afolayan-00828823a" target="_blank" title="My LinkedIn profile" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
+                        <svg class="dark_accent">
+                            <use xlink:href="./images/linked-in.svg#linked-in" href="./images/linked-in.svg#linked-in"></use>
+                        </svg>
+                    </a>
+
+                    <a href="https://twitter.com/ti_oluwa_" target="_blank" title="My twitter profile" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
+                        <svg class="dark_accent">
+                            <use xlink:href="./images/twitter.svg#twitter" href="./images/twitter.svg#twitter"></use>
+                        </svg>
+                    </a>
+
+                    <a href="https://github.com/ti-oluwa" target="_blank" title="My github profile" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
+                        <svg class="dark_accent">
+                            <use xlink:href="./images/github.svg#github" href="./images/github.svg#github"></use>
+                        </svg>
+                    </a>
+
+                    <a href="https://wa.me/+23409013329333" target="_blank" title="Talk to me on Whatsapp" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
+                        <svg class="dark_accent">
+                            <use xlink:href="./images/whatsapp.svg#whatsapp" href="./images/whatsapp.svg#whatsapp"></use>
+                        </svg>
+                    </a>
+
+                    <a href="https://instagram.com/ti_oluwa" target="_blank" title="Check out my instagram" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
+                        <svg class="dark_accent">
+                            <use xlink:href="./images/instagram.svg#instagram" href="./images/instagram.svg#instagram"></use>
+                        </svg>
+                    </a>
                 </div>
     
                 <div class="intro_content">
@@ -87,11 +145,15 @@
                     <div class="btns">
                         <a class="download_btn" onclick="downloadFile(`./files/Tolu's Resume.pdf`, `Tolu's Resume.pdf`, event.target)">
                             Download CV
-                            <img src="./images/download.svg" style="width: 25px; height: 100%; filter: invert(0.2);">
+                            <svg class="dark_accent" style="width: 25px; height: 25px;">
+                                <use xlink:href="./images/download.svg#download" href="./images/download.svg#download"></use>
+                            </svg>
                         </a>
                         <a class="contact_btn" onclick="scrollToContacts()">
                             Contact me
-                            <img src="./images/send.svg" style="width: 25px; height: 100%;">
+                            <svg class="just_light" style="width: 25px; height: 25px;">
+                                <use xlink:href="./images/send.svg#send" href="./images/send.svg#send"></use>
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -105,7 +167,10 @@
 
         <!-- SCROLL DOWN MOUSE -->
         <div class="scroll_down_section" onclick="scrollDown();">
-            <img src="./images/mouse.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+            <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                <use xlink:href="./images/mouse.svg#mouse" href="./images/mouse.svg#mouse"></use>
+            </svg>
+
             <p>Scroll down</p>
         </div>
 
@@ -168,136 +233,148 @@
             <div class="skills_section">
                 <div class="skill">
                     <div class="skill_head">
-                        <img src="./images/html.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                        <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                            <use xlink:href="./images/html.svg#html" href="./images/html.svg#html"></use>
+                        </svg>
                         <div>
                             <h3>Frontend development</h3>
                             <p>More than 1 year</p>
                         </div>
-                        <img class="drop_arrow" src="./images/down.svg" style="width: clamp(20px, 4vw, 25px); height: clamp(20px, 4vw, 25px);">
+                        <svg class="dark_dim drop_arrow" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                            <use xlink:href="./images/down.svg#down" href="./images/down.svg#down"></use>
+                        </svg>
                     </div>
 
                     <div class="skill_body">
-                            <div class="skill_item">
-                                <div class="item_head">
-                                    <h4>HTML5</h4>
-                                    <p>80%</p>
-                                </div>
-
-                                <div class="proficiency_indicator">
-                                    <!-- A PROFICIENCY SLIDER   -->
-                                    <div class="indicator"></div>
-                                </div>
+                        <div class="skill_item">
+                            <div class="item_head">
+                                <h4>HTML5</h4>
+                                <p>80%</p>
                             </div>
 
-                            <div class="skill_item">
-                                <div class="item_head">
-                                    <h4>CSS3</h4>
-                                    <p>90%</p>
-                                </div>
+                            <div class="proficiency_indicator">
+                                <!-- A PROFICIENCY SLIDER   -->
+                                <div class="indicator"></div>
+                            </div>
+                        </div>
 
-                                <div class="proficiency_indicator">
-                                    <!-- A PROFICIENCY SLIDER   -->
-                                    <div class="indicator"></div>
-                                </div>
+                        <div class="skill_item">
+                            <div class="item_head">
+                                <h4>CSS3</h4>
+                                <p>90%</p>
                             </div>
 
-                            <div class="skill_item">
-                                <div class="item_head">
-                                    <h4>Javascript</h4>
-                                    <p>60%</p>
-                                </div>
+                            <div class="proficiency_indicator">
+                                <!-- A PROFICIENCY SLIDER   -->
+                                <div class="indicator"></div>
+                            </div>
+                        </div>
 
-                                <div class="proficiency_indicator">
-                                    <!-- A PROFICIENCY SLIDER   -->
-                                    <div class="indicator"></div>
-                                </div>
+                        <div class="skill_item">
+                            <div class="item_head">
+                                <h4>Javascript</h4>
+                                <p>60%</p>
                             </div>
 
-                            <div class="skill_item">
-                                <div class="item_head">
-                                    <h4>Bootstrap</h4>
-                                    <p>45%</p>
-                                </div>
-
-                                <div class="proficiency_indicator">
-                                    <!-- A PROFICIENCY SLIDER   -->
-                                    <div class="indicator"></div>
-                                </div>
+                            <div class="proficiency_indicator">
+                                <!-- A PROFICIENCY SLIDER   -->
+                                <div class="indicator"></div>
                             </div>
+                        </div>
+
+                        <div class="skill_item">
+                            <div class="item_head">
+                                <h4>Bootstrap</h4>
+                                <p>45%</p>
+                            </div>
+
+                            <div class="proficiency_indicator">
+                                <!-- A PROFICIENCY SLIDER   -->
+                                <div class="indicator"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="skill">
                     <div class="skill_head">
-                        <img src="./images/database.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                        <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                            <use xlink:href="./images/database.svg#database" href="./images/database.svg#database"></use>
+                        </svg>
                         <div>
                             <h3>Backend development</h3>
                             <p>Up to 1 year</p>
                         </div>
-                        <img class="drop_arrow" src="./images/down.svg" style="width: clamp(20px, 4vw, 25px); height: clamp(20px, 4vw, 25px);">
+                        <svg class="dark_dim drop_arrow" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                            <use xlink:href="./images/down.svg#down" href="./images/down.svg#down"></use>
+                        </svg>
                     </div>
 
                     <div class="skill_body">
-                            <div class="skill_item">
-                                <div class="item_head">
-                                    <h4>Python</h4>
-                                    <p>80%</p>
-                                </div>
-
-                                <div class="proficiency_indicator">
-                                    <!-- A PROFICIENCY SLIDER   -->
-                                    <div class="indicator"></div>
-                                </div>
+                        <div class="skill_item">
+                            <div class="item_head">
+                                <h4>Python</h4>
+                                <p>80%</p>
                             </div>
 
-                            <div class="skill_item">
-                                <div class="item_head">
-                                    <h4>MySQL</h4>
-                                    <p>40%</p>
-                                </div>
+                            <div class="proficiency_indicator">
+                                <!-- A PROFICIENCY SLIDER   -->
+                                <div class="indicator"></div>
+                            </div>
+                        </div>
 
-                                <div class="proficiency_indicator">
-                                    <!-- A PROFICIENCY SLIDER   -->
-                                    <div class="indicator"></div>
-                                </div>
+                        <div class="skill_item">
+                            <div class="item_head">
+                                <h4>MySQL</h4>
+                                <p>40%</p>
                             </div>
 
-                            <div class="skill_item">
-                                <div class="item_head">
-                                    <h4>Django</h4>
-                                    <p>70%</p>
-                                </div>
-
-                                <div class="proficiency_indicator">
-                                    <!-- A PROFICIENCY SLIDER   -->
-                                    <div class="indicator"></div>
-                                </div>
+                            <div class="proficiency_indicator">
+                                <!-- A PROFICIENCY SLIDER   -->
+                                <div class="indicator"></div>
                             </div>
+                        </div>
+
+                        <div class="skill_item">
+                            <div class="item_head">
+                                <h4>Django</h4>
+                                <p>70%</p>
+                            </div>
+
+                            <div class="proficiency_indicator">
+                                <!-- A PROFICIENCY SLIDER   -->
+                                <div class="indicator"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="skill">
                     <div class="skill_head">
-                        <img src="./images/version_control.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                        <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                            <use xlink:href="./images/version_control.svg#version_control" href="./images/version_control.svg#version_control"></use>
+                        </svg>
                         <div>
                             <h3>Version control</h3>
                             <!-- <p>More than 1 years</p> -->
                         </div>
-                        <img class="drop_arrow" src="./images/down.svg" style="width: clamp(20px, 4vw, 25px); height: clamp(20px, 4vw, 25px);">
+                        <svg class="dark_dim drop_arrow" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                            <use xlink:href="./images/down.svg#down" href="./images/down.svg#down"></use>
+                        </svg>
                     </div>
 
                     <div class="skill_body">
-                            <div class="skill_item">
-                                <div class="item_head">
-                                    <h4>Git</h4>
-                                    <p>75%</p>
-                                </div>
-
-                                <div class="proficiency_indicator">
-                                    <!-- A PROFICIENCY SLIDER   -->
-                                    <div class="indicator"></div>
-                                </div>
+                        <div class="skill_item">
+                            <div class="item_head">
+                                <h4>Git</h4>
+                                <p>75%</p>
                             </div>
+
+                            <div class="proficiency_indicator">
+                                <!-- A PROFICIENCY SLIDER   -->
+                                <div class="indicator"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -308,11 +385,15 @@
             <div class="qualifications_section">
                 <div class="q_head">
                     <p class="active_sub_tab" id="education_switch" onclick="showEducation();">
-                        <img src="./images/education.svg" style="width: clamp(20px, 4vw, 25px); height: 100%;">
+                        <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                            <use xlink:href="./images/education.svg#education" href="./images/education.svg#education"></use>
+                        </svg>
                         Education
                     </p>
                     <p id="work_switch" onclick="showWork();">
-                        <img src="./images/work.svg" style="width: clamp(20px, 4vw, 25px); height: 100%;">
+                        <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
+                            <use xlink:href="./images/work.svg#work" href="./images/work.svg#work"></use>
+                        </svg>
                         Work
                     </p>
                 </div>
@@ -369,17 +450,23 @@
 
             <div class="services">
                 <div class="service">
-                    <img src="./images/html_tag.svg" style="width: clamp(40px, 4vw, 60px); height: 100%;" class="symbol">
+                    <svg class="dark_dim symbol" style="width: clamp(40px, 4vw, 60px); height: clamp(40px, 4vw, 60px);">
+                        <use xlink:href="./images/html_tag.svg#html_tag" href="./images/html_tag.svg#html_tag"></use>
+                    </svg>
                     <h3>Frontend Development</h3>
                     <p class="info_btn">
                         More info
-                        <img src="./images/info1.svg" style="width: clamp(14px, 4vw, 16px); height: 100%;">
+                        <svg class="dark_dim" style="width: clamp(14px, 4vw, 16px); height: clamp(14px, 4vw, 16px);">
+                            <use xlink:href="./images/info1.svg#info1" href="./images/info1.svg#info1"></use>
+                        </svg>
                     </p>
 
                     <div class="more_info">
                         <div class="info_title">
                             <h3>Frontend Development</h3>
-                            <img src="./images/cancel.svg" style="width: clamp(25px, 4vw, 35px); height: 100%;"> 
+                            <svg class="dark_dim" style="width: clamp(25px, 4vw, 35px); height: clamp(25px, 4vw, 35px);">
+                                <use xlink:href="./images/cancel.svg#cancel" href="./images/cancel.svg#cancel"></use>
+                            </svg>
                         </div>
 
                         <ul>
@@ -398,17 +485,23 @@
                 </div>
 
                 <div class="service">
-                    <img src="./images/server.svg" style="width: clamp(40px, 4vw, 60px); height: 100%;" class="symbol">
+                    <svg class="dark_dim symbol" style="width: clamp(40px, 4vw, 60px); height: clamp(40px, 4vw, 60px);">
+                        <use xlink:href="./images/server.svg#server" href="./images/server.svg#server"></use>
+                    </svg>
                     <h3>Backend Development</h3>
                     <p class="info_btn">
                         More info
-                        <img src="./images/info1.svg" style="width: clamp(14px, 4vw, 16px); height: 100%;">
+                        <svg class="dark_dim" style="width: clamp(14px, 4vw, 16px); height: clamp(14px, 4vw, 16px);">
+                            <use xlink:href="./images/info1.svg#info1" href="./images/info1.svg#info1"></use>
+                        </svg>
                     </p>
 
                     <div class="more_info">
                         <div class="info_title">
                             <h3>Backend Development</h3>
-                            <img src="./images/cancel.svg" style="width: clamp(25px, 4vw, 35px); height: 100%;">
+                            <svg class="dark_dim" style="width: clamp(25px, 4vw, 35px); height: clamp(25px, 4vw, 35px);">
+                                <use xlink:href="./images/cancel.svg#cancel" href="./images/cancel.svg#cancel"></use>
+                            </svg>
                         </div>
 
                         <ul>
@@ -439,7 +532,9 @@
             <div class="carousel_container">
                 <div class="carousel_body">
                     <div class="carousel_nav">
-                        <img src="./images/left_arrow.svg" id="move_left">
+                        <svg class="dark_light" id="move_left" style="width: clamp(20px, 4vw, 25px); height: clamp(20px, 4vw, 25px); opacity: 0.3;">
+                            <use xlink:href="./images/left_arrow.svg#left_arrow" href="./images/left_arrow.svg#left_arrow"></use>
+                        </svg>
                     </div>
                     
                     <div class="carousel">
@@ -509,7 +604,9 @@
                     </div>
     
                     <div class="carousel_nav">
-                        <img src="./images/right_arrow.svg" id="move_right">
+                        <svg class="dark_dim" id="move_right" style="width: clamp(20px, 4vw, 25px); height: clamp(20px, 4vw, 25px);">
+                            <use xlink:href="./images/right_arrow.svg#right_arrow" href="./images/right_arrow.svg#right_arrow"></use>
+                        </svg>
                     </div>
                 </div>
                 
@@ -529,7 +626,9 @@
                 <p>Contact me today and get 20% off your new project.</p>
                 <a onclick="scrollToContacts(true)">
                     Contact me
-                    <img src="./images/right_arrow.svg" style="width: clamp(20px, 4vw, 25px); height: 100%; filter: invert(0.8);">
+                    <svg class="just_light" style="width: clamp(20px, 4vw, 25px); height: clamp(20px, 4vw, 25px);">
+                        <use xlink:href="./images/right_arrow.svg#right_arrow" href="./images/right_arrow.svg#right_arrow"></use>
+                    </svg>
                 </a>
             </div>
 
@@ -548,8 +647,10 @@
             <div class="testimonials">
                 <div class="testimonial">
                     <div class="testifier_details">
-                        <img src="./images/user.svg">
-    
+                        <svg class="dark_dim">
+                            <use xlink:href="./images/user.svg#user" href="./images/user.svg#user"></use>
+                        </svg>
+
                         <div>
                             <h3>Afolayan Comfort</h3>
                             <p>Client</p>
@@ -567,7 +668,9 @@
     
                 <div class="testimonial">
                     <div class="testifier_details">
-                        <img src="./images/user.svg">
+                        <svg class="dark_dim">
+                            <use xlink:href="./images/user.svg#user" href="./images/user.svg#user"></use>
+                        </svg>
     
                         <div>
                             <h3>Terso Elama</h3>
@@ -585,7 +688,9 @@
     
                 <div class="testimonial">
                     <div class="testifier_details">
-                        <img src="./images/user.svg">
+                        <svg class="dark_dim">
+                            <use xlink:href="./images/user.svg#user" href="./images/user.svg#user"></use>
+                        </svg>
     
                         <div>
                             <h3>Jacqueline Thompson</h3>
@@ -613,7 +718,9 @@
             <div class="contacts_container">
                 <div class="contacts">
                     <div class="contact">
-                        <img src="./images/phone.svg">
+                        <svg class="dark_dim">
+                            <use xlink:href="./images/phone.svg#phone" href="./images/phone.svg#phone"></use>
+                        </svg>
                         <div>
                             <h3>Call me on</h3>
                             <a href="tel:+2349013329333">+234-9013329333</a>
@@ -621,7 +728,9 @@
                     </div>
 
                     <div class="contact">
-                        <img src="./images/mail.svg">
+                        <svg class="dark_dim">
+                            <use xlink:href="./images/mail.svg#mail" href="./images/mail.svg#mail"></use>
+                        </svg>
                         <div>
                             <h3>My mailbox</h3>
                             <a href="mailto:tioluwa.dev@gmail.com">tioluwa.dev@gmail.com</a>
@@ -629,7 +738,9 @@
                     </div>
 
                     <div class="contact">
-                        <img src="./images/dm.svg">
+                        <svg class="dark_dim">
+                            <use xlink:href="./images/dm.svg#dm" href="./images/dm.svg#dm"></use>
+                        </svg>
                         <div>
                             <h3>Send a DM</h3>
                             <a href="https://wa.me/+23409013329333">09013329333</a>
@@ -645,7 +756,9 @@
                     <textarea name="" id="message" placeholder="Message or Project description" spellcheck="true" title="Type a message. Give a concise description of the project you have in mind."></textarea>
                     <button id="submit" disabled aria-details="Send a message to me">
                         Send message
-                        <img src="./images/send.svg" style="width: clamp(15px, 4vw, 25px); height: 100%;">
+                        <svg class="just_light" style="width: clamp(15px, 4vw, 25px); height: clamp(15px, 4vw, 25px);">
+                            <use xlink:href="./images/send.svg#send" href="./images/send.svg#send"></use>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -664,15 +777,21 @@
                 <p>Share on</p>
                 <div class="share">
                     <a href="https://ctt.ac/aY525" target="_blank">
-                        <img src="./images/twitter.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on twitter">
+                        <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on twitter">
+                            <use xlink:href="./images/twitter.svg#twitter" href="./images/twitter.svg#twitter"></use>
+                        </svg>
                     </a>
 
                     <a href="whatsapp://send?text=Hey!%20I%20just%20wanted%20to%20refer%20a%20fantastic%20web%20developer%20for%20a%20job%20opportunity.%0A%0A%20Tolu%20has%20a%20talent%20for%20building%20beautiful%20websites%20and%20I%20recommend%20him%20for%20any%20web%20development%20needs,%20%20whether%20it's%20for%20business%20or%20a%20personal%20website.%0A%0ACheck%20out%20Tolu's%20portfolio%20website%20here:%20https://bit.ly/dev_tioluwa" action="share/whatsapp/share" target="_blank">
-                        <img src="./images/whatsapp.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on whatsapp">
+                        <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on whatsapp">
+                            <use xlink:href="./images/whatsapp.svg#whatsapp" href="./images/whatsapp.svg#whatsapp"></use>
+                        </svg>
                     </a>
 
                     <a href="https://www.linkedin.com/shareArticle?url=https://bit.ly/dev_tioluwa&title=Tioluwa's Portfolio&summary=Check out my recent work and resume" target="_blank">
-                        <img src="./images/linked-in.svg" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on linkedin">
+                        <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on linkedin">
+                            <use xlink:href="./images/linked-in.svg#linked-in" href="./images/linked-in.svg#linked-in"></use>
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -704,7 +823,7 @@
     let header = document.querySelector('header ul');
     let header_links = document.querySelectorAll('header ul li');
     let carousel = document.querySelector('.carousel');
-    let carousel_btns = document.querySelectorAll('.carousel_nav img');
+    let carousel_btns = document.querySelectorAll('.carousel_nav svg');
     let carousel_items = document.querySelectorAll('.carousel_item');
     let carousel_item_width = carousel_items[0].offsetWidth;
     let carousel_dots = document.querySelectorAll('.carousel_dot');
@@ -714,21 +833,37 @@
     let send_btn = document.querySelector('#submit');
     let message_form = document.querySelector('.contact_form');
     let notification_card = document.querySelector('.notification_card');
-
+    let theme_toggle = document.querySelector('.theme_toggle');
 
 
     // dark mode
-
     let prefers_dark = window.matchMedia('(prefers-color-scheme: dark)')
+    // document.addEventListener('readystatechange', ()=>{
+    //     switchTheme();
+    // });
+
     prefers_dark.addEventListener('change', (mediaQuery) => {
         if(mediaQuery.matches){
-            body.classList.remove('light');
             body.classList.add('dark');
         }else{
             body.classList.remove('dark');
-            body.classList.add('light');
         }
     })
+
+    theme_toggle.addEventListener('click', ()=>{
+        switchTheme();
+    })
+
+    function switchTheme(){
+        body.classList.toggle('dark');
+        if(body.classList.contains('dark')){
+            theme_toggle.querySelector('use').href['animVal'] = './images/night-mode.svg#night-mode';
+            theme_toggle.querySelector('use').href['baseVal'] = './images/night-mode.svg#night-mode';
+        }else{
+            theme_toggle.querySelector('use').href['animVal'] = './images/light-mode.svg#light-mode';
+            theme_toggle.querySelector('use').href['baseVal'] = './images/light-mode.svg#light-mode';
+        }
+    };
     
 
     // intro observer
@@ -871,9 +1006,12 @@
     function openMenu(){
         document.querySelector('.menu_items').classList.remove('hide_flex');
         menu_btn.classList.add('open');
-        menu_btn.querySelector('img').src = './images/close.svg';
+        console.log();
+        menu_btn.querySelector('svg use').href['baseVal'] = './images/close.svg#close';
+        menu_btn.querySelector('svg use').href['animVal'] = './images/close.svg#close';
         let delay = 0.08;
         let index = menu_items.length  - 1;
+
         for(let i = 0; i < menu_items.length; i++) {
             menu_items[index].style.animationDelay = delay + 's';
             menu_items[index].classList.toggle('show_menu_item');
@@ -889,7 +1027,8 @@
 
     function closeMenu(){
         menu_btn.classList.remove('open');
-        menu_btn.querySelector('img').src = './images/menu_dot.svg';
+        menu_btn.querySelector('svg use').href['baseVal'] = './images/menu_dot.svg#menu_dot';
+        menu_btn.querySelector('svg use').href['animVal'] = './images/menu_dot.svg#menu_dot';
         menu_items.forEach((item) => {
             item.classList.add('remove_menu_item');
             setTimeout(() => {
@@ -1111,7 +1250,7 @@
             if (service.querySelector('.info_btn').contains(e.target)) {
                 body.classList.add('stop_scroll');
                 service.querySelector('.more_info').classList.add('show_flex');
-            } else if( (service.querySelector('.more_info').classList.contains('show_flex') && !service.querySelector('.more_info').contains(e.target))  || service.querySelector('.info_title img').contains(e.target)) {
+            } else if( (service.querySelector('.more_info').classList.contains('show_flex') && !service.querySelector('.more_info').contains(e.target))  || service.querySelector('.info_title svg').contains(e.target)) {
                 body.classList.remove('stop_scroll');
                 service.querySelector('.more_info').classList.add('remove_more_info');
                 setTimeout(() => {
