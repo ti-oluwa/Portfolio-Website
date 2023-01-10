@@ -32,7 +32,7 @@
             <li id="portfolio_section"><a>Portfolio</a></li>
             <li id="contacts_section"><a>Contact</a></li>
         </ul>
-        <svg class="dark_dim theme_toggle" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on twitter">
+        <svg class="dark_dim theme_toggle" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" title="Switch theme">
             <use xlink:href="./images/light-mode.svg#light-mode" href="./images/light-mode.svg#light-mode"></use>
         </svg>
     </header>
@@ -160,7 +160,7 @@
             </div>
 
             <div class="intro_img">
-                <img src="./images/resume.svg">
+                <img src="./images/resume.svg" alt="">
             </div>
 
         </section>
@@ -183,7 +183,7 @@
 
             <div class="section_content">
                 <div class="about_img">
-                    <img src="./images/about_me1.webp" >
+                    <img src="./images/about_me1.webp" alt="">
                     <div class="frame"></div>
                 </div>
     
@@ -403,7 +403,7 @@
                         <h3>Petroleum Engineering, B.Eng</h3>
                         <p>FUPRE - Delta, Nigeria.</p>
                         <small>
-                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;">
+                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="">
                             2019 - Till date
                         </small>
                     </div>
@@ -412,7 +412,7 @@
                         <h3>Frontend development</h3>
                         <p>FreeCodeCamp.Org</p>
                         <small>
-                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;">
+                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="">
                             2021 - Till date
                         </small>
                     </div>
@@ -421,7 +421,7 @@
                         <h3>Backend development (Python)</h3>
                         <p>I4G X ZURI Training - Nigeria</p>
                         <small>
-                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;">
+                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="">
                             June - Sept. 2022
                         </small>
                     </div>
@@ -432,7 +432,7 @@
                         <h3>Freelancing</h3>
                         <p>Remote - Worldwide</p>
                         <small>
-                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;">
+                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="">
                             2022 - Till date
                         </small>
                     </div>
@@ -540,12 +540,12 @@
                     <div class="carousel">
                         <div class="carousel_item">
                             <div class="carousel_item_img">
-                                <img src="./images/students.webp">
+                                <img src="./images/students.webp" alt="">
 
                                 <div class="img_overlay">
                                     <h3>Eden Place</h3>
                                     <p>A school website</p>
-                                    <a href="" title="Click here to visit the project website"><img src="./images/link.svg"></a>
+                                    <a href="" title="Click here to visit the project website"><img src="./images/link.svg" alt=""></a>
                                 </div>
                             </div>
 
@@ -561,12 +561,12 @@
 
                         <div class="carousel_item">
                             <div class="carousel_item_img">
-                                <img src="./images/campaign-rafiki.webp">
+                                <img src="./images/campaign-rafiki.webp" alt="">
 
                                 <div class="img_overlay">
                                     <h3>Postman</h3>
                                     <p>Messaging made easy</p>
-                                    <a href="https://tioluwa.pythonanywhere.com/" title="Click here to visit the project website"><img src="./images/link.svg"></a>
+                                    <a href="https://tioluwa.pythonanywhere.com/" title="Click here to visit the project website"><img src="./images/link.svg" alt=""></a>
                                 </div>
                             </div>
 
@@ -588,7 +588,7 @@
                                 <div class="img_overlay">
                                     <h3>Authwiki</h3>
                                     <p>A library of auth codes</p>
-                                    <a href="www.authwiki.herokuapp.com" title="Click here to visit the project website"><img src="./images/link.svg"></a>
+                                    <a href="www.authwiki.herokuapp.com" title="Click here to visit the project website"><img src="./images/link.svg" alt=""></a>
                                 </div>
                             </div>
 
@@ -633,7 +633,7 @@
             </div>
 
             <div class="call_to_action_img">
-                <img src="./images/bust-removebg.webp">
+                <img src="./images/bust-removebg.webp" alt="">
             </div>
         </section>
 
@@ -837,29 +837,48 @@
 
 
     // dark mode
-    let prefers_dark = window.matchMedia('(prefers-color-scheme: dark)')
-    // document.addEventListener('readystatechange', ()=>{
-    //     switchTheme();
-    // });
 
-    prefers_dark.addEventListener('change', (mediaQuery) => {
-        if(mediaQuery.matches){
-            body.classList.add('dark');
-        }else{
-            body.classList.remove('dark');
-        }
+    let prefers_dark = window.matchMedia('(prefers-color-scheme: dark)') // checks if the user's device is in dark mode. using the attribute, "matches", returns true if the user is in dark mode or false if not
+    
+    // Check if the theme of the website has been set before. Use the theme if it has been set or choose the theme based on the system wide theme
+    if (!localStorage.getItem('tolu_portfolio_theme')){
+        switchToDark(prefers_dark.matches);
+    }else{
+        let setToDark = localStorage.getItem('tolu_portfolio_theme') == "dark" ? true : false;
+        switchToDark(setToDark);
+    }
+
+    prefers_dark.addEventListener('change', () => {
+        switchToDark(prefers_dark.matches)
     })
+
 
     theme_toggle.addEventListener('click', ()=>{
-        switchTheme();
+        let themeIsLight = isLight(); // values is true if the theme is light
+        switchToDark(themeIsLight); // if themeIsLight is true, the `to_dark` argument is set to true or else it is set to false
     })
 
-    function switchTheme(){
-        body.classList.toggle('dark');
-        if(body.classList.contains('dark')){
+    function isLight(){
+        // returns if the theme is light
+        if(localStorage.getItem('theme')){
+            return localStorage.getItem('tolu_portfolio_theme') == "light" ? true : false;
+        };
+        return true;
+    }
+
+    function switchToDark(to_dark=true){
+        // sets theme to "dark" if to_dark is true otherwise, it sets theme to "light"
+        let theme = to_dark ? "dark" : "light";
+        localStorage.setItem('tolu_portfolio_theme', theme)
+
+        if(to_dark){
+            // switches to dark mode
+            body.classList.add('dark');
             theme_toggle.querySelector('use').href['animVal'] = './images/night-mode.svg#night-mode';
             theme_toggle.querySelector('use').href['baseVal'] = './images/night-mode.svg#night-mode';
         }else{
+            // switches to light mode
+            body.classList.remove('dark');
             theme_toggle.querySelector('use').href['animVal'] = './images/light-mode.svg#light-mode';
             theme_toggle.querySelector('use').href['baseVal'] = './images/light-mode.svg#light-mode';
         }

@@ -34,7 +34,7 @@ body{
     -moz-osx-font-smoothing: grayscale !important;
     background: var(--light-bg);
     position: relative;
-    transition: all 1.5s ease-out !important;
+    transition: all 1.2s ease-out !important;
 }
 
 img, svg, use, picture, video{
@@ -58,84 +58,35 @@ link[type=image/x-icon]{
     max-width: 80%;
 }
 
-@media(prefers-color-scheme: light){
-    :root{
-        scroll-behavior: smooth !important;
-        --light-bg: #DDD0C8;
-        /* --light-bg: #f5f5f5; */
-        --dark-bg: #1f1f1f;
-        --light: #d0d0d0;
-        --text-color: #555; 
-        --text-pop-color: #444;
-        --accent-color: #323232;
-        --accent-color-lighter: #6a6a6a;
-        --accent-color-darker: #282828;
-        --heading-color: #2f2f2f;
-        --shade: #b5b5b5;
-        --shade-dark: #8f8f8f;
-        --shade-trans: hsl(0, 0%, 71%, 0.8);
-        --shade-dark-trans: hsl(0, 0%, 56%, 0.8);
-        --dark-gradient: linear-gradient(45deg, var(--shade-dark) 5%, var(--text-color) 40%, var(--accent-color));
-        --light-gradient: linear-gradient(45deg, var(--shade) 5%, var(--shade-dark) 40%);
-        --light-gradient-135: linear-gradient(135deg, var(--shade) 5%, var(--shade-dark) 40%);
-        --repeating-gradient: repeating-linear-gradient(-45deg,  var(--shade), var(--shade) 1px, var(--shade-dark) 1px, var(--shade-dark) 2px);
-        --light-shadow-color: var(--text-color);
-        --dark-shadow-color: var(--text-pop-color);
-        --lighter-shadow-color: var(--heading-color);
-        --light-dark: #e1e1e1;
-        --dark-light: #444;
-        --light-accent: #e1e1e1;
-        --dark-accent: #444;
-        --dark-dim: #444;
-        --just-light: #e1e1e1;
-    }
-    
-}
-
-@media (prefers-color-scheme: dark){
-    :root{
-        scroll-behavior: smooth !important;
-        --light-bg: #262e3c;
-        /* --light-bg: #f5f5f5; */
-        --dark-bg: #1d1d1e;
-        --light: #1f242e;
-        --text-color: #b5bdc6; 
-        --text-pop-color: #868c93;
-        --accent-color: #de8a59;
-        --accent-color-lighter: #ffb266;
-        --accent-color-darker: #b27c47;
-        --heading-color: #e1e1e1;
-        --shade: #1e242f ;
-        --shade-dark: #14181f;
-        --shade-trans: hsl(218, 22%, 15%, 0.8) ;
-        --shade-dark-trans: hsl(218, 22%, 10%, 0.8);
-        --dark-gradient: linear-gradient(45deg, var(--text-color) 40%, var(--text-pop-color));
-        --light-gradient: linear-gradient(45deg, var(--shade) 5%, var(--shade-dark) 40%);
-        --light-gradient-135: linear-gradient(135deg, var(--shade) 5%, var(--shade-dark) 40%);
-        --repeating-gradient: repeating-linear-gradient(-45deg,  var(--shade), var(--shade) 1px, var(--shade-dark) 1px, var(--shade-dark) 2px);
-        --light-shadow-color: hsl(23, 58%, 71%);
-        --dark-shadow-color: var(--shade-dark-trans);
-        --lighter-shadow-color: var(--shade-dark);
-        --light-dark: #1e242f;
-        --dark-light: #e1e1e1;
-        --light-accent: var(--accent-color);
-        --dark-accent: var(--accent-color);
-        --dark-dim: #b5bdc6;
-        --just-light: #e1e1e1;
-    }
-
-    *{
-        color-scheme: dark;
-    }
-
-    .active_tab{
-        color: var(--heading-color) !important;
-    }
-
-    .tab_indicator{
-        box-shadow: inset 2px 2px 4px var(--light-shadow-color), inset -2px -2px 4px var(--dark-shadow-color) !important;
-    }
-
+:root{
+    scroll-behavior: smooth !important;
+    --light-bg: #DDD0C8;
+    /* --light-bg: #f5f5f5; */
+    --dark-bg: #1f1f1f;
+    --light: #d0d0d0;
+    --text-color: #555; 
+    --text-pop-color: #444;
+    --accent-color: #323232;
+    --accent-color-lighter: #6a6a6a;
+    --accent-color-darker: #282828;
+    --heading-color: #2f2f2f;
+    --shade: #b5b5b5;
+    --shade-dark: #8f8f8f;
+    --shade-trans: hsl(0, 0%, 71%, 0.8);
+    --shade-dark-trans: hsl(0, 0%, 56%, 0.8);
+    --dark-gradient: linear-gradient(45deg, var(--shade-dark) 5%, var(--text-color) 40%, var(--accent-color));
+    --light-gradient: linear-gradient(45deg, var(--shade) 5%, var(--shade-dark) 40%);
+    --light-gradient-135: linear-gradient(135deg, var(--shade) 5%, var(--shade-dark) 40%);
+    --repeating-gradient: repeating-linear-gradient(-45deg,  var(--shade), var(--shade) 1px, var(--shade-dark) 1px, var(--shade-dark) 2px);
+    --light-shadow-color: var(--text-color);
+    --dark-shadow-color: var(--text-pop-color);
+    --lighter-shadow-color: var(--heading-color);
+    --light-dark: #e1e1e1;
+    --dark-light: #444;
+    --light-accent: #e1e1e1;
+    --dark-accent: #444;
+    --dark-dim: #444;
+    --just-light: #e1e1e1;
 }
 
 
@@ -293,6 +244,11 @@ header ul{
 
 header ul li{
     cursor: pointer;
+}
+
+.theme_toggle{
+    cursor: pointer;
+    transition: all 0.5s ease-out;
 }
 
 /* SVG CLASSES */
