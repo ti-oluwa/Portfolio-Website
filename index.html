@@ -25,7 +25,7 @@
             ti_oluwa
         </a>
         <ul>
-            <li><a class="in_view">Home</a></li>
+            <li><a class="">Home</a></li>
             <li id="about_section"><a>About</a></li>
             <li id="sq_section"><a>Skills</a></li>
             <li id="services_section"><a>Services</a></li>
@@ -837,41 +837,47 @@
 
 
     // dark mode
+    function detectAndSetTheme(){
+        if(window.matchMedia){  // if the system supports prefers-color-scheme
+            let prefers_dark = window.matchMedia('(prefers-color-scheme: dark)') // checks if the user's device is in dark mode. using the attribute, "matches", returns true if the user is in dark mode or false if not
 
-    let prefers_dark = window.matchMedia('(prefers-color-scheme: dark)') // checks if the user's device is in dark mode. using the attribute, "matches", returns true if the user is in dark mode or false if not
-    
-    // Check if the theme of the website has been set before. Use the theme if it has been set or choose the theme based on the system wide theme
-    if (!localStorage.getItem('tolu_portfolio_theme')){
-        switchToDark(prefers_dark.matches);
-    }else{
-        let setToDark = localStorage.getItem('tolu_portfolio_theme') == "dark" ? true : false;
-        switchToDark(setToDark);
-    }
+            // Check if the theme of the website has been set before. Use the theme if it has been set or choose the theme based on the system wide theme
+            if (!localStorage.getItem('tolu_portfolio_theme')){
+                switchToDark(prefers_dark.matches);
+            }else{
+                let setToDark = localStorage.getItem('tolu_portfolio_theme') == "dark" ? true : false;
+                switchToDark(setToDark);
+            }
 
-    prefers_dark.addEventListener('change', () => {
-        switchToDark(prefers_dark.matches)
-    })
+            // Add event listener to detect system wide theme change
+            prefers_dark.addEventListener('change', () => {
+                switchToDark(prefers_dark.matches);
+            });
+        }else{
+            if (localStorage.getItem('tolu_portfolio_theme')){
+                let setToDark = localStorage.getItem('tolu_portfolio_theme') == "dark" ? true : false;
+                switchToDark(setToDark);
+            }
+        };
+        
+    };
 
-
-    theme_toggle.addEventListener('click', ()=>{
-        let themeIsLight = isLight(); // values is true if the theme is light
-        switchToDark(themeIsLight); // if themeIsLight is true, the `to_dark` argument is set to true or else it is set to false
-    })
 
     function isLight(){
         // returns if the theme is light
         if(localStorage.getItem('theme')){
             return localStorage.getItem('tolu_portfolio_theme') == "light" ? true : false;
         };
-        return true;
-    }
+        return !body.classList.contains('dark');
+    };
+
 
     function switchToDark(to_dark=true){
         // sets theme to "dark" if to_dark is true otherwise, it sets theme to "light"
-        let theme = to_dark ? "dark" : "light";
-        localStorage.setItem('tolu_portfolio_theme', theme)
+        var theme = to_dark ? "dark" : "light";
+        localStorage.setItem('tolu_portfolio_theme', theme);
 
-        if(to_dark){
+        if(to_dark == true){
             // switches to dark mode
             body.classList.add('dark');
             theme_toggle.querySelector('use').href['animVal'] = './images/night-mode.svg#night-mode';
@@ -883,6 +889,14 @@
             theme_toggle.querySelector('use').href['baseVal'] = './images/light-mode.svg#light-mode';
         }
     };
+    
+
+    theme_toggle.addEventListener('click', ()=>{
+        var themeIsLight = isLight(); // values is true if the theme is light
+        switchToDark(themeIsLight); // if themeIsLight is true, the `to_dark` argument is set to true or else it is set to false
+    })
+
+    detectAndSetTheme();
     
 
     // intro observer

@@ -90,6 +90,7 @@ link[type=image/x-icon]{
 }
 
 
+
 .dark{
     scroll-behavior: smooth !important;
         --light-bg: #262e3c;
@@ -248,7 +249,16 @@ header ul li{
 
 .theme_toggle{
     cursor: pointer;
-    transition: all 0.5s ease-out;
+    transition: all 0.2s ease-out;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+
+
+.dark .theme_toggle{
+    filter: brightness(70%);
+    box-shadow: inset 1px 2px 4px #1f242e, inset -0.8px -0.8px 2px #b5bdc6;
 }
 
 /* SVG CLASSES */
