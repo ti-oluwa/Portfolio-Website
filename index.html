@@ -32,7 +32,7 @@
             <li id="portfolio_section"><a>Portfolio</a></li>
             <li id="contacts_section"><a>Contact</a></li>
         </ul>
-        <svg class="dark_dim theme_toggle" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" title="Switch theme">
+        <svg class="dark_dim theme_toggle" style="width: clamp(30px, 4vw, 35px); height: clamp(30px, 4vw, 35px);" title="Switch theme">
             <use xlink:href="./images/light-mode.svg#light-mode" href="./images/light-mode.svg#light-mode"></use>
         </svg>
     </header>
@@ -877,12 +877,12 @@
         var theme = to_dark ? "dark" : "light";
         localStorage.setItem('tolu_portfolio_theme', theme);
 
-        if(to_dark == true){
+        if(to_dark == true && !body.classList.contains('dark')){
             // switches to dark mode
             body.classList.add('dark');
             theme_toggle.querySelector('use').href['animVal'] = './images/night-mode.svg#night-mode';
             theme_toggle.querySelector('use').href['baseVal'] = './images/night-mode.svg#night-mode';
-        }else{
+        }else if ( to_dark == false && body.classList.contains('dark') ){
             // switches to light mode
             body.classList.remove('dark');
             theme_toggle.querySelector('use').href['animVal'] = './images/light-mode.svg#light-mode';

@@ -1,15 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Manrope');
-@import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=DM+Sans');
-@import url('https://fonts.googleapis.com/css?family=Cabin');
-@import url('https://fonts.googleapis.com/css?family=Secular+One');
-@import url('https://fonts.googleapis.com/css?family=Anton');
-@import url('https://fonts.googleapis.com/css?family=Cookie');
-@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
-@import url('https://fonts.googleapis.com/css2?family=Vesper+Libre&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Scope+One&family=Vesper+Libre&display=swap');
-
 
 
 *, *::before, *::after{
@@ -87,6 +78,7 @@ link[type=image/x-icon]{
     --dark-accent: #444;
     --dark-dim: #444;
     --just-light: #e1e1e1;
+    --darker-shadow: rgba(1, 1, 1, 0.15);
 }
 
 
@@ -120,6 +112,7 @@ link[type=image/x-icon]{
         --dark-accent: var(--accent-color);
         --dark-dim: #b5bdc6;
         --just-light: #e1e1e1;
+        --darker-shadow: rgba(20, 24, 31, 0.35);
 }
 
 
@@ -1728,7 +1721,7 @@ header ul li{
     background: var(--shade-trans);
     border-radius: 6px;
     padding: 20px;
-    box-shadow: 2px 8px 6px rgba(31, 31, 31, 0.15);
+    box-shadow: 2px 8px 6px var(--darker-shadow);
 }
 
 .enlarge{
