@@ -838,7 +838,7 @@
 
     // dark mode
     function detectAndSetTheme(){
-        if(window.matchMedia){  // if the system supports prefers-color-scheme
+        if(window.matchMedia('(prefers-color-scheme: dark)')){  // if the system supports prefers-color-scheme
             let prefers_dark = window.matchMedia('(prefers-color-scheme: dark)') // checks if the user's device is in dark mode. using the attribute, "matches", returns true if the user is in dark mode or false if not
 
             // Check if the theme of the website has been set before. Use the theme if it has been set or choose the theme based on the system wide theme
