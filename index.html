@@ -17,6 +17,11 @@
 </head>
 
 <body>
+    <script>
+        if (localStorage.getItem('tolu_portfolio_theme') && localStorage.getItem('tolu_portfolio_theme') == "dark"){
+                document.querySelector('body').classList.add('dark');
+        };
+    </script>
     <header class="container">
         <a href="#" id="header_name">
             <svg class="dark_light" style="width: clamp(20px, 2vw, 25px); height: clamp(20px, 2vw, 25px);">
@@ -877,7 +882,7 @@
         var theme = to_dark ? "dark" : "light";
         localStorage.setItem('tolu_portfolio_theme', theme);
 
-        if(to_dark == true && !body.classList.contains('dark')){
+        if(to_dark == true){
             // switches to dark mode
             body.classList.add('dark');
             theme_toggle.querySelector('use').href['animVal'] = './images/night-mode.svg#night-mode';
