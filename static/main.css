@@ -161,7 +161,7 @@ h1, h2, h3, h4, h5, h6, b, span{
 
 p, i, a, small, li{
     color: var(--text-color);
-    font-family: 'Manrope';
+    font-family: 'Reckless';
     font-weight: 500;
 }
 
@@ -173,14 +173,14 @@ a{
 
 ::placeholder{
     color: var(--text-color);
-    font-family: 'Manrope';
+    font-family: 'Reckless';
     font-weight: 500;
     font-size: clamp(14px, 2vw, 16px);
 }
 
 input, textarea{
     color: var(--text-color);
-    font-family: 'Manrope';
+    font-family: 'Reckless';
     font-weight: 500;
     font-size: clamp(14px, 2vw, 16px);
     outline: none;
@@ -537,7 +537,7 @@ header ul li{
     line-height: 1.6;
     text-align: center;
     font-size: clamp(14px, 2vw, 16px);
-    font-family: "Manrope";
+    font-family: "Reckless";
 }
 
 .notification_card button{
@@ -546,7 +546,7 @@ header ul li{
     width: 90%;
     padding: 10px 10px;
     border-radius: 6px;
-    font-family: "DM Sans";
+    font-family: "Reckless";
     font-size: clamp(14px, 2vw, 16px);
     background: var(--accent-color-lighter);
     color: var(--light);
@@ -792,7 +792,7 @@ header ul li{
 .scroll_down_section p{
     font-weight: 600;
     font-size: clamp(11px, 2vw, 14px);
-    font-family: 'DM Sans';
+    font-family: 'Reckless';
 }
 
 /* ABOUT SECTION */
@@ -839,6 +839,10 @@ header ul li{
     width: 300px;
     height: 350px;
     border-radius: 2px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
 
@@ -1195,7 +1199,7 @@ header ul li{
     align-items: center;
     gap: 5px;
     font-size: clamp(16px, 4vw, 18px);
-    font-family: 'DM Sans';
+    font-family: 'Reckless';
     cursor: pointer;
     padding: 5px 0;
 }
@@ -1820,7 +1824,7 @@ header ul li{
 .testimony small{
     font-size: clamp(12px, 2vw, 14px);
     font-weight: 600;
-    font-family: 'DM Sans';
+    font-family: 'Reckless';
 }
 
 .testimony p{
@@ -1951,7 +1955,7 @@ header ul li{
     outline: none;
     font-size: clamp(16px, 4vw, 18px);
     font-weight: 600;
-    font-family: 'DM Sans';
+    font-family: 'Reckless';
     background: var(--accent-color);
     color: #f5f5f5;
     box-shadow: inset -2px -2px 4px var(--dark-bg),
