@@ -27,7 +27,7 @@
             <svg class="dark_light" style="width: clamp(20px, 2vw, 25px); height: clamp(20px, 2vw, 25px);">
                 <use xlink:href="./images/hive.svg#hive" href="./images/hive.svg#hive"></use>
             </svg>
-            ti_oluwa
+            Toluwalase Afolayan
         </a>
         <ul>
             <li><a class="">Home</a></li>
@@ -133,20 +133,23 @@
                 </div>
     
                 <div class="intro_content">
-                    <h1>
-                        Hello! I'm Tolu...
-                    </h1>
+                    <div class="intro">
+                        <span>Hey there👋! </span><span>I'm Tolu Afolayan</span>
+                    </div>
                     <h3>A web developer</h3>
-                    <p>
-                        ...with high level skill and solutions to web design problems.
-                        I build fast and affordable websites that work by leveraging the power of modern web development tools.
+                    <div class="intro_text">
+                        <p>
+                            ...with high level skill and solutions to web design problems.
+                            I build fast and affordable websites that work by leveraging the power of modern web development tools.
+                        </p>
+                    
                         <p>
                             As you browse through my portfolio, you will find a selection of my best work, showcasing my skills. I am
                             always looking for new challenges and opportunities to expand my skills, so if you have a project in
                             mind, don't hesitate to get in touch. I would love to hear from you and see how I can help bring your vision to
                             life.
                         </p>
-                    </p>
+                    </div>
                     <div class="btns">
                         <a class="download_btn" onclick="downloadFile(`./files/Tolu's Resume.pdf`, `Tolu's Resume.pdf`, event.target)">
                             Download CV
@@ -537,7 +540,7 @@
             <div class="carousel_container">
                 <div class="carousel_body">
                     <div class="carousel_nav">
-                        <svg class="dark_light" id="move_left" style="width: clamp(20px, 4vw, 25px); height: clamp(20px, 4vw, 25px); opacity: 0.3;">
+                        <svg class="dark_light" id="move_left" style="width: clamp(45px, 4vw, 70px); height: clamp(45px, 4vw, 70px); opacity: 0.3;">
                             <use xlink:href="./images/left_arrow.svg#left_arrow" href="./images/left_arrow.svg#left_arrow"></use>
                         </svg>
                     </div>
@@ -609,7 +612,7 @@
                     </div>
     
                     <div class="carousel_nav">
-                        <svg class="dark_dim" id="move_right" style="width: clamp(20px, 4vw, 25px); height: clamp(20px, 4vw, 25px);">
+                        <svg class="dark_dim" id="move_right" style="width: clamp(45px, 4vw, 70px); height: clamp(45px, 4vw, 70px);">
                             <use xlink:href="./images/right_arrow.svg#right_arrow" href="./images/right_arrow.svg#right_arrow"></use>
                         </svg>
                     </div>
@@ -839,6 +842,8 @@
     let message_form = document.querySelector('.contact_form');
     let notification_card = document.querySelector('.notification_card');
     let theme_toggle = document.querySelector('.theme_toggle');
+    let move_right = document.querySelector('#move_right');
+    let intro_text = document.querySelector('.intro_text');
 
 
     // dark mode
@@ -959,9 +964,13 @@
         entries.forEach((entry) => {
             if(entry.isIntersecting){
                 entry.target.classList.add('opacify');
+            }else{
+                entry.target.classList.remove('opacify');
             }
         });
     },);
+
+
     
     services.forEach((service) => {
         service_observer.observe(service);
@@ -1218,11 +1227,11 @@
         })
     }
 
+    let left_nav = document.querySelector('#move_left');
+    let right_nav = document.querySelector('#move_right');
+
     carousel.addEventListener('scroll', () => {
         highlightDot();
-
-        let left_nav = document.querySelector('#move_left');
-        let right_nav = document.querySelector('#move_right');
 
         if ( carousel.scrollLeft == (carousel_items[0].offsetWidth * (carousel_items.length - 1)) || carousel.scrollLeft >= (carousel_items[0].offsetWidth * (carousel_items.length - 1) - 20) ){
             right_nav.style.opacity = '0.5';
@@ -1238,6 +1247,27 @@
             left_nav.style.opacity = '1';
             left_nav.style.pointerEvents = 'auto';
         };
+
+    });
+
+    carousel_items_observer = new IntersectionObserver((entries) => {
+        entries.forEach( (entry) => {
+            if( entry.isIntersecting && (entry.target) == carousel_items[0] ){
+                right_nav.classList.add('point_right');
+            }else if ( !entry.isIntersecting && (entry.target) == carousel_items[0] ){
+                right_nav.classList.remove('point_right');
+            };
+
+            if( entry.isIntersecting && (entry.target) == carousel_items[carousel_items.length - 1] ){
+                left_nav.classList.add('point_left');
+            }else{
+                left_nav.classList.remove('point_left');
+            };
+        });
+    }, {threshold:0.5});
+   
+    carousel_items.forEach((item) => {
+        carousel_items_observer.observe(item);
     });
     
     // Contact form
