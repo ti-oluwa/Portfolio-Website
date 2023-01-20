@@ -79,6 +79,7 @@ link[type=image/x-icon]{
 :root{
     scroll-behavior: smooth !important;
     --light-bg: #DDD0C8;
+    --light-bg-trans: rgba(221, 208, 200, 0.8);
     /* --light-bg: #f5f5f5; */
     --dark-bg: #1f1f1f;
     --light: #d0d0d0;
@@ -113,6 +114,7 @@ link[type=image/x-icon]{
 .dark{
     scroll-behavior: smooth !important;
         --light-bg: #262e3c;
+        --light-bg-trans: rgba(38, 46, 60, 0.8);
         /* --light-bg: #f5f5f5; */
         --dark-bg: #1d1d1e;
         --light: #1f242e;
@@ -157,12 +159,16 @@ h1, h2, h3, h4, h5, h6, b, span{
     color: var(--heading-color);
     font-family: 'Reckless';
     font-weight: 600;
+    transition: color 1.2s ease-out !important;
+
 }
 
 p, i, a, small, li{
     color: var(--text-color);
     font-family: 'Reckless';
     font-weight: 500;
+    transition: color 1.2s ease-out !important;
+
 }
 
 a{
@@ -185,6 +191,8 @@ input, textarea{
     font-size: clamp(14px, 2vw, 16px);
     outline: none;
     background: none;
+    transition: all 1.2s ease-out !important;
+
 }
 
 button{
@@ -226,10 +234,24 @@ header{
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    /* font-family: 'Montserrat'; */
     gap: 40px;
     margin-bottom: clamp(20px, 2vw, 60px) !important;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    padding: 0 5%;
+    background: var(--light-bg-trans);
+    backdrop-filter: blur(5px);
+    isolation: isolate;
+    transition: box-shadow 0.5s ease;
+    transition: background 1.2s ease-out !important;
 }
+
+.add_shadow{
+    box-shadow: 0 0 10px var(--darker-shadow);
+}
+
 
 header #header_name{
     display: flex;
@@ -312,7 +334,7 @@ header ul li{
 #go_up{
     position: fixed;
     z-index: 100;
-    bottom: clamp(80px, 4vw, 100px);
+    bottom: clamp(20px, 4vw, 40px);
     right: clamp(20px, 4vw, 30px);
     width: 40px;
     height: 40px;
@@ -322,6 +344,8 @@ header ul li{
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
+    transition: background 1.2s ease-out !important;
+
 }
 
 .hide{
@@ -347,6 +371,8 @@ header ul li{
     align-items: center;
     z-index: 100;
     gap: clamp(22px, 2vw, 48px);
+    transition: background 1.2s ease-out !important;
+
 }
 
 
@@ -423,6 +449,8 @@ header ul li{
                             2px 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.1s ease;
     animation: show_menu_btn 0.2s ease-out forwards;
+    transition: background 1.2s ease-out !important;
+
 }
 
 @keyframes show_menu_btn {
@@ -556,13 +584,14 @@ header ul li{
 /* INTRO SECTION */
 
 .intro_section{
+    margin-top: 120px;
     display: flex;
     /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
     min-height: 70vh;
     gap: clamp(32px, 6vw, 76px);
-    margin-block: 20px;
+    margin-bottom: 20px;
     opacity: 0;
     transform: translateY(-50px);
 }

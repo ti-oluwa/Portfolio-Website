@@ -22,7 +22,7 @@
                 document.querySelector('body').classList.add('dark');
         };
     </script>
-    <header class="container">
+    <header>
         <a href="#" id="header_name">
             <svg class="dark_light" style="width: clamp(20px, 2vw, 25px); height: clamp(20px, 2vw, 25px);">
                 <use xlink:href="./images/hive.svg#hive" href="./images/hive.svg#hive"></use>
@@ -136,7 +136,7 @@
                     <div class="intro">
                         <span>Hey there👋! </span><span>I'm Tolu Afolayan</span>
                     </div>
-                    <h3>A web developer</h3>
+                    <h3>Ingenious web developer</h3>
                     <div class="intro_text">
                         <p>
                             ...with high level skill and solutions to web design problems.
@@ -1125,7 +1125,15 @@
         };
         
         hideNotification();
+
+        if (document.documentElement.scrollTop > 10){
+            document.querySelector('header').classList.add('add_shadow');
+        }else{
+            document.querySelector('header').classList.remove('add_shadow');
+        };
     });
+
+    
 
 
     // Tab switcher
