@@ -927,13 +927,12 @@
     const opacity_observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if(entry.isIntersecting){
-                entry.target.classList.add('.opace');
+                entry.target.classList.add('opace');
             }else{
-                entry.target.classList.remove('.opace');
+                entry.target.classList.remove('opace');
             }
         });
     });
-
     opacity_observer.observe(call_to_action);
 
     // trophy observer
@@ -1012,30 +1011,33 @@
     const section_link_observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting){
-                let header_link = document.querySelector(`header ul li[id="${entry.target.className}"] a`);
-
-                if(entry.target.className == "intro_section"){
+                if(entry.target.classList.contains("intro_section")){
                     let header_link = document.querySelector(`header ul li[id="home"] a`);
-                    console.log(header_link)
+                    if (header_link && !header_link.classList.contains('active')){
+                        header_link.classList.add('active');  
+                    }
+                };
 
-                }
-
+                let header_link = document.querySelector(`header ul li[id="${entry.target.className}"] a`);
                 if (header_link && !header_link.classList.contains('active')){
                     header_link.classList.add('active');  
-                }
+                };
                 
             }else{
-                let header_link = document.querySelector(`header ul li[id="${entry.target.className}"] a`);
-
-                if(entry.target.className == "intro_section"){
+                if(entry.target.classList.contains("intro_section")){
                     let header_link = document.querySelector(`header ul li[id="home"] a`);
-                }
+                    if (header_link && header_link.classList.contains('active')){
+                        header_link.classList.remove('active');  
+                    }
+                };
 
+                let header_link = document.querySelector(`header ul li[id="${entry.target.className}"] a`);
                 if (header_link && header_link.classList.contains('active')){
                     header_link.classList.remove('active');
-                }            
+                }  
+      
             }
-        })
+        });
     },{threshold: 0.75});
 
     section_observer.observe(about_section);
