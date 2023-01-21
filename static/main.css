@@ -2106,7 +2106,7 @@ footer .copy{
 }
 
 .point_right{
-    animation: point_right ease-out 0.3s alternate-reverse 5;
+    animation: point_right ease-out 0.3s alternate-reverse 4;
     animation-delay: 0.2s;
 }
 
@@ -2119,7 +2119,7 @@ footer .copy{
 }
 
 .point_left{
-    animation: point_left ease 0.3s alternate-reverse 5;
+    animation: point_left ease 0.3s alternate-reverse 4;
     animation-delay: 0.2s;
 }
 
