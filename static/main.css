@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Manrope');
+/* @import url('https://fonts.googleapis.com/css?family=Manrope');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-@import url('https://fonts.googleapis.com/css?family=DM+Sans');
+@import url('https://fonts.googleapis.com/css?family=DM+Sans'); */
 
 @font-face {
-    font-family: 'Manrope';
-    src: url('Manrope-VariableFont_wght.woff2') format('woff2');
+    font-family: 'Nuckle';
+    src: url('Nuckle-Medium.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'DM Sans';
     src: url('DMSans-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-}
+} */
 
 @font-face {
     font-family: 'Montserrat';
@@ -164,7 +164,7 @@ h1, h2, h3, h4, h5, h6, b, span{
 
 p, i, a, small, li{
     color: var(--text-color);
-    font-family: 'Reckless';
+    font-family: 'Nuckle';
     font-weight: 500;
     transition: color 1.2s ease-out !important;
 
@@ -272,12 +272,33 @@ header a{
     font-weight: 600;
     color: var(--text-color);
     font-size: clamp(12px, 4vw, 16px);
-    transition: color 0.05s ease !important;
 }
 
-header ul a:hover{
-    color: var(--accent-color);
+header ul a{
+    position: relative;
 }
+
+header ul a::before{
+    display: inline-block;
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.6s ease;
+}
+
+
+.active::before{
+    width: 100% !important;
+}
+
+header ul a:hover::before{
+    width: 100%;
+}
+
+
 
 header ul{
     display: flex;
@@ -699,12 +720,17 @@ header ul li{
     animation-delay: 1s;
 }
 
+
 @keyframes opace {
     from{
         opacity: 0;
     }to{
         opacity: 1;
     }
+}
+
+.opace{
+    animation: opace 1.2s ease forwards !important;
 }
 
 
@@ -1644,7 +1670,7 @@ header ul li{
 }
 
 .carousel_item_body h3{
-    font-size: clamp(14px, 2vw, 18px);
+    font-size: clamp(14px, 4vw, 20px);
 }
 
 .carousel_item_body p{
@@ -1714,7 +1740,7 @@ header ul li{
     align-items: center;
     padding: 0 clamp(20px, 4vw, 40px);
     transition: background 1.2s ease-out !important;
-
+    opacity: 0;
 }
 
 .call_to_action_body{
@@ -2184,16 +2210,11 @@ footer .copy{
         justify-content: center;
     }
 
-    .intro_section .intro_img{
-        order: 1;
+    .intro_img{
+        display: none;
     }
 
-    /* .intro_img{
-        border-radius: 50%;
-    } */
-
     .intro_section .main{
-        order: 2;
         width: 100%;
     }
 
@@ -2212,6 +2233,11 @@ footer .copy{
     }
     .about_content{
         width: 100%;
+    }
+
+    #go_up{
+        bottom: 20px;
+        left: 20px;
     }
 }
 
@@ -2281,10 +2307,14 @@ footer .copy{
         max-height: 350px;
     }
 
+    .intro_section .main{
+        order: 1;
+    }
+
     .main .socials{
         flex-direction: row;
         border-left: none;
-        /* gap: 20px; */
+        order: 2;
         padding: 14px 20px;
         align-self: flex-start;
         border-left: 2px solid var(--text-color);
@@ -2328,10 +2358,7 @@ footer .copy{
         flex-direction: column;
     }
 
-    #go_up{
-        bottom: 20px;
-        left: 20px;
-    }
+    
 
     @keyframes remove_menu_item {
         0% {

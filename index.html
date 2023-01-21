@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property='og:title' content="Tolu's Portfolio"/>
+    <meta property='og:title' content="Toluwalase's Portfolio"/>
     <meta property='og:image' content="https://github.com/ti-oluwa/Portfolio-Website/blob/master/images/bust.webp">
     <meta property='og:description' content='Check out my most recent work and resume.'/>
     <meta property='og:url' content='https://bit.ly/dev_tioluwa'/>
     <meta name="description" content="Afolayan Daniel Toluwalase is a web developer, mostly backend focused. This is Afolayan Daniel Toluwalase's portfolio website containing his CV and most recent works. 
     It also has link to his social media pages and various means of contacting him. You can also send a mail to him through the website. This website is meant to attract potential clients for web development related jobs">
 
-    <title>Tolu's Portfolio</title>
+    <title>Daniel Toluwalase Afolayan</title>
     <link rel="stylesheet" href="./static/main.css">
     <link rel="icon" type="image/x-icon" href="./images/hive2.svg#hive">
 </head>
@@ -30,9 +30,9 @@
             Toluwalase Afolayan
         </a>
         <ul>
-            <li><a class="">Home</a></li>
+            <li id="home"><a>Home</a></li>
             <li id="about_section"><a>About</a></li>
-            <li id="sq_section"><a>Skills</a></li>
+            <li id="skills_section"><a>Skills</a></li>
             <li id="services_section"><a>Services</a></li>
             <li id="portfolio_section"><a>Portfolio</a></li>
             <li id="contacts_section"><a>Contact</a></li>
@@ -596,7 +596,7 @@
                                 <div class="img_overlay">
                                     <h3>Authwiki</h3>
                                     <p>A library of auth codes</p>
-                                    <a href="www.authwiki.herokuapp.com" title="Click here to visit the project website"><img src="./images/link.svg" alt=""></a>
+                                    <a href="https://github.com/zuri-training/AuthWiki_Team4" title="Click here to visit the project repository"><img src="./images/link.svg" alt=""></a>
                                 </div>
                             </div>
 
@@ -606,7 +606,7 @@
                                     This website is a library of tools and resources used for validation and authentication in various tech stacks. This library includes a variety of code types. Whether you are a developer looking for reliable authentication solution
                                      or a user looking to protect online accounts, this site has something for you. Explore today!
                                 </p>
-                                <a href="www.authwiki.herokuapp.com">View site</a>
+                                <a href="https://github.com/zuri-training/AuthWiki_Team4">View repo</a>
                             </div>
                         </div>
                     </div>
@@ -796,7 +796,7 @@
                         </svg>
                     </a>
 
-                    <a href="https://www.linkedin.com/shareArticle?url=https://bit.ly/dev_tioluwa&title=Tolu's%20Portfolio&summary=Check%20out%20my%20recent%20work%20and%20resume" target="_blank">
+                    <a href="https://www.linkedin.com/shareArticle?url=https://bit.ly/dev_tioluwa&title=Toluwlase's%20Portfolio&summary=Check%20out%20my%20recent%20work%20and%20resume" target="_blank">
                         <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on linkedin">
                             <use xlink:href="./images/linked-in.svg#linked-in" href="./images/linked-in.svg#linked-in"></use>
                         </svg>
@@ -817,6 +817,7 @@
     let portfolio_section = document.querySelector('.portfolio_section');
     let contacts_section = document.querySelector('.contacts_section');
     let qualifications_section = document.querySelector('.qualifications_section');
+    let call_to_action = document.querySelector('.call_to_action');
     let skills = document.querySelectorAll('.skill');
     let skill_items = document.querySelectorAll('.skill_item');
     let trophies = document.querySelectorAll('.trophy');
@@ -910,6 +911,7 @@
     detectAndSetTheme();
     
 
+
     // intro observer
     const intro_observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -921,6 +923,18 @@
 
     intro_observer.observe(intro_section);
 
+    // opacity observer
+    const opacity_observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('.opace');
+            }else{
+                entry.target.classList.remove('.opace');
+            }
+        });
+    });
+
+    opacity_observer.observe(call_to_action);
 
     // trophy observer
     const trophy_observer = new IntersectionObserver((entries) => {
@@ -994,11 +1008,49 @@
         })
     },{threshold: 0.75,});
 
+    // section link observer 
+    const section_link_observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting){
+                let header_link = document.querySelector(`header ul li[id="${entry.target.className}"] a`);
+
+                if(entry.target.className == "intro_section"){
+                    let header_link = document.querySelector(`header ul li[id="home"] a`);
+                    console.log(header_link)
+
+                }
+
+                if (header_link && !header_link.classList.contains('active')){
+                    header_link.classList.add('active');  
+                }
+                
+            }else{
+                let header_link = document.querySelector(`header ul li[id="${entry.target.className}"] a`);
+
+                if(entry.target.className == "intro_section"){
+                    let header_link = document.querySelector(`header ul li[id="home"] a`);
+                }
+
+                if (header_link && header_link.classList.contains('active')){
+                    header_link.classList.remove('active');
+                }            
+            }
+        })
+    },{threshold: 0.75});
+
     section_observer.observe(about_section);
     section_observer.observe(skills_section);
     section_observer.observe(services_section);
     section_observer.observe(portfolio_section);
     section_observer.observe(contacts_section);
+
+    section_link_observer.observe(intro_section);
+    section_link_observer.observe(about_section);
+    section_link_observer.observe(skills_section);
+    section_link_observer.observe(services_section);
+    section_link_observer.observe(portfolio_section);
+    section_link_observer.observe(contacts_section);
+
 
     //testimonial observer
 
