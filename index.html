@@ -916,9 +916,11 @@
         entries.forEach((entry) => {
             if(entry.isIntersecting){
                 entry.target.classList.add('stagger_anim');
+            }else{
+                entry.target.classList.remove('stagger_anim');
             }
         });
-    });
+    }, {rootMargin:"10% 0%"});
 
     
     const stagger_elements = document.querySelectorAll('.stagger_element');
@@ -931,7 +933,7 @@
             child.style.animationDelay = `${delay}s`;
             delay += 0.5;
         };
-    },{rootMargin:"10% 0%"});
+    });
     
 
     

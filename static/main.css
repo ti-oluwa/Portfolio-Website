@@ -2172,7 +2172,7 @@ footer .copy{
 
 
 .stagger_element > *{
-    transform: translateY(100px);
+    transform: translateY(100%);
     opacity: 0;
     z-index: -1;
 }
@@ -2183,7 +2183,7 @@ footer .copy{
 
 @keyframes stag {
     0%{
-        transform: translateY(100px);
+        transform: translateY(100%);
         opacity: 0;
         z-index: -1;
     }
