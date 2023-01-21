@@ -154,7 +154,6 @@ link[type=image/x-icon]{
 }
 
 
-
 h1, h2, h3, h4, h5, h6, b, span{
     color: var(--heading-color);
     font-family: 'Reckless';
@@ -175,6 +174,12 @@ a{
     text-decoration: none;
     transition: 0.05s ease;
     font-family: "Reckless";
+}
+
+a, button{
+    cursor: pointer;
+    transition: background 1.2s ease-out !important;
+
 }
 
 ::placeholder{
@@ -267,7 +272,7 @@ header a{
     font-weight: 600;
     color: var(--text-color);
     font-size: clamp(12px, 4vw, 16px);
-    transition: 0.05s ease;
+    transition: color 0.05s ease !important;
 }
 
 header ul a:hover{
@@ -291,6 +296,7 @@ header ul li{
 
 .theme_toggle{
     cursor: pointer;
+    transition: background 1.2s ease-out !important;
     transition: all 0.2s ease-out;
     border-radius: 50%;
     padding: 5px;
@@ -447,9 +453,9 @@ header ul li{
     box-shadow: inset 2px 2px 4px var(--light-dark),
                             inset -2px -2px 4px var(--dark-bg),
                             2px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 1.2s ease-out !important;
     transition: all 0.1s ease;
     animation: show_menu_btn 0.2s ease-out forwards;
-    transition: background 1.2s ease-out !important;
 
 }
 
@@ -1679,6 +1685,7 @@ header ul li{
     border-radius: 50%;
     background-color: var(--shade);
     cursor: pointer;
+    transition: background 1.2s ease-out !important;
     transition: all 0.2s ease-in-out;
 }
 
@@ -1704,6 +1711,8 @@ header ul li{
     justify-content: flex-start;
     align-items: center;
     padding: 0 clamp(20px, 4vw, 40px);
+    transition: background 1.2s ease-out !important;
+
 }
 
 .call_to_action_body{
@@ -1803,6 +1812,8 @@ header ul li{
     border-radius: 6px;
     padding: 20px;
     box-shadow: 2px 8px 6px var(--darker-shadow);
+    transition: all 1.2s ease-out !important;
+
 }
 
 .enlarge{
@@ -1822,6 +1833,7 @@ header ul li{
     height: clamp(40px, 4vw, 55px);
     border-radius: 50%;
     background: var(--shade-dark);
+    transition: background 1.2s ease-out !important;
 }
 
 .testifier_details div{
@@ -1882,6 +1894,7 @@ header ul li{
     align-items: flex-start;
     gap: 40px clamp(20px, 4vw, 60px);
     padding: clamp(0px, 4vw, 20px);
+    
 }
 
 .contacts{
