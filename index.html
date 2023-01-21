@@ -844,6 +844,7 @@
     let theme_toggle = document.querySelector('.theme_toggle');
     let move_right = document.querySelector('#move_right');
     let intro_text = document.querySelector('.intro_text');
+    let carousel_item_imgs = document.querySelectorAll('.carousel_item_img img');
 
 
     // dark mode
@@ -975,6 +976,7 @@
     services.forEach((service) => {
         service_observer.observe(service);
     })
+
 
 
     // section observer
