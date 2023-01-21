@@ -196,8 +196,8 @@ input, textarea{
     font-size: clamp(14px, 2vw, 16px);
     outline: none;
     background: none;
+    transition: border 0.2s ease !important;
     transition: all 1.2s ease-out !important;
-
 }
 
 button{
@@ -210,16 +210,16 @@ button:disabled{
     pointer-events: none;
 }
 
-input:invalid{
-    border-color: var(--accent-color);
+input[type=email]:not(:placeholder-shown):invalid{
+    border-bottom-color: hsl(348, 83%, 67%) !important;
 }
 
-input:focus-within{
-    border-bottom-color: var(--accent-color) !important;
+input:is(:focus-within, :not(:placeholder-shown)){
+    border-bottom: 2px solid var(--accent-color) !important;
 }
 
-textarea:focus-within{
-    border-bottom-color: var(--accent-color) !important;
+textarea:is(:focus-within, :not(:placeholder-shown)){
+    border-bottom: 2px solid var(--accent-color) !important;
 }
 
 *::-webkit-scrollbar{
@@ -264,6 +264,8 @@ header{
 .add_shadow{
     box-shadow: 0 0 10px var(--darker-shadow);
 }
+
+
 
 
 header #header_name{
@@ -705,7 +707,7 @@ header ul li{
 }
 
 .intro span{
-    font-size: clamp(28px, 4vw, 60px);
+    font-size: clamp(40px, 4vw, 60px);
     font-weight: 600;
     color: var(--heading-color);
 }
@@ -2166,6 +2168,34 @@ footer .copy{
     }to{
         transform: translateX(-8px);
     }
+}
+
+
+.stagger_element > *{
+    transform: translateY(100%);
+    opacity: 0;
+    z-index: -1;
+}
+
+.stagger_anim{
+    animation: stag 1s ease forwards !important;
+}
+
+@keyframes stag {
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+        z-index: -1;
+    }
+    /* 50%{
+        opacity: 0;
+    } */
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+        z-index: 0;
+    }
+
 }
 
 /* MEDIA QUERIES */

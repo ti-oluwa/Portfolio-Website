@@ -133,7 +133,7 @@
                 </div>
     
                 <div class="intro_content">
-                    <div class="intro">
+                    <div class="intro" class="stagger_element">
                         <span>Hey there👋! </span><span>I'm Tolu Afolayan</span>
                     </div>
                     <h3>Ingenious web developer</h3>
@@ -184,7 +184,7 @@
 
         <!-- ABOUT SECTION -->
         <section class="about_section">
-            <div class="section_head">
+            <div class="section_head stagger_element">
                 <h1>About Me</h1>
                 <p>Get to know me</p>
             </div>
@@ -224,7 +224,7 @@
 
         <!-- SKILLS AND QUALIFICATIONS -->
         <section class="sq_section">
-            <div class="section_head">
+            <div class="section_head stagger_element">
                 <h1>Skills</h1>
                 <p>My technical know how and educational background</p>
             </div>
@@ -407,7 +407,7 @@
                 </div>
 
                 <div class="q_section" id="education">
-                    <div class="event">
+                    <div class="event stagger_element">
                         <h3>Petroleum Engineering, B.Eng</h3>
                         <p>FUPRE - Delta, Nigeria.</p>
                         <small>
@@ -416,7 +416,7 @@
                         </small>
                     </div>
 
-                    <div class="event">
+                    <div class="event stagger_element">
                         <h3>Frontend development</h3>
                         <p>FreeCodeCamp.Org</p>
                         <small>
@@ -425,7 +425,7 @@
                         </small>
                     </div>
 
-                    <div class="event">
+                    <div class="event stagger_element">
                         <h3>Backend development (Python)</h3>
                         <p>I4G X ZURI Training - Nigeria</p>
                         <small>
@@ -451,7 +451,7 @@
 
         <!-- SERVICES SECTION -->
         <section class="services_section">
-            <div class="section_head">
+            <div class="section_head stagger_element">
                 <h1>Services</h1>
                 <p>Services I render</p>
             </div>
@@ -532,7 +532,7 @@
 
         <!-- PORTFOLIO SECTION -->
         <section class="portfolio_section">
-            <div class="section_head">
+            <div class="section_head stagger_element">
                 <h1>Portfolio</h1>
                 <p>My most recent works</p>
             </div>
@@ -647,7 +647,7 @@
 
         <!-- TESTIMONIALS -->
         <section class="testimonials_section">
-            <div class="section_head">
+            <div class="section_head stagger_element">
                 <h1>Testimonials</h1>
                 <p>Reviews from clients</p>
             </div>
@@ -718,7 +718,7 @@
 
         <!-- CONTACTS SECTION -->
         <section class="contacts_section">
-            <div class="section_head">
+            <div class="section_head stagger_element">
                 <h1>Contact Me</h1>
                 <p>Get in touch or get a quote</p>
             </div>
@@ -761,7 +761,7 @@
                         <input type="text" id="name" placeholder="Name" required title="Enter your full name preferably">
                         <input type="email" id="email" placeholder="Email address" required title="Enter an email address i can contact you with">
                     </div>
-                    <textarea name="" id="message" placeholder="Message or Project description" spellcheck="true" title="Type a message. Give a concise description of the project you have in mind."></textarea>
+                    <textarea name="" id="message" placeholder="Message or Project description" spellcheck="true" title="Type a message. Give a concise description of the project you have in mind." required></textarea>
                     <button id="submit" disabled aria-details="Send a message to me">
                         Send message
                         <svg class="just_light" style="width: clamp(15px, 4vw, 25px); height: clamp(15px, 4vw, 25px);">
@@ -911,7 +911,30 @@
     detectAndSetTheme();
     
 
+    // stagger animation
+    observe_to_stagger = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('stagger_anim');
+            }
+        });
+    });
 
+    
+    const stagger_elements = document.querySelectorAll('.stagger_element');
+
+    stagger_elements.forEach((element) => {
+        let delay = 0;
+        for(let i = 0; i < element.children.length; i++){
+            let child = element.children[i]
+            observe_to_stagger.observe(child);
+            child.style.animationDelay = `${delay}s`;
+            delay += 0.5;
+        };
+    });
+    
+
+    
     // intro observer
     const intro_observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -1338,7 +1361,7 @@
     message_form.addEventListener('input', ()=>{
         let validity = [];
         message_form.querySelectorAll('input, textarea').forEach((field) => {
-            if(field.value != ''){
+            if(field.checkValidity() == true){
                 validity.push(true);
             }else{
                 validity.push(false);
