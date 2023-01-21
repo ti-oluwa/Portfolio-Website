@@ -924,14 +924,14 @@
     const stagger_elements = document.querySelectorAll('.stagger_element');
 
     stagger_elements.forEach((element) => {
-        let delay = 0;
+        let delay = 1.0;
         for(let i = 0; i < element.children.length; i++){
             let child = element.children[i]
             observe_to_stagger.observe(child);
             child.style.animationDelay = `${delay}s`;
             delay += 0.5;
         };
-    });
+    },{rootMargin:"10% 0%"});
     
 
     

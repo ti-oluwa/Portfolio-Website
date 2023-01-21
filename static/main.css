@@ -2172,24 +2172,21 @@ footer .copy{
 
 
 .stagger_element > *{
-    transform: translateY(100%);
+    transform: translateY(100px);
     opacity: 0;
     z-index: -1;
 }
 
 .stagger_anim{
-    animation: stag 1s ease forwards !important;
+    animation: stag 0.5s ease-in forwards !important;
 }
 
 @keyframes stag {
     0%{
-        transform: translateY(100%);
+        transform: translateY(100px);
         opacity: 0;
         z-index: -1;
     }
-    /* 50%{
-        opacity: 0;
-    } */
     100%{
         transform: translateY(0);
         opacity: 1;
