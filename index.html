@@ -14,7 +14,18 @@
     <title>Daniel Toluwalase Afolayan</title>
     <link rel="stylesheet" href="./static/main.css">
     <link rel="icon" type="image/x-icon" href="./images/hive2.svg#hive">
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 </head>
+<script>
+    document.onreadystatechange = ()=>{
+        if(document.readyState == "complete"){
+            document.documentElement.style.display = '';
+        }else{
+            document.documentElement.style.display = 'none';
+        }
+    }
+</script>
 
 <body>
     <script>
@@ -133,8 +144,9 @@
                 </div>
     
                 <div class="intro_content">
-                    <div class="intro" class="stagger_element">
-                        <span>Hey there👋! </span><span>I'm Tolu Afolayan</span>
+                    <div class="intro" class="anime_text_stagger">
+                        <span>Hey there👋!</span>
+                        <span>I'm Tolu Afolayan</span>
                     </div>
                     <h3>Ingenious web developer</h3>
                     <div class="intro_text">
@@ -184,9 +196,13 @@
 
         <!-- ABOUT SECTION -->
         <section class="about_section">
-            <div class="section_head stagger_element">
-                <h1>About Me</h1>
-                <p>Get to know me</p>
+            <div class="section_head">
+                <h1 class="anime_text">
+                    <span>About Me</span>
+                </h1>
+                <p class="anime_text">
+                    <span>Get to know me</span>
+                </p>
             </div>
 
             <div class="section_content">
@@ -224,9 +240,13 @@
 
         <!-- SKILLS AND QUALIFICATIONS -->
         <section class="sq_section">
-            <div class="section_head stagger_element">
-                <h1>Skills</h1>
-                <p>My technical know how and educational background</p>
+            <div class="section_head">
+                <h1 class="anime_text">
+                    <span>Skills</span>
+                </h1>
+                <p class="anime_text">
+                    <span>My technical know how and educational background</span>
+                </p>
             </div>
 
             <div class="tab_switcher">
@@ -407,27 +427,39 @@
                 </div>
 
                 <div class="q_section" id="education">
-                    <div class="event stagger_element">
-                        <h3>Petroleum Engineering, B.Eng</h3>
-                        <p>FUPRE - Delta, Nigeria.</p>
+                    <div class="event">
+                        <h3 class="anime_text">
+                            <span>Petroleum Engineering, B.Eng</span>
+                        </h3>
+                        <p class="anime_text">
+                            <span>FUPRE - Delta, Nigeria.</span>
+                        </p>
                         <small>
                             <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="">
                             2019 - Till date
                         </small>
                     </div>
 
-                    <div class="event stagger_element">
-                        <h3>Frontend development</h3>
-                        <p>FreeCodeCamp.Org</p>
+                    <div class="event">
+                        <h3 class="anime_text">
+                            <span>Frontend development</span>
+                        </h3>
+                        <p class="anime_text">
+                            <span>FreeCodeCamp.Org</span>
+                        </p>
                         <small>
                             <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="">
                             2021 - Till date
                         </small>
                     </div>
 
-                    <div class="event stagger_element">
-                        <h3>Backend development (Python)</h3>
-                        <p>I4G X ZURI Training - Nigeria</p>
+                    <div class="event">
+                        <h3 class="anime_text">
+                            <span>Backend development (Python)</span>
+                        </h3>
+                        <p class="anime_text">
+                            <span>I4G X ZURI Training - Nigeria</span>
+                        </p>
                         <small>
                             <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="">
                             June - Sept. 2022
@@ -437,8 +469,12 @@
 
                 <div class="q_section" id="work">
                     <div class="event">
-                        <h3>Freelancing</h3>
-                        <p>Remote - Worldwide</p>
+                        <h3 class="anime_text">
+                            <span>Freelancing</span>
+                        </h3>
+                        <p class="anime_text">
+                            <span>Remote - Worldwide</span>
+                        </p>
                         <small>
                             <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="">
                             2022 - Till date
@@ -451,9 +487,13 @@
 
         <!-- SERVICES SECTION -->
         <section class="services_section">
-            <div class="section_head stagger_element">
-                <h1>Services</h1>
-                <p>Services I render</p>
+            <div class="section_head">
+                <h1 class="anime_text">
+                    <span>Services</span>
+                </h1>
+                <p class="anime_text">
+                    <span>Services I render</span>
+                </p>
             </div>
 
             <div class="services">
@@ -532,9 +572,13 @@
 
         <!-- PORTFOLIO SECTION -->
         <section class="portfolio_section">
-            <div class="section_head stagger_element">
-                <h1>Portfolio</h1>
-                <p>My most recent works</p>
+            <div class="section_head">
+                <h1 class="anime_text">
+                    <span>Portfolio</span>
+                </h1>
+                <p class="anime_text">
+                    <span>My recent works</span>
+                </p>
             </div>
 
             <div class="carousel_container">
@@ -647,9 +691,13 @@
 
         <!-- TESTIMONIALS -->
         <section class="testimonials_section">
-            <div class="section_head stagger_element">
-                <h1>Testimonials</h1>
-                <p>Reviews from clients</p>
+            <div class="section_head">
+                <h1 class="anime_text">
+                    <span>Testimonials</span>
+                </h1>
+                <p class="anime_text">
+                    <span>Reviews from clients</span>
+                </p>
             </div>
 
             <div class="testimonials">
@@ -718,9 +766,13 @@
 
         <!-- CONTACTS SECTION -->
         <section class="contacts_section">
-            <div class="section_head stagger_element">
-                <h1>Contact Me</h1>
-                <p>Get in touch or get a quote</p>
+            <div class="section_head">
+                <h1 class="anime_text">
+                    <span>Contact Me</span>
+                </h1>
+                <p class="anime_text">
+                    <span>Get in touch or get a quote</span>
+                </p>
             </div>
 
             <div class="contacts_container">
@@ -911,27 +963,53 @@
     detectAndSetTheme();
     
 
-    // stagger animation
-    observe_to_stagger = new IntersectionObserver((entries) => {
+    // text animation
+    const text_observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if(entry.isIntersecting){
-                entry.target.classList.add('stagger_anim');
+                entry.target.classList.add('text_anim');
             }else{
-                entry.target.classList.remove('stagger_anim');
+                entry.target.classList.remove('text_anim');
             }
         });
-    }, {rootMargin:"10% 0%"});
+    });
 
-    
-    const stagger_elements = document.querySelectorAll('.stagger_element');
+    const staggering_text_observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('text_anim');
+            }else{
+                entry.target.classList.remove('text_anim');
+            }
+        });
+    });
 
-    stagger_elements.forEach((element) => {
-        let delay = 1.0;
+
+
+    let staggering_anime_texts = document.querySelectorAll('.anime_text_stagger');
+    const anime_texts = document.querySelectorAll('.anime_text');
+
+    // anime text stagger
+    console.log(staggering_anime_texts);
+    staggering_anime_texts.forEach((element) => {
+        let split_text = new SplitType(element.classList[0]);
+        console.log(split_text.chars)
+        let delay = 0.2;
+        for(let i = 0; i < split_text.chars.length; i++){
+            let char = split_text.chars[i];
+            char.style.animationDelay = `${delay}s`;
+            staggering_text_observer.observe(char);
+            delay += 0.2;
+        };
+    });
+
+    anime_texts.forEach((element) => {
+        let delay = 0.2;
         for(let i = 0; i < element.children.length; i++){
             let child = element.children[i]
-            observe_to_stagger.observe(child);
             child.style.animationDelay = `${delay}s`;
-            delay += 0.5;
+            text_observer.observe(child);
+            delay += 0.2;
         };
     });
     

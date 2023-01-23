@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'Nuckle';
-    src: url('Nuckle-Regular.woff2') format('woff2');
+    src: url('Nuckle-Medium.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -2170,27 +2170,29 @@ footer .copy{
     }
 }
 
+.anime_text, .anime_text_stagger{
+    overflow: hidden !important;
+}
 
-.stagger_element > *{
+.anime_text > *{
+    font-size: inherit;
+    font: inherit;
+    font-weight: inherit;
+    display: block;
     transform: translateY(100%);
-    opacity: 0;
-    z-index: -1;
 }
 
-.stagger_anim{
-    animation: stag 0.5s ease-in forwards !important;
+.text_anim{
+    animation: text_anim 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards !important;
 }
 
-@keyframes stag {
+@keyframes text_anim {
     0%{
         transform: translateY(100%);
-        opacity: 0;
-        z-index: -1;
+    
     }
     100%{
         transform: translateY(0);
-        opacity: 1;
-        z-index: 0;
     }
 
 }
