@@ -2183,7 +2183,7 @@ footer .copy{
 }
 
 .text_anim{
-    animation: text_anim 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards !important;
+    animation: text_anim 1s ease forwards !important;
 }
 
 @keyframes text_anim {

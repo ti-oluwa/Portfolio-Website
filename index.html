@@ -144,11 +144,15 @@
                 </div>
     
                 <div class="intro_content">
-                    <div class="intro" class="anime_text_stagger">
-                        <span>Hey there👋!</span>
-                        <span>I'm Tolu Afolayan</span>
+                    <div class="intro">
+                        <div class="anime_text_stagger">
+                            <span>Hey there👋!</span>
+                        </div>
+                        <div class="anime_text_stagger">
+                            <span>I'm Tolu Afolayan</span>
+                        </div>               
                     </div>
-                    <h3>Ingenious web developer</h3>
+                    <h3 class="anime_text_stagger">Ingenious web developer</h3>
                     <div class="intro_text">
                         <p>
                             ...with high level skill and solutions to web design problems.
@@ -974,35 +978,49 @@
         });
     });
 
-    const staggering_text_observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if(entry.isIntersecting){
-                entry.target.classList.add('text_anim');
-            }else{
-                entry.target.classList.remove('text_anim');
-            }
-        });
-    });
 
 
-
-    let staggering_anime_texts = document.querySelectorAll('.anime_text_stagger');
+    const staggering_anime_texts = document.querySelectorAll('.anime_text_stagger');
     const anime_texts = document.querySelectorAll('.anime_text');
+    let animes = []
 
     // anime text stagger
-    console.log(staggering_anime_texts);
     staggering_anime_texts.forEach((element) => {
-        let split_text = new SplitType(element.classList[0]);
-        console.log(split_text.chars)
-        let delay = 0.2;
-        for(let i = 0; i < split_text.chars.length; i++){
-            let char = split_text.chars[i];
-            char.style.animationDelay = `${delay}s`;
-            staggering_text_observer.observe(char);
-            delay += 0.2;
-        };
+        let split_text = new SplitType('.anime_text_stagger');
+        
+        let tween = gsap.from(split_text.lines, {
+            duration: 1,
+            y: 100,
+            stagger: 0.2,
+            // ease: 'power4.out',
+            delay: 0.5,
+        });
+        tween.pause();
+
+        let anime = {
+            'element': element,
+            'tween': tween,
+        }
+        animes.push(anime);
     });
 
+    for (let i = 0; i < animes.length; i++){
+        let anime = animes[i];
+        let element = anime.element;
+        let tween = anime.tween;
+        let observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if(entry.isIntersecting){
+                    tween.play();
+                }else{
+                    tween.pause();
+                }
+            });
+        });
+        observer.observe(element);
+    };
+
+   
     anime_texts.forEach((element) => {
         let delay = 0.2;
         for(let i = 0; i < element.children.length; i++){
