@@ -153,6 +153,12 @@ link[type=image/x-icon]{
     box-shadow: inset 2px 2px 4px var(--light-shadow-color), inset -2px -2px 4px var(--dark-shadow-color) !important;
 }
 
+.dark .service::before{
+    background: #000 !important;
+}
+
+
+
 
 h1, h2, h3, h4, h5, h6, b, span{
     color: var(--heading-color);
