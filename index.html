@@ -951,7 +951,7 @@
     let theme_toggle = document.querySelector('.theme_toggle');
     let move_right = document.querySelector('#move_right');
     let intro_text = document.querySelector('.intro_text');
-    let carousel_item_imgs = document.querySelectorAll('.carousel_item_img img');
+    let carousel_item_imgs = document.querySelectorAll('.carousel_item_img > img');
     let loader = document.querySelector('.loader');
 
 
@@ -1076,8 +1076,8 @@
     
 
     anime_texts.forEach((element) => {
-        let delay = 0;
         for(let i = 0; i < element.children.length; i++){
+            let delay = 0;
             let child = element.children[i]
             child.style.animationDelay = `${delay}s`;
             text_observer.observe(child);
@@ -1165,6 +1165,21 @@
         service_observer.observe(service);
     })
 
+    // carousel item img observer
+
+    const carousel_item_img_observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('zoom_in_img');
+            }else{
+                entry.target.classList.remove('zoom_in_img');
+            }
+        });
+    }, {threshold: 0.5});
+
+    carousel_item_imgs.forEach((img) => {
+        carousel_item_img_observer.observe(img);
+    })
 
 
     // section observer
