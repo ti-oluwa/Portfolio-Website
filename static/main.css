@@ -1187,7 +1187,7 @@ header ul li{
 
 .drop_ind{
     max-width: clamp(15px, 2vw, 20px) !important;
-    height: 4px;
+    height: clamp(3px, 2vw, 4px);
     background: var(--accent-color);
     border-radius: 4px;
     position: relative;

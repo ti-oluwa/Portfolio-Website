@@ -272,9 +272,7 @@
                             <h3>Frontend development</h3>
                             <p>More than 1 year</p>
                         </div>
-                        <!-- <svg class="dark_dim drop_arrow" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
-                            <use xlink:href="./images/down.svg#down" href="./images/down.svg#down"></use>
-                        </svg> -->
+                
                         <div class="drop_ind"></div>
                     </div>
 
@@ -338,9 +336,7 @@
                             <h3>Backend development</h3>
                             <p>Up to 1 year</p>
                         </div>
-                        <!-- <svg class="dark_dim drop_arrow" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
-                            <use xlink:href="./images/down.svg#down" href="./images/down.svg#down"></use>
-                        </svg> -->
+                        
                         <div class="drop_ind"></div>
                     </div>
 
@@ -392,9 +388,7 @@
                             <h3>Version control</h3>
                             <!-- <p>More than 1 years</p> -->
                         </div>
-                        <!-- <svg class="dark_dim drop_arrow" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
-                            <use xlink:href="./images/down.svg#down" href="./images/down.svg#down"></use>
-                        </svg> -->
+                        
                         <div class="drop_ind"></div>
                     </div>
 
@@ -1508,7 +1502,11 @@
         // Skills section
         skills.forEach((skill) => {
             if(skill.querySelector('.skill_head').contains(e.target)){
-                // skill.querySelector('.drop_ind').classList.toggle('flip');
+                document.querySelectorAll('.skill_body').forEach((body) => {
+                    if(!body.parentNode.querySelector('.skill_head').contains(e.target)){
+                        body.classList.remove('show_dropdown');
+                    }
+                });
                 skill.querySelector('.skill_body').classList.toggle('show_dropdown');
             };
         });
