@@ -525,8 +525,6 @@ header ul li{
     align-items: center;
     z-index: 100;
     gap: clamp(22px, 2vw, 48px);
-    transition: background 1.2s ease-out !important;
-
 }
 
 
@@ -602,8 +600,7 @@ header ul li{
     box-shadow: inset 2px 2px 4px var(--light-dark),
                             inset -2px -2px 4px var(--dark-bg),
                             2px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background 1.2s ease-out !important;
-    transition: all 0.1s ease;
+    transition: all 1.2s ease-out !important;
     animation: show_menu_btn 0.2s ease-out forwards;
 
 }
@@ -647,6 +644,16 @@ header ul li{
 
 .open{
     transform: rotate(360deg);
+}
+
+.bottom_menu:has(.open){
+    transition: 1s ease !important;
+    background-color: var(--light-bg-trans);
+    box-shadow: 0px 0px 10px 100vmax var(--light-bg-trans) !important;
+}
+
+body:has(.open){
+    overflow: hidden;
 }
 
 /* NOTIFICATION */
@@ -885,8 +892,13 @@ header ul li{
     font-weight: 600;
     cursor: pointer;
     font-size: clamp(14px, 2vw, 16px);
-    box-shadow: inset 2px 2px 4px 2px rgba(31, 31, 31, 0.15),
-                        inset 2px 2px 5px var(--shade-dark);
+    box-shadow: inset 2px 2px 4px 2px var(--darker-shadow),
+                        inset 2px 2px 5px var(--accent-color-lighter);
+}
+
+.dark .contact_btn{
+    box-shadow: inset -2px -2px 4px var(--dark-shadow-color),
+                        inset 2px 2px 4px var(--accent-color-lighter);
 }
 
 .intro_content .download_btn{
@@ -1375,6 +1387,10 @@ header ul li{
     border-radius: inherit;
     box-shadow: inset 4px 3px 4px var(--shade-dark);
     animation: indicator_anim 1s ease-out forwards;
+}
+
+.dark .proficiency_indicator .indicator{
+    box-shadow: inset -1px -3px 4px var(--shade-dark);
 }
 
 .show_dropdown{
