@@ -185,6 +185,7 @@ link[type=image/x-icon]{
     scroll-behavior: smooth !important;
     --light-bg: #DDD0C8;
     --light-bg-trans: rgba(221, 208, 200, 0.7);
+    --light-bg-trans-l : rgba(221, 208, 200, 0.9);
     /* --light-bg: #f5f5f5; */
     --dark-bg: #1f1f1f;
     --light: #d0d0d0;
@@ -220,6 +221,7 @@ link[type=image/x-icon]{
     scroll-behavior: smooth !important;
         --light-bg: #13171f;
         --light-bg-trans: rgba(19, 23, 31, 0.7);
+        --light-bg-trans-l : rgba(19, 23, 31, 0.9);
         /* --light-bg: #f5f5f5; */
         --dark-bg: #1d1d1e;
         --light: #1f242e;
@@ -647,9 +649,9 @@ header ul li{
 }
 
 .bottom_menu:has(.open){
-    transition: 1s ease !important;
-    background-color: var(--light-bg-trans);
-    box-shadow: 0px 0px 10px 100vmax var(--light-bg-trans) !important;
+    transition: 0.5s ease !important;
+    background-color: var(--light-bg-trans-l);
+    box-shadow: 0px 0px 10px 100vmax var(--light-bg-trans-l) !important;
 }
 
 body:has(.open){
