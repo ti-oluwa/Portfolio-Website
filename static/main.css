@@ -1056,7 +1056,7 @@ body:has(.open), body:has(.open) *{
     transform: translateY(0%) scale(1.1);
     object-fit: cover;
     object-position: center;
-    transition: 1.2s ease;
+    transition: 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .parallax{
