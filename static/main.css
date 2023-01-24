@@ -73,7 +73,7 @@ body:not(:has(.page_loaded)){
 }
 
 .loader h1 span{
-    font-family: 'Nuckle';
+    font-family: 'Nuckle', system-ui;
     font-weight: 600;
     font-size: clamp(20px, 6vw, 36px);
 }
@@ -274,7 +274,7 @@ link[type=image/x-icon]{
 
 h1, h2, h3, h4, h5, h6, b, span{
     color: var(--heading-color);
-    font-family: 'Reckless';
+    font-family: 'Reckless', Georgia;
     font-weight: 600;
     transition: color 1.2s ease-out !important;
 
@@ -720,7 +720,7 @@ header ul li{
     line-height: 1.6;
     text-align: center;
     font-size: clamp(14px, 2vw, 16px);
-    font-family: "Reckless";
+    font-family: "Nuckle";
 }
 
 .notification_card button{
@@ -729,7 +729,7 @@ header ul li{
     width: 90%;
     padding: 10px 10px;
     border-radius: 6px;
-    font-family: "Reckless";
+    font-family: "Nuckle";
     font-size: clamp(14px, 2vw, 16px);
     background: var(--accent-color-lighter);
     color: var(--light);
@@ -817,9 +817,9 @@ header ul li{
 .intro_content .intro{
     margin-bottom: 16px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
+    align-items: flex-start;
     gap: 5px 10px;
     max-width: 100%;
 }

@@ -23,7 +23,7 @@
 
 <body>
     <!-- DETECT THE USERS PREFERRED THEME AND SWITCH -->
-    <script defer>
+    <script>
         if (localStorage.getItem('tolu_portfolio_theme') && localStorage.getItem('tolu_portfolio_theme') == "dark"){
                 document.querySelector('body').classList.add('dark');
         };
@@ -1045,7 +1045,7 @@
             y: 100,
             stagger: 0.2,
             // ease: 'power4.out',
-            delay: 3.4,
+            delay: 3.2,
         });
         tween.pause();
 
