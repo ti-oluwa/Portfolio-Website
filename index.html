@@ -17,26 +17,65 @@
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 </head>
-<script>
-    document.onreadystatechange = ()=>{
-        if(document.readyState == "complete"){
-            document.documentElement.style.display = '';
-        }else{
-            document.documentElement.style.display = 'none';
-        }
-    }
-</script>
 
 <body>
+    <!-- DETECT THE USERS PREFERRED THEME AND SWITCH -->
     <script>
         if (localStorage.getItem('tolu_portfolio_theme') && localStorage.getItem('tolu_portfolio_theme') == "dark"){
                 document.querySelector('body').classList.add('dark');
         };
     </script>
+
+    <!-- LOADING ANAIMATION -->
+    <div class="loader show_loader">
+        <svg class="dark_accent">
+            <use xlink:href="./images/hive.svg#hive" href="./images/hive.svg#hive"></use>
+        </svg>
+
+        <div class="progress_bar">
+            <div></div>
+        </div>
+
+        <h1>
+            <span>Toluwalase Afolayan</span>
+        </h1>
+    </div>
+
+    <!-- HIDE BODY TILL IT'S COMPLETELY LOADED -->
+    <script>
+        let progress_ind = document.querySelector('.progress_bar div');
+        let progress_amount = 0;
+
+        function progress_bar(increment){
+            if(progress_amount < 100)
+            {
+                progress_amount += increment;
+                progress_ind.style.width = `${progress_amount}%`;
+            };
+        };
+
+        progress_bar(2);
+        document.onreadystatechange = ()=>{
+            if(document.readyState == "complete"){
+                document.querySelector('.loader').classList.add('pre_hide_loader');
+                setTimeout(()=>{
+                    document.querySelector('.loader').classList.remove('pre_hide_loader');
+                    document.querySelector('.loader').classList.add('page_loaded');
+                }, 1200);
+
+                setTimeout(()=>{
+                    document.querySelector('.loader').style.display = 'none';
+                }, 3400);
+            }else{
+                document.querySelector('.loader').classList.add('show_loader');
+            }
+        }
+    </script>
+
     <header>
         <a href="#" id="header_name">
             <svg class="dark_light" style="width: clamp(20px, 2vw, 25px); height: clamp(20px, 2vw, 25px);">
-                <use xlink:href="./images/hive.svg#hive" href="./images/hive.svg#hive"></use>
+                <use xlink:href="./images/hive.svg#hive" href="./images/hive.svg#hive" onload="progress_bar(2)"></use>
             </svg>
             Toluwalase Afolayan
         </a>
@@ -49,7 +88,7 @@
             <li id="contacts_section"><a>Contact</a></li>
         </ul>
         <svg class="dark_dim theme_toggle" style="width: clamp(30px, 4vw, 35px); height: clamp(30px, 4vw, 35px);" title="Switch theme">
-            <use xlink:href="./images/light-mode.svg#light-mode" href="./images/light-mode.svg#light-mode"></use>
+            <use xlink:href="./images/light-mode.svg#light-mode" href="./images/light-mode.svg#light-mode" onload="progress_bar(2)"></use>
         </svg>
     </header>
     <div class="container">
@@ -65,38 +104,38 @@
             <div class="menu_items">
                 <div class="menu_item" id="about">
                     <svg class="dark_dim">
-                        <use xlink:href="./images/user.svg#user" href="./images/user.svg#user"></use>
+                        <use xlink:href="./images/user.svg#user" href="./images/user.svg#user" onload="progress_bar(2)"></use>
                     </svg>
                 </div>
 
                 <div class="menu_item" id="skills">
                     <svg class="dark_dim">
-                        <use xlink:href="./images/skills.svg#skills" href="./images/skills.svg#skills"></use>
+                        <use xlink:href="./images/skills.svg#skills" href="./images/skills.svg#skills" onload="progress_bar(2)"></use>
                     </svg>
                 </div>
 
                 <div class="menu_item" id="services">
                     <svg class="dark_dim">
-                        <use xlink:href="./images/services.svg#services" href="./images/services.svg#services"></use>
+                        <use xlink:href="./images/services.svg#services" href="./images/services.svg#services" onload="progress_bar(2)"></use>
                     </svg>
                 </div>
 
                 <div class="menu_item" id="portfolio">
                     <svg class="dark_dim">
-                        <use xlink:href="./images/portfolio.svg#portfolio" href="./images/portfolio.svg#portfolio"></use>
+                        <use xlink:href="./images/portfolio.svg#portfolio" href="./images/portfolio.svg#portfolio" onload="progress_bar(2)"></use>
                     </svg>
                 </div>
 
                 <div class="menu_item" id="contacts">
                     <svg class="dark_dim">
-                        <use xlink:href="./images/contact.svg#contact" href="./images/contact.svg#contact"></use>
+                        <use xlink:href="./images/contact.svg#contact" href="./images/contact.svg#contact" onload="progress_bar(2)"></use>
                     </svg>
                 </div>
             </div>
 
             <div class="menu_btn">
                 <svg class="dark_dim">
-                    <use href="./images/menu_dot.svg#menu_dot"></use>
+                    <use href="./images/menu_dot.svg#menu_dot" onload="progress_bar(2)"></use>
                 </svg>
             </div>
         </div>
@@ -114,35 +153,36 @@
                 <div class="socials">
                     <a href="https://linkedin.com/in/daniel-afolayan-00828823a" target="_blank" title="My LinkedIn profile" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
                         <svg class="dark_accent">
-                            <use xlink:href="./images/linked-in.svg#linked-in" href="./images/linked-in.svg#linked-in"></use>
+                            <use xlink:href="./images/linked-in.svg#linked-in" href="./images/linked-in.svg#linked-in" onload="progress_bar(2)"></use>
                         </svg>
                     </a>
 
                     <a href="https://twitter.com/ti_oluwa_" target="_blank" title="My twitter profile" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
                         <svg class="dark_accent">
-                            <use xlink:href="./images/twitter.svg#twitter" href="./images/twitter.svg#twitter"></use>
+                            <use xlink:href="./images/twitter.svg#twitter" href="./images/twitter.svg#twitter" onload="progress_bar(2)"></use>
                         </svg>
                     </a>
 
                     <a href="https://github.com/ti-oluwa" target="_blank" title="My github profile" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
                         <svg class="dark_accent">
-                            <use xlink:href="./images/github.svg#github" href="./images/github.svg#github"></use>
+                            <use xlink:href="./images/github.svg#github" href="./images/github.svg#github" onload="progress_bar(2)"></use>
                         </svg>
                     </a>
 
                     <a href="https://wa.me/+23409013329333" target="_blank" title="Talk to me on Whatsapp" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
                         <svg class="dark_accent">
-                            <use xlink:href="./images/whatsapp.svg#whatsapp" href="./images/whatsapp.svg#whatsapp"></use>
+                            <use xlink:href="./images/whatsapp.svg#whatsapp" href="./images/whatsapp.svg#whatsapp" onload="progress_bar(2)"></use>
                         </svg>
                     </a>
 
                     <a href="https://instagram.com/ti_oluwa" target="_blank" title="Check out my instagram" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
                         <svg class="dark_accent">
-                            <use xlink:href="./images/instagram.svg#instagram" href="./images/instagram.svg#instagram"></use>
+                            <use xlink:href="./images/instagram.svg#instagram" href="./images/instagram.svg#instagram" onload="progress_bar(2)"></use>
                         </svg>
                     </a>
                 </div>
-    
+                
+
                 <div class="intro_content">
                     <div class="intro">
                         <div class="anime_text_stagger">
@@ -170,7 +210,7 @@
                         <a class="download_btn" onclick="downloadFile(`./files/Tolu's Resume.pdf`, `Tolu's Resume.pdf`, event.target)">
                             Download CV
                             <svg class="dark_accent" style="width: 25px; height: 25px;">
-                                <use xlink:href="./images/download.svg#download" href="./images/download.svg#download"></use>
+                                <use xlink:href="./images/download.svg#download" href="./images/download.svg#download" onload="progress_bar(2)"></use>
                             </svg>
                         </a>
                         <a class="contact_btn" onclick="scrollToContacts()">
@@ -184,7 +224,7 @@
             </div>
 
             <div class="intro_img">
-                <img src="./images/resume.svg" alt="">
+                <img src="./images/resume.svg" alt="" onload="progress_bar(15)">
             </div>
 
         </section>
@@ -211,7 +251,7 @@
 
             <div class="section_content">
                 <div class="about_img">
-                    <img src="./images/bust.webp" alt="">
+                    <img src="./images/bust.webp" alt="" onload="progress_bar(15)">
                     <div class="frame"></div>
                 </div>
     
@@ -593,7 +633,7 @@
                     <div class="carousel">
                         <div class="carousel_item">
                             <div class="carousel_item_img">
-                                <img src="./images/students.webp" alt="">
+                                <img src="./images/students.webp" alt="" onload="progress_bar(10)">
 
                                 <div class="img_overlay">
                                     <h3>Eden Place</h3>
@@ -614,7 +654,7 @@
 
                         <div class="carousel_item">
                             <div class="carousel_item_img">
-                                <img src="./images/campaign-rafiki.webp" alt="">
+                                <img src="./images/campaign-rafiki.webp" alt="" onload="progress_bar(10)">
 
                                 <div class="img_overlay">
                                     <h3>Postman</h3>
@@ -636,7 +676,7 @@
 
                         <div class="carousel_item">
                             <div class="carousel_item_img">
-                                <img src="./images/auth.webp">
+                                <img src="./images/auth.webp" onload="progress_bar(10)">
 
                                 <div class="img_overlay">
                                     <h3>Authwiki</h3>
@@ -686,7 +726,7 @@
             </div>
 
             <div class="call_to_action_img">
-                <img src="./images/bust-removebg.webp" alt="">
+                <img src="./images/bust-removebg.webp" alt="" onload="progress_bar(10)">
             </div>
         </section>
 
@@ -911,6 +951,7 @@
     let move_right = document.querySelector('#move_right');
     let intro_text = document.querySelector('.intro_text');
     let carousel_item_imgs = document.querySelectorAll('.carousel_item_img img');
+    let loader = document.querySelector('.loader');
 
 
     // dark mode
