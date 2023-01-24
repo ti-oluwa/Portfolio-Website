@@ -266,8 +266,8 @@
                             
                     <div class="trophies">
                         <div class="trophy">
-                            <h2>1+</h2>
-                            <p>Years of experience</p>
+                            <h2>1</h2>
+                            <p>Year of experience</p>
                         </div>
                         <div class="trophy">
                             <h2>3+</h2>
@@ -275,7 +275,7 @@
                         </div>
                         <div class="trophy">
                             <h2>1+</h2>
-                            <p>Companies worked</p>
+                            <p>Team worked</p>
                         </div>
                     </div>
                 </div>
@@ -290,7 +290,7 @@
                     <span>Skills</span>
                 </h1>
                 <p class="anime_text">
-                    <span>My technical know how and educational background</span>
+                    <span>Languages, tools used and abilities</span>
                 </p>
             </div>
 
@@ -321,7 +321,7 @@
                         <div class="skill_item">
                             <div class="item_head">
                                 <h4>HTML5</h4>
-                                <p>80%</p>
+                                <p>95%</p>
                             </div>
 
                             <div class="proficiency_indicator">
@@ -329,7 +329,7 @@
                                 <div class="indicator"></div>
                             </div>
                         </div>
-
+                        
                         <div class="skill_item">
                             <div class="item_head">
                                 <h4>CSS3</h4>
@@ -358,6 +358,18 @@
                             <div class="item_head">
                                 <h4>Bootstrap</h4>
                                 <p>45%</p>
+                            </div>
+
+                            <div class="proficiency_indicator">
+                                <!-- A PROFICIENCY SLIDER   -->
+                                <div class="indicator"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill_item">
+                            <div class="item_head">
+                                <h4>Responsive design</h4>
+                                <p>80%</p>
                             </div>
 
                             <div class="proficiency_indicator">
@@ -1127,6 +1139,19 @@
         t_delay += 0.2;
     })
     trophy_observer.observe(document.querySelector('.about_img'));
+
+    // parallax observer
+    const parallax_observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.remove('parallax');
+            }else{
+                entry.target.classList.add('parallax');
+            }
+        });
+    }, {threshold: 0.6});
+
+    parallax_observer.observe(document.querySelector('.about_img img'));
 
     // skill observer
     const skill_observer = new IntersectionObserver((entries) => {
