@@ -14,8 +14,7 @@
 
     <title>Toluwalase Afolayan</title>
     <link rel="preconnect" href="./static/"/>
-    <link rel="preload" as="style" href="./static/RecklessNeue-Regular.woff"/>
-    <link rel="preload" as="style" href="./static/Nuckle-Medium.woff2"/>
+    <link rel="preconnect" href="./images/"/>
 
     <link rel="stylesheet" href="./static/main.css">
     <script src="https://unpkg.com/split-type"></script>
@@ -1046,7 +1045,7 @@
             y: 100,
             stagger: 0.2,
             // ease: 'power4.out',
-            delay: 0.5,
+            delay: 3.4,
         });
         tween.pause();
 
@@ -1057,24 +1056,26 @@
         animes.push(anime);
     });
 
-    for (let i = 0; i < animes.length; i++){
-        let anime = animes[i];
-        let element = anime.element;
-        let tween = anime.tween;
-        let observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if(entry.isIntersecting){
-                    tween.play();
-                }
-                // else{
-                //     tween.pause();
-                // }
+    document.addEventListener('DOMContentLoaded', () => {
+        for (let i = 0; i < animes.length; i++){
+            let anime = animes[i];
+            let element = anime.element;
+            let tween = anime.tween;
+            let observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if(entry.isIntersecting){
+                        tween.play();
+                    }
+                    // else{
+                    //     tween.pause();
+                    // }
+                });
             });
-        });
-        observer.observe(element);
-    };
+            observer.observe(element);
+        };
+    });
+    
 
-   
     anime_texts.forEach((element) => {
         let delay = 0;
         for(let i = 0; i < element.children.length; i++){
