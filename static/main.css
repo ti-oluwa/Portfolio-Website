@@ -920,7 +920,7 @@ header ul li{
 .about_img img{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
 }
 
@@ -1160,10 +1160,10 @@ header ul li{
     filter: invert(0.2);
 }
 
-.flip{
+/* .flip{
     transition: transform 0.2s ease-in;
     transform: rotate(180deg) !important;
-}
+} */
 
 .skill_body{
     display: none;
@@ -1183,6 +1183,32 @@ header ul li{
         opacity: 1;
         transform: translateY(0px);
     }
+}
+
+.drop_ind{
+    max-width: clamp(15px, 2vw, 20px) !important;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 4px;
+    position: relative;
+}
+
+.drop_ind::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 4px;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease-out;
+    z-index: 1;
+}
+
+.skill:has(.show_dropdown) .drop_ind::before{
+    transform: rotate(0deg);
 }
 
 .skill_item{
@@ -1242,7 +1268,7 @@ header ul li{
         width: 0%;
     }
     to{
-        width: ;
+        width:;
     }
 }
 
@@ -2183,7 +2209,7 @@ footer .copy{
 }
 
 .text_anim{
-    animation: text_anim 1s ease forwards !important;
+    animation: text_anim 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards !important;
 }
 
 @keyframes text_anim {
