@@ -71,9 +71,9 @@ body:not(:has(.page_loaded)){
     align-items: center;
     position: fixed;
     inset: 0;
-    min-width: 100vw;
-    min-height: 100vh;
-    background-color: var(--light-dark);
+    min-width: 100%;
+    min-height: 100%;
+    background-color: var(--light-bg);
     isolation: isolate;
 }
 
@@ -84,7 +84,7 @@ body:not(:has(.page_loaded)){
 .loader h1 span{
     font-family: 'Nuckle';
     font-weight: 600;
-    font-size: clamp(20px, 6vw, 48px);
+    font-size: clamp(20px, 6vw, 36px);
 }
 
 .loader svg{
