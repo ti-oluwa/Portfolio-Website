@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#323232">
+    <meta name="theme-color" content="#de8a59">
     <meta property='og:title' content="Toluwalase's Portfolio"/>
     <meta property='og:image' content="https://github.com/ti-oluwa/Portfolio-Website/blob/master/images/bust.webp">
     <meta property='og:description' content='Check out my most recent work and resume.'/>
@@ -36,7 +36,6 @@
     <script>
         if (localStorage.getItem('tolu_portfolio_theme') && localStorage.getItem('tolu_portfolio_theme') == "dark"){
                 document.querySelector('body').classList.add('dark');
-                document.querySelector('meta[name=theme-color]').content = "#de8a59";
         };
     </script>
 
@@ -103,6 +102,9 @@
         <svg class="dark_dim theme_toggle" style="width: clamp(30px, 4vw, 35px); height: clamp(30px, 4vw, 35px);" title="Switch theme" aria-label="Theme toggle" aria-describedby="Toggles between light and dark themes">
             <use xlink:href="./images/light-mode.svg#light-mode" href="./images/light-mode.svg#light-mode" onload="progress_bar(2)"></use>
         </svg>
+
+        <!-- PAGE SCROLL PROGRESS INDICATOR -->
+        <div class="scroll_progress_ind"></div>
     </header>
     <div class="container">
         <!-- GO UP ARROW -->
@@ -981,6 +983,7 @@
     let intro_text = document.querySelector('.intro_text');
     let carousel_item_imgs = document.querySelectorAll('.carousel_item_img > img');
     let loader = document.querySelector('.loader');
+    let scroll_progress_ind = document.querySelector('.scroll_progress_ind');
 
 
     // dark mode
@@ -1027,13 +1030,11 @@
         if(to_dark == true){
             // switches to dark mode
             body.classList.add('dark');
-            document.querySelector('meta[name=theme-color]').content = "#de8a59";
             theme_toggle.querySelector('use').href['animVal'] = './images/night-mode.svg#night-mode';
             theme_toggle.querySelector('use').href['baseVal'] = './images/night-mode.svg#night-mode';
         }else if ( to_dark == false && body.classList.contains('dark') ){
             // switches to light mode
             body.classList.remove('dark');
-            document.querySelector('meta[name=theme-color]').content = "#323232";
             theme_toggle.querySelector('use').href['animVal'] = './images/light-mode.svg#light-mode';
             theme_toggle.querySelector('use').href['baseVal'] = './images/light-mode.svg#light-mode';
         }
@@ -1407,7 +1408,10 @@
     // Hides scroll up button when at the top of the page
     window.addEventListener('scroll', () => {
         var scrollTop = document.documentElement.scrollTop;
-        // console.log(scrollTop)
+        
+        var scrolled_by = Math.floor(scrollTop / (document.body.offsetHeight - window.innerHeight + 80) * 100)
+        scroll_progress_ind.style.width = `${scrolled_by}%`;
+
         if(scrollTop <= window.innerHeight){
             go_up_btn.classList.add('hide');
         }else{
@@ -1421,6 +1425,7 @@
         }else{
             document.querySelector('header').classList.remove('add_shadow');
         };
+        
     });
 
     
