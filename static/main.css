@@ -654,7 +654,7 @@ header ul li{
     box-shadow: 0px 0px 10px 100vmax var(--light-bg-trans-l) !important;
 }
 
-body:has(.open), body:has(.open) *{
+body:has(.open), body:has(.open) .carousel{
     overflow: hidden;
 }
 
