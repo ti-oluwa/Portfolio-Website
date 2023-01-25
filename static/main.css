@@ -534,7 +534,7 @@ header ul li{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: clamp(10px, 4vw, 20px);
+    gap: clamp(10px, 6vw, 50px);
 }
 
 
@@ -550,6 +550,16 @@ header ul li{
     position: relative;
     transition: 0.6s ease !important;
     backdrop-filter: blur(2px);
+}
+
+.menu_item p{
+    font-size: clamp(12px, 4vw, 16px);
+    font-weight: 600;
+    color: var(--text-color);
+    position: absolute;
+    top: -80%;
+    left: 50%;
+    transform: translate(-50%, 0%);
 }
 
 .active_menu_item{
@@ -2594,7 +2604,13 @@ footer .copy{
         flex-direction: column;
     }
 
-    
+    .menu_item p{
+        position: absolute;
+        top: 50%;
+        left: -200%;
+        transform: translate(0%, -50%);
+        transition: 0.6s ease !important;
+    }
 
     @keyframes remove_menu_item {
         0% {
