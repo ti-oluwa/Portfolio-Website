@@ -568,7 +568,7 @@ header ul li{
 }
 
 .show_menu_item{
-    animation: show_menu_item 0.3s ease-in forwards;
+    animation: show_menu_item 0.3s ease forwards;
 }
 
 @keyframes show_menu_item {
