@@ -667,6 +667,10 @@ body:has(.open), body:has(.open) .carousel{
     overflow: hidden;
 }
 
+body:has(.open) *:is(a, button, input, select, textarea){
+    pointer-events: none !important;
+}
+
 /* NOTIFICATION */
 
 .notification_card{
@@ -770,7 +774,7 @@ body:has(.open), body:has(.open) .carousel{
 }
 
 .show_intro{
-    animation: drop_down 1s ease-out forwards;
+    animation: drop_down 1s ease-out forwards 3.4s;
 }
 
 @keyframes drop_down {
@@ -863,7 +867,7 @@ body:has(.open), body:has(.open) .carousel{
 .intro_content .intro_text{
     opacity: 0;
     animation: opace 1s ease-in forwards;
-    animation-delay: 1s;
+    animation-delay: 4.4s;
 }
 
 

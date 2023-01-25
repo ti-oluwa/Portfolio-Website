@@ -1112,8 +1112,9 @@
             }
         });
     },);
-
-    intro_observer.observe(intro_section);
+    document.addEventListener('DOMContentLoaded', () => {
+        intro_observer.observe(intro_section);
+    });
 
     // opacity observer
     const opacity_observer = new IntersectionObserver((entries) => {
@@ -1673,7 +1674,7 @@
                         behavior: 'smooth',
                         block: 'nearest',
                     });
-                }, 100)    
+                }, 220)    
             };
         });
 
