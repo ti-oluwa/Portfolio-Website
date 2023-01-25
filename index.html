@@ -1668,10 +1668,12 @@
 
         menu_btns.forEach((btn) => {
             if(btn.contains(e.target)){
-                document.querySelector(`.${btn.id}_section`).scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'nearest',
-                });
+                setTimeout(()=>{
+                    document.querySelector(`.${btn.id}_section`).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest',
+                    });
+                }, 100)    
             };
         });
 
