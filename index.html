@@ -1027,11 +1027,13 @@
         if(to_dark == true){
             // switches to dark mode
             body.classList.add('dark');
+            document.querySelector('meta[name=theme-color]').content = "#de8a59";
             theme_toggle.querySelector('use').href['animVal'] = './images/night-mode.svg#night-mode';
             theme_toggle.querySelector('use').href['baseVal'] = './images/night-mode.svg#night-mode';
         }else if ( to_dark == false && body.classList.contains('dark') ){
             // switches to light mode
             body.classList.remove('dark');
+            document.querySelector('meta[name=theme-color]').content = "#323232";
             theme_toggle.querySelector('use').href['animVal'] = './images/light-mode.svg#light-mode';
             theme_toggle.querySelector('use').href['baseVal'] = './images/light-mode.svg#light-mode';
         }
