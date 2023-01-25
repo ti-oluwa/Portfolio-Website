@@ -394,9 +394,9 @@ header{
     bottom: -2px;
     left: 0;
     background: #de8a59;
-    width: 100%;
+    width: 0%;
     height: 4px;
-    transition: 0.2s ease-out;
+    transition: 0.1s ease;
 }
 
 
