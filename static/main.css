@@ -659,7 +659,6 @@ header ul li{
 }
 
 .bottom_menu:has(.open){
-    transition: 1s ease !important;
     background-color: var(--light-bg-trans-l);
     box-shadow: 0px 0px 10px 100vmax var(--light-bg-trans-l) !important;
 }
