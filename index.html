@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#323232">
     <meta property='og:title' content="Toluwalase's Portfolio"/>
     <meta property='og:image' content="https://github.com/ti-oluwa/Portfolio-Website/blob/master/images/bust.webp">
     <meta property='og:description' content='Check out my most recent work and resume.'/>
@@ -11,14 +12,23 @@
     <meta name="description" content="Afolayan Daniel Toluwalase is a web developer, mostly backend focused. This is Afolayan Daniel Toluwalase's portfolio website containing his CV and most recent works. 
     It also has link to his social media pages and various means of contacting him. You can also send a mail to him through the website. This website is meant to attract potential clients for web development related jobs">
     <link rel="icon" type="image/x-icon" href="./images/hive2.svg#hive">
+    <link rel="apple-touch-icon" href="./images/hive2.svg#hive"/>
 
     <title>Toluwalase Afolayan</title>
+    <!-- PRECONNECT TO SPEED UP LOADING -->
     <link rel="preconnect" href="./static/"/>
     <link rel="preconnect" href="./images/"/>
+
+    <!-- PRELOAD FONTS -->
+    <link rel="preload" href="./static/Nuckle-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="./static/RecklessNeue-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="./static/Montserrat-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
 
     <link rel="stylesheet" href="./static/main.css">
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -26,6 +36,7 @@
     <script>
         if (localStorage.getItem('tolu_portfolio_theme') && localStorage.getItem('tolu_portfolio_theme') == "dark"){
                 document.querySelector('body').classList.add('dark');
+                document.querySelector('meta[name=theme-color]').content = "#de8a59";
         };
     </script>
 
@@ -930,7 +941,7 @@
         <p class="copy">ti_oluwa &copy;2023</p>
     </footer>
 </body>
-<script src="./static/jquery-3.6.1.min.js"></script>
+
 <script>
     const tab_labels = document.querySelectorAll('.tab_labels .label');
     const tab_indicator = document.querySelector('.tab_indicator');

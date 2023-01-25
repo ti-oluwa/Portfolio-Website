@@ -3,22 +3,25 @@
 @font-face {
     font-family: 'Nuckle';
     src: url('Nuckle-Medium.woff2') format('woff2');
-    font-weight: normal;
+    font-weight: auto;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Reckless';
     src: url('./RecklessNeue-Regular.woff') format('woff');
-    font-weight: normal;
+    font-weight: auto;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Montserrat';
     src: url('./Montserrat-VariableFont_wght.woff2') format('woff2');
-    font-weight: normal;
+    font-weight: auto;
     font-style: normal;
+    font-display: swap;
 }
 
 *, *::before, *::after{
@@ -568,7 +571,7 @@ header ul li{
 }
 
 .show_menu_item{
-    animation: show_menu_item 0.3s ease forwards;
+    animation: show_menu_item 0.22s ease forwards;
 }
 
 @keyframes show_menu_item {
@@ -805,7 +808,8 @@ body:has(.open) *:is(a, button, input, select, textarea){
 }
 
 .show_intro .socials{
-    animation: show_socials 1s ease forwards 0.5s;
+    animation: show_socials 1s ease forwards;
+    animation-delay: 3.9s;
 }
 
 @keyframes show_socials {
