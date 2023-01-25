@@ -100,13 +100,13 @@
             <li id="portfolio_section"><a>Portfolio</a></li>
             <li id="contacts_section"><a>Contact</a></li>
         </ul>
-        <svg class="dark_dim theme_toggle" style="width: clamp(30px, 4vw, 35px); height: clamp(30px, 4vw, 35px);" title="Switch theme">
+        <svg class="dark_dim theme_toggle" style="width: clamp(30px, 4vw, 35px); height: clamp(30px, 4vw, 35px);" title="Switch theme" aria-label="Theme toggle" aria-describedby="Toggles between light and dark themes">
             <use xlink:href="./images/light-mode.svg#light-mode" href="./images/light-mode.svg#light-mode" onload="progress_bar(2)"></use>
         </svg>
     </header>
     <div class="container">
         <!-- GO UP ARROW -->
-        <div id="go_up" class="hide">
+        <div id="go_up" class="hide" aria-label="Scroll to top button" aria-describedby="Scrolls to page top">
             <svg class="just_light">
                 <use xlink:href="./images/up-arrow.svg" href="./images/up-arrow.svg#up-arrow"></use>
             </svg>
@@ -115,35 +115,35 @@
         <!-- BOTTOM MENU -->
         <div class="bottom_menu">
             <div class="menu_items">
-                <div class="menu_item" id="about">
+                <div role="directory" class="menu_item" id="about" aria-describedby="Scrolls to about section">
                     <svg class="dark_dim">
                         <use xlink:href="./images/user.svg#user" href="./images/user.svg#user" onload="progress_bar(2)"></use>
                     </svg>
                     <p>About</p>
                 </div>
 
-                <div class="menu_item" id="skills">
+                <div role="directory" class="menu_item" id="skills" aria-describedby="Scrolls to skills section">
                     <svg class="dark_dim">
                         <use xlink:href="./images/skills.svg#skills" href="./images/skills.svg#skills" onload="progress_bar(2)"></use>
                     </svg>
                     <p>Skills</p>
                 </div>
 
-                <div class="menu_item" id="services">
+                <div role="directory" class="menu_item" id="services" aria-describedby="Scrolls to services section">
                     <svg class="dark_dim">
                         <use xlink:href="./images/services.svg#services" href="./images/services.svg#services" onload="progress_bar(2)"></use>
                     </svg>
                     <p>Services</p>
                 </div>
 
-                <div class="menu_item" id="portfolio">
+                <div role="directory" class="menu_item" id="portfolio" aria-describedby="Scrolls to portfolio section">
                     <svg class="dark_dim">
                         <use xlink:href="./images/portfolio.svg#portfolio" href="./images/portfolio.svg#portfolio" onload="progress_bar(2)"></use>
                     </svg>
                     <p>Portfolio</p>
                 </div>
 
-                <div class="menu_item" id="contacts">
+                <div role="directory" class="menu_item" id="contacts" aria-describedby="Scrolls to contact section">
                     <svg class="dark_dim">
                         <use xlink:href="./images/contact.svg#contact" href="./images/contact.svg#contact" onload="progress_bar(2)"></use>
                     </svg>
@@ -151,7 +151,7 @@
                 </div>
             </div>
 
-            <div class="menu_btn">
+            <div role="toolbar" class="menu_btn" aria-label="Popup menu button">
                 <svg class="dark_dim">
                     <use href="./images/menu_dot.svg#menu_dot" onload="progress_bar(2)"></use>
                 </svg>
@@ -166,34 +166,34 @@
 
 
         <!-- INTRO SECTION -->
-        <section class="intro_section" id="intro">
+        <section class="intro_section" id="intro" aria-label="Introduction">
             <div class="main">
                 <div class="socials">
-                    <a href="https://linkedin.com/in/daniel-afolayan-00828823a" target="_blank" title="My LinkedIn profile" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
+                    <a href="https://linkedin.com/in/daniel-afolayan-00828823a" target="_blank" title="My LinkedIn profile" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);" aria-label="My LinkedIn">
                         <svg class="dark_accent">
                             <use xlink:href="./images/linked-in.svg#linked-in" href="./images/linked-in.svg#linked-in" onload="progress_bar(2)"></use>
                         </svg>
                     </a>
 
-                    <a href="https://twitter.com/ti_oluwa_" target="_blank" title="My twitter profile" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
+                    <a href="https://twitter.com/ti_oluwa_" target="_blank" title="My twitter profile" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);" aria-label="My twitter profile">
                         <svg class="dark_accent">
                             <use xlink:href="./images/twitter.svg#twitter" href="./images/twitter.svg#twitter" onload="progress_bar(2)"></use>
                         </svg>
                     </a>
 
-                    <a href="https://github.com/ti-oluwa" target="_blank" title="My github profile" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
+                    <a href="https://github.com/ti-oluwa" target="_blank" title="My github profile" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);" aria-label="My GitHub profile">
                         <svg class="dark_accent">
                             <use xlink:href="./images/github.svg#github" href="./images/github.svg#github" onload="progress_bar(2)"></use>
                         </svg>
                     </a>
 
-                    <a href="https://wa.me/+23409013329333" target="_blank" title="Talk to me on Whatsapp" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
+                    <a href="https://wa.me/+23409013329333" target="_blank" title="Talk to me on Whatsapp" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);" aria-label="My Whatsapp">
                         <svg class="dark_accent">
                             <use xlink:href="./images/whatsapp.svg#whatsapp" href="./images/whatsapp.svg#whatsapp" onload="progress_bar(2)"></use>
                         </svg>
                     </a>
 
-                    <a href="https://instagram.com/ti_oluwa" target="_blank" title="Check out my instagram" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);">
+                    <a href="https://instagram.com/ti_oluwa" target="_blank" title="Check out my instagram" style="width: clamp(30px, 2vw, 50px); height: clamp(30px, 2vw, 50px);" aria-label="My Instagram">
                         <svg class="dark_accent">
                             <use xlink:href="./images/instagram.svg#instagram" href="./images/instagram.svg#instagram" onload="progress_bar(2)"></use>
                         </svg>
@@ -225,13 +225,13 @@
                         </p>
                     </div>
                     <div class="btns">
-                        <a class="download_btn" onclick="downloadFile(`./files/Tolu's Resume.pdf`, `Tolu's Resume.pdf`, event.target)">
+                        <a class="download_btn" onclick="downloadFile(`./files/Tolu's Resume.pdf`, `Tolu's Resume.pdf`, event.target)" aria-label="Download CV" aria-describedby="Click to download my resume">
                             Download CV
                             <svg class="dark_accent" style="width: 25px; height: 25px;">
                                 <use xlink:href="./images/download.svg#download" href="./images/download.svg#download" onload="progress_bar(2)"></use>
                             </svg>
                         </a>
-                        <a class="contact_btn" onclick="scrollToContacts()">
+                        <a class="contact_btn" onclick="scrollToContacts()" aria-label="Get a quote">
                             Contact me
                             <svg class="just_light" style="width: 25px; height: 25px;">
                                 <use xlink:href="./images/send.svg#send" href="./images/send.svg#send"></use>
@@ -242,13 +242,13 @@
             </div>
 
             <div class="intro_img">
-                <img src="./images/resume.svg" alt="" onload="progress_bar(15)">
+                <img src="./images/resume.svg" alt="Introductory section image" onload="progress_bar(15)">
             </div>
 
         </section>
 
         <!-- SCROLL DOWN MOUSE -->
-        <div class="scroll_down_section" onclick="scrollDown();">
+        <div class="scroll_down_section" onclick="scrollDown();" aria-label="Scroll to about section">
             <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
                 <use xlink:href="./images/mouse.svg#mouse" href="./images/mouse.svg#mouse"></use>
             </svg>
@@ -257,7 +257,7 @@
         </div>
 
         <!-- ABOUT SECTION -->
-        <section class="about_section">
+        <section class="about_section" aria-label="About me">
             <div class="section_head">
                 <h1 class="anime_text">
                     <span>About Me</span>
@@ -269,7 +269,7 @@
 
             <div class="section_content">
                 <div class="about_img">
-                    <img src="./images/bust.webp" alt="" onload="progress_bar(15)">
+                    <img src="./images/bust.webp" alt="Tolu Afolayan" onload="progress_bar(15)">
                     <div class="frame"></div>
                 </div>
     
@@ -300,7 +300,7 @@
         </section>
 
         <!-- SKILLS AND QUALIFICATIONS -->
-        <section class="sq_section">
+        <section class="sq_section" aria-label="My skills and qualifications">
             <div class="section_head">
                 <h1 class="anime_text">
                     <span>Skills</span>
@@ -313,8 +313,8 @@
             <div class="tab_switcher">
                 <div class="tab_indicator"></div>
                 <div class="tab_labels">
-                    <p class="label active_tab" id="skills">Skills</p>
-                    <p class="label" id="qualifications">Qualifications</p>
+                    <p class="label active_tab" id="skills_" aria-label="Switch to skills tab">Skills</p>
+                    <p class="label" id="qualifications" aria-label="Switch to qualifications tab">Qualifications</p>
                 </div>
             </div>
 
@@ -482,13 +482,13 @@
             <!-- QUALIFICATIONS SECTION -->
             <div class="qualifications_section">
                 <div class="q_head">
-                    <p class="active_sub_tab" id="education_switch" onclick="showEducation();">
+                    <p class="active_sub_tab" id="education_switch" onclick="showEducation();" aria-describedby="View my educational history">
                         <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
                             <use xlink:href="./images/education.svg#education" href="./images/education.svg#education"></use>
                         </svg>
                         Education
                     </p>
-                    <p id="work_switch" onclick="showWork();">
+                    <p id="work_switch" onclick="showWork();" aria-describedby="View my work history">
                         <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);">
                             <use xlink:href="./images/work.svg#work" href="./images/work.svg#work"></use>
                         </svg>
@@ -505,7 +505,7 @@
                             <span>FUPRE - Delta, Nigeria.</span>
                         </p>
                         <small>
-                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="">
+                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="calendar icon">
                             2019 - Till date
                         </small>
                     </div>
@@ -518,7 +518,7 @@
                             <span>FreeCodeCamp.Org</span>
                         </p>
                         <small>
-                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="">
+                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="calendar icon">
                             2021 - Till date
                         </small>
                     </div>
@@ -531,7 +531,7 @@
                             <span>I4G X ZURI Training - Nigeria</span>
                         </p>
                         <small>
-                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="">
+                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="calendar icon">
                             June - Sept. 2022
                         </small>
                     </div>
@@ -546,7 +546,7 @@
                             <span>Remote - Worldwide</span>
                         </p>
                         <small>
-                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="">
+                            <img src="./images/calendar.svg" style="width: clamp(14px, 4vw, 18px); height: 100%;" alt="calendar icon">
                             2022 - Till date
                         </small>
                     </div>
@@ -556,7 +556,7 @@
         </section>
 
         <!-- SERVICES SECTION -->
-        <section class="services_section">
+        <section class="services_section" aria-label="Services I render">
             <div class="section_head">
                 <h1 class="anime_text">
                     <span>Services</span>
@@ -572,7 +572,7 @@
                         <use xlink:href="./images/html_tag.svg#html_tag" href="./images/html_tag.svg#html_tag"></use>
                     </svg>
                     <h3>Frontend Development</h3>
-                    <p class="info_btn">
+                    <p class="info_btn" aria-label="More info" aria-describedby="Click to bring up more info on this service">
                         More info
                         <svg class="dark_dim" style="width: clamp(14px, 4vw, 16px); height: clamp(14px, 4vw, 16px);">
                             <use xlink:href="./images/info1.svg#info1" href="./images/info1.svg#info1"></use>
@@ -582,7 +582,7 @@
                     <div class="more_info">
                         <div class="info_title">
                             <h3>Frontend Development</h3>
-                            <svg class="dark_dim" style="width: clamp(25px, 4vw, 35px); height: clamp(25px, 4vw, 35px);">
+                            <svg class="dark_dim" style="width: clamp(25px, 4vw, 35px); height: clamp(25px, 4vw, 35px);" aria-label="close">
                                 <use xlink:href="./images/cancel.svg#cancel" href="./images/cancel.svg#cancel"></use>
                             </svg>
                         </div>
@@ -607,7 +607,7 @@
                         <use xlink:href="./images/server.svg#server" href="./images/server.svg#server"></use>
                     </svg>
                     <h3>Backend Development</h3>
-                    <p class="info_btn">
+                    <p class="info_btn" aria-label="More info" aria-describedby="Click to bring up more info on this service">
                         More info
                         <svg class="dark_dim" style="width: clamp(14px, 4vw, 16px); height: clamp(14px, 4vw, 16px);">
                             <use xlink:href="./images/info1.svg#info1" href="./images/info1.svg#info1"></use>
@@ -617,7 +617,7 @@
                     <div class="more_info">
                         <div class="info_title">
                             <h3>Backend Development</h3>
-                            <svg class="dark_dim" style="width: clamp(25px, 4vw, 35px); height: clamp(25px, 4vw, 35px);">
+                            <svg class="dark_dim" style="width: clamp(25px, 4vw, 35px); height: clamp(25px, 4vw, 35px);" aria-label="close">
                                 <use xlink:href="./images/cancel.svg#cancel" href="./images/cancel.svg#cancel"></use>
                             </svg>
                         </div>
@@ -641,7 +641,7 @@
         </section>
 
         <!-- PORTFOLIO SECTION -->
-        <section class="portfolio_section">
+        <section class="portfolio_section" aria-label="My portfolio projects">
             <div class="section_head">
                 <h1 class="anime_text">
                     <span>Portfolio</span>
@@ -654,7 +654,7 @@
             <div class="carousel_container">
                 <div class="carousel_body">
                     <div class="carousel_nav">
-                        <svg class="dark_light" id="move_left" style="width: clamp(45px, 4vw, 70px); height: clamp(45px, 4vw, 70px); opacity: 0.3;">
+                        <svg class="dark_light" id="move_left" style="width: clamp(45px, 4vw, 70px); height: clamp(45px, 4vw, 70px); opacity: 0.3;" aria-label="Scroll left arrow">
                             <use xlink:href="./images/left_arrow.svg#left_arrow" href="./images/left_arrow.svg#left_arrow"></use>
                         </svg>
                     </div>
@@ -662,12 +662,12 @@
                     <div class="carousel">
                         <div class="carousel_item">
                             <div class="carousel_item_img">
-                                <img src="./images/students.webp" alt="" onload="progress_bar(10)">
+                                <img src="./images/students.webp" alt="Eden Place School placeholder image" onload="progress_bar(10)">
 
                                 <div class="img_overlay">
                                     <h3>Eden Place</h3>
                                     <p>A school website</p>
-                                    <a href="http://edenplace.pythonanywhere.com/" title="Click here to visit the project website"><img src="./images/link.svg" alt=""></a>
+                                    <a href="http://edenplace.pythonanywhere.com/" title="Click here to visit the project website" aria-describedby="Click here for more on the project"><img src="./images/link.svg" alt="link icon"></a>
                                 </div>
                             </div>
 
@@ -677,18 +677,18 @@
                                     This is a school website I built for an elementary school. The website features a modern and user friendly design
                                      with easy navigation for both parents and pupils. I am proud to have had the opportunity to contribute to the school through this project.
                                 </p>
-                                <a href="http://edenplace.pythonanywhere.com/">View site</a>
+                                <a href="http://edenplace.pythonanywhere.com/" aria-describedby="Click here for more on the project">View site</a>
                             </div>
                         </div>
 
                         <div class="carousel_item">
                             <div class="carousel_item_img">
-                                <img src="./images/campaign-rafiki.webp" alt="" onload="progress_bar(10)">
+                                <img src="./images/campaign-rafiki.webp" alt="Postman messanger placeholder image" onload="progress_bar(10)">
 
                                 <div class="img_overlay">
                                     <h3>Postman</h3>
                                     <p>Messaging made easy</p>
-                                    <a href="https://tioluwa.pythonanywhere.com/" title="Click here to visit the project website"><img src="./images/link.svg" alt=""></a>
+                                    <a href="https://tioluwa.pythonanywhere.com/" title="Click here to visit the project website" aria-describedby="Click here for more on the project"><img src="./images/link.svg" alt="link icon"></a>
                                 </div>
                             </div>
 
@@ -699,18 +699,18 @@
                                      It also includes a contact list feature, allowing you to save and manage a list of recipients for future use and more.
 
                                 </p>
-                                <a href="https://tioluwa.pythonanywhere.com/">View site</a>
+                                <a href="https://tioluwa.pythonanywhere.com/" aria-describedby="Click here for more on the project">View site</a>
                             </div>
                         </div>
 
                         <div class="carousel_item">
                             <div class="carousel_item_img">
-                                <img src="./images/auth.webp" onload="progress_bar(10)">
+                                <img src="./images/auth.webp" onload="progress_bar(10)" alt="AuthWiki placeholder image">
 
                                 <div class="img_overlay">
                                     <h3>Authwiki</h3>
                                     <p>A library of auth codes</p>
-                                    <a href="https://github.com/zuri-training/AuthWiki_Team4" title="Click here to visit the project repository"><img src="./images/link.svg" alt=""></a>
+                                    <a href="https://github.com/zuri-training/AuthWiki_Team4" title="Click here to visit the project repository" aria-describedby="Click here for more on the project"><img src="./images/link.svg" alt="link icon"></a>
                                 </div>
                             </div>
 
@@ -720,13 +720,13 @@
                                     This website is a library of tools and resources used for validation and authentication in various tech stacks. This library includes a variety of code types. Whether you are a developer looking for reliable authentication solution
                                      or a user looking to protect online accounts, this site has something for you. Explore today!
                                 </p>
-                                <a href="https://github.com/zuri-training/AuthWiki_Team4">View repo</a>
+                                <a href="https://github.com/zuri-training/AuthWiki_Team4" aria-describedby="Click here for more on the project">View repo</a>
                             </div>
                         </div>
                     </div>
     
                     <div class="carousel_nav">
-                        <svg class="dark_dim" id="move_right" style="width: clamp(45px, 4vw, 70px); height: clamp(45px, 4vw, 70px);">
+                        <svg class="dark_dim" id="move_right" style="width: clamp(45px, 4vw, 70px); height: clamp(45px, 4vw, 70px);" aria-label="Scroll right arrow">
                             <use xlink:href="./images/right_arrow.svg#right_arrow" href="./images/right_arrow.svg#right_arrow"></use>
                         </svg>
                     </div>
@@ -742,7 +742,7 @@
         </section>
 
         <!-- CALL TO ACTION -->
-        <section class="call_to_action">
+        <section class="call_to_action" aria-label="Call to action">
             <div class="call_to_action_body">
                 <h3>Do you have a project?</h3>
                 <p>Contact me today and get 20% off your new project.</p>
@@ -755,12 +755,12 @@
             </div>
 
             <div class="call_to_action_img">
-                <img src="./images/bust-removebg.webp" alt="" onload="progress_bar(10)">
+                <img src="./images/bust-removebg.webp" alt="Tolu Afolayan - No background" onload="progress_bar(10)">
             </div>
         </section>
 
         <!-- TESTIMONIALS -->
-        <section class="testimonials_section">
+        <section class="testimonials_section" aria-label="Clients testimonies">
             <div class="section_head">
                 <h1 class="anime_text">
                     <span>Testimonials</span>
@@ -835,7 +835,7 @@
         </section>
 
         <!-- CONTACTS SECTION -->
-        <section class="contacts_section">
+        <section class="contacts_section" aria-label="Contact me">
             <div class="section_head">
                 <h1 class="anime_text">
                     <span>Contact Me</span>
@@ -855,7 +855,7 @@
                             <h3 class="anime_text">
                                 <span>Call me on</span>
                             </h3>
-                            <a href="tel:+2349013329333" class="anime_text">
+                            <a href="tel:+2349013329333" class="anime_text" aria-label="My mobile number" aria-describedby="Place a call to me">
                                 <span>+234-9013329333</span>
                             </a>
                         </div>
@@ -869,7 +869,7 @@
                             <h3 class="anime_text">
                                 <span>My mailbox</span>
                             </h3>
-                            <a href="mailto:tioluwa.dev@gmail.com" class="anime_text">
+                            <a href="mailto:tioluwa.dev@gmail.com" class="anime_text" aria-label="My mailbox" aria-describedby="Send me an email here">
                                 <span>tioluwa.dev@gmail.com</span>
                             </a>
                         </div>
@@ -883,20 +883,20 @@
                             <h3 class="anime_text">
                                 <span>Send a DM</span>
                             </h3>
-                            <a href="https://wa.me/+23409013329333" class="anime_text">
+                            <a href="https://wa.me/+23409013329333" class="anime_text" aria-label="My whatsapp number" aria-describedby="Send me a private message here">
                                 <span>09013329333</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="contact_form">
+                <div class="contact_form" aria-label="Contact form">
                     <div class="form_group">
-                        <input type="text" id="name" placeholder="Name" required title="Enter your full name preferably">
-                        <input type="email" id="email" placeholder="Email address" required title="Enter an email address i can contact you with">
+                        <input type="text" id="name" placeholder="Name" required aria-required="true" aria-label="Client name" title="Enter your full name preferably">
+                        <input type="email" id="email" placeholder="Email address" required aria-required="true" aria-label="Client email" title="Enter an email address i can contact you with">
                     </div>
-                    <textarea name="" id="message" placeholder="Message or Project description" spellcheck="true" title="Type a message. Give a concise description of the project you have in mind." required></textarea>
-                    <button id="submit" disabled aria-details="Send a message to me">
+                    <textarea name="" id="message" placeholder="Message or Project description" spellcheck="true" title="Type a message. Give a concise description of the project you have in mind." required aria-required="true" aria-label="Message"></textarea>
+                    <button id="submit" disabled aria-label="Send message">
                         Send message
                         <svg class="just_light" style="width: clamp(15px, 4vw, 25px); height: clamp(15px, 4vw, 25px);">
                             <use xlink:href="./images/send.svg#send" href="./images/send.svg#send"></use>
@@ -915,22 +915,22 @@
                 <p>Web developer</p>
             </div>
     
-            <div class="social_share_tab">
+            <div class="social_share_tab" aria-label="Share my portfolio">
                 <p>Share on</p>
                 <div class="share">
-                    <a href="https://ctt.ac/aY525" target="_blank">
+                    <a href="https://ctt.ac/aY525" target="_blank" aria-label="Share on Twitter">
                         <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on twitter">
                             <use xlink:href="./images/twitter.svg#twitter" href="./images/twitter.svg#twitter"></use>
                         </svg>
                     </a>
 
-                    <a href="whatsapp://send?text=Hey!%20I%20just%20wanted%20to%20refer%20a%20fantastic%20web%20developer%20for%20a%20job%20opportunity.%0A%0A%20Tolu%20has%20a%20talent%20for%20building%20beautiful%20websites%20and%20I%20recommend%20him%20for%20any%20web%20development%20needs,%20%20whether%20it's%20for%20business%20or%20a%20personal%20website.%0A%0ACheck%20out%20Tolu's%20portfolio%20website%20here:%20https://bit.ly/dev_tioluwa" action="share/whatsapp/share" target="_blank">
+                    <a aria-label="Share on Whatsapp" href="whatsapp://send?text=Hey!%20I%20just%20wanted%20to%20refer%20a%20fantastic%20web%20developer%20for%20a%20job%20opportunity.%0A%0A%20Tolu%20has%20a%20talent%20for%20building%20beautiful%20websites%20and%20I%20recommend%20him%20for%20any%20web%20development%20needs,%20%20whether%20it's%20for%20business%20or%20a%20personal%20website.%0A%0ACheck%20out%20Tolu's%20portfolio%20website%20here:%20https://bit.ly/dev_tioluwa" action="share/whatsapp/share" target="_blank">
                         <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on whatsapp">
                             <use xlink:href="./images/whatsapp.svg#whatsapp" href="./images/whatsapp.svg#whatsapp"></use>
                         </svg>
                     </a>
 
-                    <a href="https://www.linkedin.com/shareArticle?url=https://bit.ly/dev_tioluwa&title=Toluwlase's%20Portfolio&summary=Check%20out%20my%20recent%20work%20and%20resume" target="_blank">
+                    <a aria-label="Share on LinkedIn" href="https://www.linkedin.com/shareArticle?url=https://bit.ly/dev_tioluwa&title=Toluwlase's%20Portfolio&summary=Check%20out%20my%20recent%20work%20and%20resume" target="_blank">
                         <svg class="dark_dim" style="width: clamp(25px, 4vw, 30px); height: clamp(25px, 4vw, 30px);" alt="share on linkedin">
                             <use xlink:href="./images/linked-in.svg#linked-in" href="./images/linked-in.svg#linked-in"></use>
                         </svg>
