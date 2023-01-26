@@ -18,11 +18,19 @@
     <!-- PRECONNECT TO SPEED UP LOADING -->
     <link rel="preconnect" href="./static/"/>
     <link rel="preconnect" href="./images/"/>
+    <link rel="preconnect" href="https://unpkg.com/"/>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/"/>
+    
 
     <!-- PRELOAD FONTS -->
     <link rel="preload" href="./static/Nuckle-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="./static/RecklessNeue-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
     <link rel="preload" href="./static/Montserrat-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <!-- PRELOAD IMAGES -->
+    <link rel="preload" href="./images/close.svg" as="image" crossorigin="anonymous">
+    <link rel="preload" href="./images/night-mode.svg" as="image" crossorigin="anonymous">
+    <link rel="preload" href="./images/light-mode.svg" as="image" crossorigin="anonymous">
 
 
     <link rel="stylesheet" href="./static/main.css">
@@ -1230,7 +1238,7 @@
     // section observer
     const section_observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            if (entry.isIntersecting && menu_btn.classList.contains('open')){
+            if (entry.isIntersecting){
                 let btn = document.querySelector(`#${entry.target.className.replace('_section', '')}`);
                 btn.classList.add('active_menu_item');
                 btn.style.pointerEvents = 'none';

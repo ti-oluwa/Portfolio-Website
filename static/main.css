@@ -396,7 +396,8 @@ header{
     background: #de8a59;
     width: 0%;
     height: 4px;
-    transition: 0.1s ease;
+    transition: 0.2s linear !important;
+    border-radius: 4px;
 }
 
 
@@ -576,7 +577,7 @@ header ul li{
 
 .active_menu_item{
     background: var(--shade-dark);
-    transform: scale(1.2) !important;
+    transform: scale(1.2) translate(0, -4px) !important;
 }
 
 .show_menu_item{
@@ -2042,6 +2043,7 @@ body:has(.open) *:is(a, button, input, select, textarea){
     box-shadow: inset 2px 0px var(--darker-shadow), inset -2px 0px var(--darker-shadow);
 }
 
+
 .testimonials::-webkit-scrollbar{
     display: none !important;
 }
@@ -2618,6 +2620,12 @@ footer .copy{
 
     .bottom_menu, .menu_items{
         flex-direction: column;
+    }
+
+    
+    .active_menu_item{
+        background: var(--shade-dark);
+        transform: scale(1.15) !important;
     }
 
     .menu_item p{
