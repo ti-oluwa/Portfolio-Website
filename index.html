@@ -38,7 +38,7 @@
 <body>
     <!-- DETECT THE USERS PREFERRED THEME AND SWITCH -->
     <script>
-        if (localStorage.getItem('tolu_portfolio_theme') && localStorage.getItem('tolu_portfolio_theme') == "dark"){
+        if (localStorage.getItem('tioluwas_portfolio_theme') && localStorage.getItem('tioluwas_portfolio_theme') == "dark"){
                 document.querySelector('body').classList.add('dark');
         };
     </script>
@@ -330,7 +330,7 @@
                         </svg>
                         <div>
                             <h3>Backend development</h3>
-                            <p>1+ years of experience</p>
+                            <p>2+ years of experience</p>
                         </div>
                         
                         <div class="drop_ind"></div>
@@ -340,6 +340,18 @@
                         <div class="skill_item">
                             <div class="item_head">
                                 <h4>Python</h4>
+                                <p>95%</p>
+                            </div>
+
+                            <div class="proficiency_indicator">
+                                <!-- A PROFICIENCY SLIDER   -->
+                                <div class="indicator"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill_item">
+                            <div class="item_head">
+                                <h4>Django</h4>
                                 <p>90%</p>
                             </div>
 
@@ -352,7 +364,7 @@
                         <div class="skill_item">
                             <div class="item_head">
                                 <h4>PostgreSQL</h4>
-                                <p>40%</p>
+                                <p>60%</p>
                             </div>
 
                             <div class="proficiency_indicator">
@@ -363,8 +375,8 @@
 
                         <div class="skill_item">
                             <div class="item_head">
-                                <h4>Django & DjangoRestFramework</h4>
-                                <p>90%</p>
+                                <h4>MongoDB</h4>
+                                <p>50%</p>
                             </div>
 
                             <div class="proficiency_indicator">
@@ -439,8 +451,20 @@
 
                         <div class="skill_item">
                             <div class="item_head">
+                                <h4>JQuery</h4>
+                                <p>70%</p>
+                            </div>
+
+                            <div class="proficiency_indicator">
+                                <!-- A PROFICIENCY SLIDER   -->
+                                <div class="indicator"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill_item">
+                            <div class="item_head">
                                 <h4>TailwindCSS</h4>
-                                <p>45%</p>
+                                <p>55%</p>
                             </div>
 
                             <div class="proficiency_indicator">
@@ -742,6 +766,25 @@
                             </div>
                         </div>
 
+                        <div class="carousel_item">
+                            <div class="carousel_item_img">
+                                <img src="./images/djsm.png" alt="djsm placeholder image" onload="progress_bar(6)">
+
+                                <div class="img_overlay">
+                                    <h3>tranzlate - Package</h3>
+                                    <p>Multilingual translation in Python<p>
+                                    <a href="https://github.com/ti-oluwa/tranzlate" title="Click here to visit the project website" aria-describedby="Click here for more on the project"><img src="./images/link.svg" alt="link icon"></a>
+                                </div>
+                            </div>
+
+                            <div class="carousel_item_body">
+                                <h3>tranzlate</h3>
+                                <p>
+                                    Simple python package for multi-lingual translation of text, files, markup and BeautifulSoup objects.
+                                </p>
+                                <a href="https://github.com/ti-oluwa/tranzlate" aria-describedby="Click here for more on the project">View repo</a>
+                            </div>
+                        </div>
 
                         <div class="carousel_item">
                             <div class="carousel_item_img">
@@ -1160,10 +1203,10 @@
             let prefers_dark = window.matchMedia('(prefers-color-scheme: dark)') // checks if the user's device is in dark mode. using the attribute, "matches", returns true if the user is in dark mode or false if not
 
             // Check if the theme of the website has been set before. Use the theme if it has been set or choose the theme based on the system wide theme
-            if (!localStorage.getItem('tolu_portfolio_theme')){
+            if (!localStorage.getItem('tioluwas_portfolio_theme')){
                 switchToDark(prefers_dark.matches);
             }else{
-                let setToDark = localStorage.getItem('tolu_portfolio_theme') == "dark" ? true : false;
+                let setToDark = localStorage.getItem('tioluwas_portfolio_theme') == "dark" ? true : false;
                 switchToDark(setToDark);
             }
 
@@ -1172,8 +1215,8 @@
                 switchToDark(prefers_dark.matches);
             });
         }else{
-            if (localStorage.getItem('tolu_portfolio_theme')){
-                let setToDark = localStorage.getItem('tolu_portfolio_theme') == "dark" ? true : false;
+            if (localStorage.getItem('tioluwas_portfolio_theme')){
+                let setToDark = localStorage.getItem('tioluwas_portfolio_theme') == "dark" ? true : false;
                 switchToDark(setToDark);
             }
         };
@@ -1184,7 +1227,7 @@
     function isLight(){
         // returns if the theme is light
         if(localStorage.getItem('theme')){
-            return localStorage.getItem('tolu_portfolio_theme') == "light" ? true : false;
+            return localStorage.getItem('tioluwas_portfolio_theme') == "light" ? true : false;
         };
         return !body.classList.contains('dark');
     };
@@ -1193,7 +1236,7 @@
     function switchToDark(to_dark=true){
         // sets theme to "dark" if to_dark is true otherwise, it sets theme to "light"
         var theme = to_dark ? "dark" : "light";
-        localStorage.setItem('tolu_portfolio_theme', theme);
+        localStorage.setItem('tioluwas_portfolio_theme', theme);
 
         if(to_dark == true){
             // switches to dark mode
